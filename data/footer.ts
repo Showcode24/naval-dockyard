@@ -1,0 +1,19 @@
+// Footer links and data
+export const footerLinks = {
+  quickLinks: [
+    { label: "About Us", href: "/about" },
+    { label: "Our Services", href: "/services" },
+    { label: "Project Portfolio", href: "/portfolio" },
+    { label: "Careers", href: "/careers" },
+    { label: "News & Updates", href: "/news" },
+    { label: "Contact Us", href: "/contact" },
+  ],
+  services: [
+    { label: "Ship Repair & Maintenance", href: "/services/ship-repair" },
+    { label: "Dry Docking & Vessel Overhauls", href: "/services/dry-docking" },
+    { label: "Fabrication & Engineering", href: "/services/fabrication" },
+    { label: "Naval Architecture", href: "/services/naval-architecture" },
+    { label: "Offshore Support", href: "/services/offshore-support" },
+  ],
+}
+

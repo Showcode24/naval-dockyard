@@ -1,0 +1,50 @@
+export const contactData = {
+  address: "Naval Dockyard Limited, Victoria Island, Lagos, Nigeria",
+  phone: "+234 (0) 123 4567 890",
+  emergencyPhone: "+234 (0) 123 4567 999",
+  email: "info@navaldockyard.com",
+  serviceEmail: "service@navaldockyard.com",
+  hours: "Monday - Friday: 8:00 AM - 5:00 PM | Saturday: 9:00 AM - 2:00 PM",
+
+  serviceTypes: [
+    "Ship Repair & Maintenance",
+    "Dry Docking & Vessel Overhauls",
+    "Fabrication & Engineering",
+    "Naval Architecture & Marine Engineering",
+    "Offshore & Oil & Gas Support",
+    "Emergency Repairs",
+    "Preventative Maintenance Programs",
+    "Electrical & Electronic Systems",
+    "Propulsion System Servicing",
+    "Hull & Structural Repairs",
+    "Interior Outfitting & Renovation",
+    "Ballast Water Treatment Installation",
+    "Other Services",
+  ],
+
+  vesselTypes: [
+    "Naval Patrol Vessel",
+    "Naval Frigate/Corvette",
+    "Coast Guard Vessel",
+    "Oil/Chemical Tanker",
+    "LNG/LPG Carrier",
+    "Container Ship",
+    "Bulk Carrier",
+    "Passenger Ferry",
+    "Offshore Supply Vessel",
+    "Platform Support Vessel",
+    "Fishing Vessel",
+    "Research Vessel",
+    "Other",
+  ],
+
+  projectTimelines: [
+    "Emergency (Immediate)",
+    "Urgent (Within 2 weeks)",
+    "Short-term (1-2 months)",
+    "Medium-term (3-6 months)",
+    "Long-term (6+ months)",
+    "Planned Maintenance (Specific date)",
+  ],
+}
+
