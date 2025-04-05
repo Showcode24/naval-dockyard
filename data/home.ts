@@ -207,3 +207,36 @@ export const ctaData = {
   secondaryButtonLink: "/services",
 }
 
+export const heroSlidesData = [
+  {
+    headline: "Excellence in Naval Engineering & Ship Repair",
+    subheadline:
+      "Providing comprehensive maintenance, repair, and overhaul services for naval and commercial vessels with precision and reliability.",
+    primaryCTA: "Request a Quote",
+    primaryCTALink: "/contact",
+    secondaryCTA: "Explore Services",
+    secondaryCTALink: "/services",
+    image: "/hero.jpg",
+  },
+  {
+    headline: "State-of-the-Art Dry Docking Facilities",
+    subheadline:
+      "Our modern facilities can accommodate vessels of all sizes, ensuring efficient and timely maintenance and repairs.",
+    primaryCTA: "Schedule Inspection",
+    primaryCTALink: "/schedule",
+    secondaryCTA: "View Facilities",
+    secondaryCTALink: "/facilities",
+    image: "/placeholder.svg",
+  },
+  {
+    headline: "Expert Engineering & Technical Teams",
+    subheadline:
+      "Our highly skilled engineers and technicians bring decades of experience to every project, ensuring the highest quality standards.",
+    primaryCTA: "Meet Our Team",
+    primaryCTALink: "/team",
+    secondaryCTA: "Our Expertise",
+    secondaryCTALink: "/expertise",
+    image: "/placeholder.svg",
+  },
+]
+
