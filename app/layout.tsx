@@ -11,19 +11,19 @@ import PreLoader from "@/components/ui/preloader"
 const rajdhani = Rajdhani({
   subsets: ["latin"],
   weight: ["500", "600", "700"],
-  variable: "--font-rajdhani"
+  variable: "--font-rajdhani",
 })
 
 const barlow = Barlow_Condensed({
   subsets: ["latin"],
   weight: ["400", "500", "600"],
-  variable: "--font-barlow"
+  variable: "--font-barlow",
 })
 
 const roboto = Roboto({
   subsets: ["latin"],
   weight: ["400", "500", "700"],
-  variable: "--font-roboto"
+  variable: "--font-roboto",
 })
 
 export const metadata: Metadata = {
@@ -31,6 +31,26 @@ export const metadata: Metadata = {
   description:
     "Precision engineering, trusted by the Navy, open to the world. We provide ship repair, maintenance, and engineering services for naval and commercial vessels.",
   keywords: "shipyard, naval dockyard, ship repair, vessel maintenance, military ships, commercial vessels, dry dock",
+  // Explicitly define favicon
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-icon.png",
+    other: [
+      {
+        rel: "icon",
+        type: "image/png",
+        sizes: "32x32",
+        url: "/favicon-32x32.png",
+      },
+      {
+        rel: "icon",
+        type: "image/png",
+        sizes: "16x16",
+        url: "/favicon-16x16.png",
+      },
+    ],
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -48,7 +68,7 @@ export const metadata: Metadata = {
       },
     ],
   },
-  generator: 'v0.dev'
+  generator: "byte-codes",
 }
 
 export default function RootLayout({
@@ -58,6 +78,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning className={`${rajdhani.variable} ${barlow.variable} ${roboto.variable}`}>
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+      </head>
       <body className="font-roboto">
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           <PreLoader />
@@ -71,3 +94,4 @@ export default function RootLayout({
     </html>
   )
 }
+

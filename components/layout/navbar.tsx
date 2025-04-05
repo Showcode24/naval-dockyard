@@ -1,5 +1,7 @@
 "use client"
 
+import type React from "react"
+
 import Link from "next/link"
 import { useState, useEffect } from "react"
 import { ModeToggle } from "../mode-toggle"
@@ -15,10 +17,25 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription } from "@/components/ui/sheet"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+
+// Custom style to override NavigationMenuTrigger hover background
+const customTriggerStyle = cn(
+  "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors focus:outline-none disabled:pointer-events-none disabled:opacity-50",
+  "hover:text-blue-500 data-[state=open]:text-blue-500",
+  "hover:bg-transparent focus:bg-transparent active:bg-transparent data-[state=open]:bg-transparent",
+  "data-[active]:bg-transparent data-[active]:text-foreground",
+)
+
+// Custom style for navigation menu link
+const customLinkStyle = cn(
+  "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors focus:outline-none disabled:pointer-events-none disabled:opacity-50",
+  "hover:text-blue-500 focus:text-blue-500",
+  "hover:bg-transparent focus:bg-transparent active:bg-transparent",
+  "data-[active]:bg-transparent data-[active]:text-foreground",
+)
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -45,7 +62,18 @@ export default function Navbar() {
           <NavigationMenuItem key={item.key}>
             {item.subItems ? (
               <>
-                <NavigationMenuTrigger>{item.title}</NavigationMenuTrigger>
+                <NavigationMenuTrigger
+                  className={customTriggerStyle}
+                  style={
+                    {
+                      backgroundColor: "transparent",
+                      "--tw-bg-opacity": "0 !important",
+                      color: "var(--foreground)",
+                    } as React.CSSProperties
+                  }
+                >
+                  {item.title}
+                </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                     {item.subItems.map((subItem) => (
@@ -53,7 +81,7 @@ export default function Navbar() {
                         <NavigationMenuLink asChild>
                           <Link
                             href={subItem.href}
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:text-blue-500 focus:text-blue-500 hover:bg-transparent"
                           >
                             <div className="text-sm font-medium leading-none">{subItem.title}</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
@@ -68,7 +96,7 @@ export default function Navbar() {
               </>
             ) : (
               <Link href={item.href} legacyBehavior passHref>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>{item.title}</NavigationMenuLink>
+                <NavigationMenuLink className={customLinkStyle}>{item.title}</NavigationMenuLink>
               </Link>
             )}
           </NavigationMenuItem>
@@ -87,9 +115,11 @@ export default function Navbar() {
         </Button>
       </SheetTrigger>
       <SheetContent side="left" className="w-[300px] sm:w-[400px]">
-        <SheetTitle className="text-left">Navigation</SheetTitle>
-        <SheetDescription className="text-left">Browse our site sections and services.</SheetDescription>
-        <div className="flex flex-col gap-6 py-4">
+        {/* Screen reader only title and description */}
+        <SheetTitle className="sr-only">Navigation</SheetTitle>
+        <SheetDescription className="sr-only">Browse our site sections and services.</SheetDescription>
+
+        <div className="flex flex-col gap-6 py-4 mt-4">
           <Link href="/" className="flex items-center gap-2" onClick={closeSheet}>
             <div className="relative h-10 w-10">
               <Image src="/navy-logo.png" alt="Nigerian Navy" fill className="object-contain" />
@@ -109,7 +139,7 @@ export default function Navbar() {
                           <Link
                             key={subItem.key}
                             href={subItem.href}
-                            className="py-2 text-sm flex items-center gap-2 hover:text-primary transition-colors"
+                            className="py-2 text-sm flex items-center gap-2 hover:text-blue-500 transition-colors"
                             onClick={closeSheet}
                           >
                             <ChevronRight className="h-4 w-4" />
@@ -126,7 +156,7 @@ export default function Navbar() {
                   <div className="py-3">
                     <Link
                       href={item.href}
-                      className="flex items-center text-base font-medium hover:text-primary transition-colors"
+                      className="flex items-center text-base font-medium hover:text-blue-500 transition-colors"
                       onClick={closeSheet}
                     >
                       {item.title}
@@ -151,7 +181,7 @@ export default function Navbar() {
     <>
       <header
         className={cn(
-          "fixed top-0 left-0 w-full z-40 transition-all duration-300 bg-background/95 backdrop-blur-sm border-b",
+          "fixed top-0 left-0 w-full z-40 transition-all duration-300 bg-background/95 backdrop-blur-sm",
           isScrolled ? "shadow-sm py-2" : "py-4",
         )}
       >
@@ -183,6 +213,9 @@ export default function Navbar() {
     </>
   )
 }
+
+
+
 
 
 
