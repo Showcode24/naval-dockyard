@@ -95,7 +95,7 @@ export const navalArchitectureData = {
 
   designTools: [
     {
-      name: "Naval Architecture Software Suite",
+      name: "Ship Design & Construction Software Suite",
       description:
         "Comprehensive software package for hull design, hydrostatics, stability, and performance analysis, providing integrated solutions for vessel design and analysis.",
       capabilities: [

@@ -1,6 +1,6 @@
 "use client"
 
-import { useRef, useEffect } from "react"
+import { useRef, useEffect, useState } from "react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
@@ -15,6 +15,7 @@ export default function HistoryPage() {
   const achievementsRef = useRef(null)
   const isTimelineInView = useInView(timelineRef, { once: true, amount: 0.2 })
   const isAchievementsInView = useInView(achievementsRef, { once: true, amount: 0.2 })
+  const [activeTimelineItem, setActiveTimelineItem] = useState<number | null>(null)
 
   useEffect(() => {
     if (isTimelineInView) {
@@ -28,16 +29,47 @@ export default function HistoryPage() {
     }
   }, [controls, isAchievementsInView])
 
+  // Parallax effect for hero section
+  const heroY = useAnimation()
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY
+      heroY.start({ y: scrollY * 0.5 })
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [heroY])
+
   return (
     <>
       <motion.section
-        className="pt-32 pb-16 bg-secondary text-white"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
+        className="pt-32 pb-16 bg-secondary text-white relative overflow-hidden"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
         ref={heroRef}
       >
-        <div className="container mx-auto px-4">
+        {/* Animated background elements */}
+        <motion.div
+          className="absolute inset-0 opacity-10"
+          animate={{
+            backgroundPosition: ["0% 0%", "100% 100%"],
+          }}
+          transition={{
+            duration: 20,
+            ease: "linear",
+            repeat: Number.POSITIVE_INFINITY,
+            repeatType: "reverse",
+          }}
+          style={{
+            backgroundImage: "url('/images/about/blueprint-pattern.svg')",
+            backgroundSize: "cover",
+          }}
+        />
+
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl">
             <motion.h1
               className="text-4xl md:text-5xl font-bold mb-6"
@@ -94,9 +126,18 @@ export default function HistoryPage() {
               </motion.p>
             </div>
             <motion.div
-              className="relative rounded-lg overflow-hidden shadow-xl"
-              whileHover={{ scale: 1.03 }}
-              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              className="relative rounded-lg overflow-hidden shadow-xl perspective-500"
+              whileHover={{
+                scale: 1.03,
+                rotateY: 5,
+                rotateX: 5,
+                boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+              }}
+              transition={{
+                type: "spring",
+                stiffness: 400,
+                damping: 10,
+              }}
             >
               <Image
                 src="/images/about/history-founding.jpg"
@@ -104,6 +145,13 @@ export default function HistoryPage() {
                 width={600}
                 height={400}
                 className="w-full h-auto"
+              />
+
+              {/* Overlay effect on hover */}
+              <motion.div
+                className="absolute inset-0 bg-primary/20 opacity-0"
+                whileHover={{ opacity: 1 }}
+                transition={{ duration: 0.3 }}
               />
             </motion.div>
           </motion.div>
@@ -118,8 +166,13 @@ export default function HistoryPage() {
               Our Journey
             </motion.h2>
             <div className="relative">
-              {/* Timeline line */}
-              <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-primary/20"></div>
+              {/* Timeline line with animation */}
+              <motion.div
+                className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-primary/20"
+                initial={{ height: 0 }}
+                animate={{ height: "100%" }}
+                transition={{ duration: 1.5, ease: "easeInOut" }}
+              />
 
               {/* Timeline items */}
               {historyData.timeline.map((item, index) => (
@@ -141,20 +194,48 @@ export default function HistoryPage() {
                       },
                     }),
                   }}
+                  onHoverStart={() => setActiveTimelineItem(index)}
+                  onHoverEnd={() => setActiveTimelineItem(null)}
                 >
                   <motion.div
                     className={`w-full md:w-5/12 ${index % 2 === 0 ? "md:pr-8 text-right" : "md:pl-8 text-left"}`}
-                    whileHover={{ scale: 1.03 }}
-                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                    whileHover={{
+                      scale: 1.05,
+                      z: 50,
+                      rotateY: index % 2 === 0 ? -5 : 5,
+                    }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 400,
+                      damping: 10,
+                    }}
+                    style={{ transformStyle: "preserve-3d" }}
                   >
-                    <div className="bg-background p-6 rounded-lg shadow-md border border-border hover:shadow-lg transition-shadow duration-300">
-                      <div className="text-primary font-bold text-2xl mb-2">{item.year}</div>
+                    <motion.div
+                      className="bg-background p-6 rounded-lg shadow-md border border-border hover:shadow-lg transition-shadow duration-300"
+                      animate={{
+                        boxShadow:
+                          activeTimelineItem === index
+                            ? "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+                            : "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+                      }}
+                    >
+                      <motion.div
+                        className="text-primary font-bold text-2xl mb-2"
+                        animate={{
+                          scale: activeTimelineItem === index ? 1.1 : 1,
+                          x: activeTimelineItem === index ? (index % 2 === 0 ? -5 : 5) : 0,
+                        }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                      >
+                        {item.year}
+                      </motion.div>
                       <h3 className="text-xl font-bold mb-3">{item.title}</h3>
                       <p className="text-muted-foreground">{item.description}</p>
-                    </div>
+                    </motion.div>
                   </motion.div>
 
-                  {/* Timeline dot */}
+                  {/* Timeline dot with pulse effect */}
                   <motion.div
                     className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-primary border-4 border-background"
                     initial={{ scale: 0 }}
@@ -172,7 +253,22 @@ export default function HistoryPage() {
                       }),
                     }}
                     custom={index}
-                  ></motion.div>
+                    whileHover={{ scale: 1.5 }}
+                  >
+                    {/* Pulse animation */}
+                    {activeTimelineItem === index && (
+                      <motion.div
+                        className="absolute inset-0 rounded-full bg-primary"
+                        initial={{ opacity: 0.7, scale: 1 }}
+                        animate={{ opacity: 0, scale: 2 }}
+                        transition={{
+                          duration: 1.5,
+                          repeat: Number.POSITIVE_INFINITY,
+                          repeatType: "loop",
+                        }}
+                      />
+                    )}
+                  </motion.div>
                 </motion.div>
               ))}
             </div>
@@ -187,8 +283,18 @@ export default function HistoryPage() {
           >
             <motion.div
               className="order-2 lg:order-1 relative rounded-lg overflow-hidden shadow-xl"
-              whileHover={{ scale: 1.03 }}
-              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              whileHover={{
+                scale: 1.03,
+                rotateY: -5,
+                rotateX: 5,
+                boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+              }}
+              transition={{
+                type: "spring",
+                stiffness: 400,
+                damping: 10,
+              }}
+              style={{ transformStyle: "preserve-3d" }}
             >
               <Image
                 src="/images/about/history-today.jpg"
@@ -197,6 +303,17 @@ export default function HistoryPage() {
                 height={400}
                 className="w-full h-auto"
               />
+
+              {/* Zoom effect on hover */}
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0"
+                whileHover={{ opacity: 1 }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className="absolute bottom-4 left-4 text-white font-bold text-lg opacity-0 hover:opacity-100 transition-opacity duration-300">
+                  Explore our modern facilities
+                </div>
+              </motion.div>
             </motion.div>
             <div className="order-1 lg:order-2">
               <motion.h2
@@ -226,11 +343,31 @@ export default function HistoryPage() {
               >
                 {historyData.future}
               </motion.p>
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button asChild className="transition-all duration-300 hover:shadow-md">
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="relative inline-block">
+                <Button
+                  asChild
+                  className="transition-all duration-300 hover:shadow-md relative z-10 overflow-hidden group"
+                >
                   <Link href="/about/leadership" className="inline-flex items-center">
-                    Meet Our Leadership Team
-                    <ChevronRight className="ml-2 h-4 w-4" />
+                    <span className="relative z-10">Meet Our Leadership Team</span>
+                    <motion.div
+                      className="absolute inset-0 bg-primary/20 -z-10"
+                      initial={{ x: "-100%" }}
+                      whileHover={{ x: 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                    />
+                    <motion.div
+                      className="ml-2"
+                      animate={{ x: [0, 5, 0] }}
+                      transition={{
+                        duration: 1,
+                        repeat: Number.POSITIVE_INFINITY,
+                        repeatType: "loop",
+                        ease: "easeInOut",
+                      }}
+                    >
+                      <ChevronRight className="h-4 w-4" />
+                    </motion.div>
                   </Link>
                 </Button>
               </motion.div>
@@ -264,7 +401,7 @@ export default function HistoryPage() {
             {historyData.achievements.map((achievement, index) => (
               <motion.div
                 key={index}
-                className="bg-background p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300"
+                className="bg-background p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 relative perspective-500"
                 initial="hidden"
                 animate={controls}
                 variants={{
@@ -282,18 +419,75 @@ export default function HistoryPage() {
                 custom={index}
                 whileHover={{
                   y: -10,
+                  rotateY: 5,
+                  rotateX: 5,
+                  z: 10,
                   transition: { type: "spring", stiffness: 400, damping: 10 },
                 }}
+                style={{ transformStyle: "preserve-3d" }}
               >
                 <motion.div
-                  className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4"
-                  whileHover={{ rotate: 360 }}
+                  className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 relative"
+                  whileHover={{
+                    rotate: 360,
+                    backgroundColor: "var(--primary-200)",
+                    scale: 1.2,
+                    z: 20,
+                  }}
                   transition={{ duration: 0.8, ease: "easeInOut" }}
+                  style={{ transformStyle: "preserve-3d" }}
                 >
                   <achievement.icon className="h-8 w-8 text-primary" />
+
+                  {/* Floating particles effect */}
+                  <motion.div
+                    className="absolute w-2 h-2 rounded-full bg-primary/40"
+                    animate={{
+                      x: [0, 15, 0],
+                      y: [0, -15, 0],
+                      opacity: [0, 1, 0],
+                    }}
+                    transition={{
+                      duration: 2,
+                      repeat: Number.POSITIVE_INFINITY,
+                      repeatType: "loop",
+                      ease: "easeInOut",
+                      delay: index * 0.2,
+                    }}
+                  />
+                  <motion.div
+                    className="absolute w-2 h-2 rounded-full bg-primary/40"
+                    animate={{
+                      x: [0, -15, 0],
+                      y: [0, -10, 0],
+                      opacity: [0, 1, 0],
+                    }}
+                    transition={{
+                      duration: 2.5,
+                      repeat: Number.POSITIVE_INFINITY,
+                      repeatType: "loop",
+                      ease: "easeInOut",
+                      delay: index * 0.1 + 0.5,
+                    }}
+                  />
                 </motion.div>
-                <h3 className="text-xl font-bold mb-3">{achievement.title}</h3>
+                <motion.h3
+                  className="text-xl font-bold mb-3"
+                  whileHover={{ scale: 1.05, color: "var(--primary)" }}
+                  transition={{ duration: 0.2 }}
+                >
+                  {achievement.title}
+                </motion.h3>
                 <p className="text-muted-foreground">{achievement.description}</p>
+
+                {/* Shine effect */}
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -z-10"
+                  initial={{ x: "-100%" }}
+                  whileHover={{ x: "100%" }}
+                  transition={{ duration: 0.8, ease: "easeInOut" }}
+                  style={{ transformStyle: "preserve-3d" }}
+                />
               </motion.div>
             ))}
           </div>

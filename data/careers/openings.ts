@@ -94,9 +94,9 @@ export const jobOpeningsData = {
       description:
         "Naval Architect needed to provide design and engineering support for vessel modifications, repairs, and structural assessments. Responsibilities include creating technical drawings, performing calculations, and ensuring compliance with regulations.",
       requirements: [
-        "Bachelor's degree in Naval Architecture or Marine Engineering",
-        "5+ years of experience in naval architecture",
-        "Proficiency in CAD software and naval architecture software",
+        "Bachelor's degree in Ship Design & Construction or Marine Engineering",
+        "5+ years of experience in Ship Design & Construction",
+        "Proficiency in CAD software and Ship Design & Construction software",
         "Knowledge of classification society rules and regulations",
         "Experience with structural analysis and stability calculations",
         "Strong problem-solving and analytical skills",

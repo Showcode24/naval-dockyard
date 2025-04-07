@@ -93,7 +93,7 @@ export const serviceData = {
       ],
     },
     {
-      title: "Naval Architecture & Marine Engineering",
+      title: "Ship Design & Construction & Marine Engineering",
       slug: "naval-architecture",
       description:
         "Our experienced naval architects and marine engineers provide expert consultation for new builds, modifications, and performance analysis to optimize your vessel's operation and compliance with regulations.",

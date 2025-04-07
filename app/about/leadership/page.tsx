@@ -1,11 +1,13 @@
 "use client"
 
-import { useRef } from "react"
+import type React from "react"
+
+import { useRef, useState } from "react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { leadershipData } from "@/data/leadership"
-import { Mail, Linkedin } from "lucide-react"
+import { Mail, Linkedin, ChevronDown, ChevronUp } from "lucide-react"
 import { motion, useInView } from "framer-motion"
 
 export default function LeadershipPage() {
@@ -13,6 +15,8 @@ export default function LeadershipPage() {
   const executivesRef = useRef(null)
   const directorsRef = useRef(null)
   const joinRef = useRef(null)
+  const [expandedBio, setExpandedBio] = useState<number | null>(null)
+  const [flippedCard, setFlippedCard] = useState<number | null>(null)
 
   const isExecutivesInView = useInView(executivesRef, { once: true, amount: 0.1 })
   const isDirectorsInView = useInView(directorsRef, { once: true, amount: 0.1 })
@@ -20,7 +24,7 @@ export default function LeadershipPage() {
 
   const cardVariants = {
     hidden: { opacity: 0, y: 50 },
-    visible: (i) => ({
+    visible: (i: number) => ({
       opacity: 1,
       y: 0,
       transition: {
@@ -31,22 +35,49 @@ export default function LeadershipPage() {
     }),
   }
 
+  // Mouse parallax effect for hero section
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    const { clientX, clientY } = e
+    const windowWidth = window.innerWidth
+    const windowHeight = window.innerHeight
+
+    // Calculate normalized mouse position (-1 to 1)
+    const normalizedX = (clientX / windowWidth) * 2 - 1
+    const normalizedY = (clientY / windowHeight) * 2 - 1
+
+    setMousePosition({ x: normalizedX, y: normalizedY })
+  }
+
   return (
-    <>
+    <div onMouseMove={handleMouseMove}>
       <motion.section
-        className="pt-32 pb-16 bg-secondary text-white"
+        className="pt-32 pb-16 bg-secondary text-white relative overflow-hidden"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
         ref={heroRef}
       >
-        <div className="container mx-auto px-4">
+        {/* Animated background elements */}
+        <motion.div
+          className="absolute inset-0 opacity-10"
+          style={{
+            backgroundImage: "url('/images/about/blueprint-pattern.svg')",
+            backgroundSize: "cover",
+            x: mousePosition.x * -20,
+            y: mousePosition.y * -20,
+          }}
+        />
+
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl">
             <motion.h1
               className="text-4xl md:text-5xl font-bold mb-6"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
+              style={{ x: mousePosition.x * 10, y: mousePosition.y * 10 }}
             >
               Leadership Team
             </motion.h1>
@@ -55,6 +86,7 @@ export default function LeadershipPage() {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
+              style={{ x: mousePosition.x * 5, y: mousePosition.y * 5 }}
             >
               Meet the experienced professionals guiding Naval Dockyard
             </motion.p>
@@ -90,53 +122,174 @@ export default function LeadershipPage() {
               {leadershipData.executives.map((executive, index) => (
                 <motion.div
                   key={index}
-                  className="bg-background rounded-lg overflow-hidden shadow-lg border border-border"
+                  className="relative perspective-1000 h-[550px]"
                   custom={index}
                   initial="hidden"
                   animate={isExecutivesInView ? "visible" : "hidden"}
                   variants={cardVariants}
-                  whileHover={{
-                    y: -10,
-                    boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
-                  }}
-                  transition={{ type: "spring", stiffness: 300, damping: 15 }}
+                  onClick={() => setFlippedCard(flippedCard === index ? null : index)}
                 >
-                  <motion.div className="relative h-80" whileHover={{ scale: 1.05 }} transition={{ duration: 0.4 }}>
-                    <Image
-                      src={executive.image || "/placeholder.svg"}
-                      alt={executive.name}
-                      fill
-                      className="object-cover"
-                    />
-                  </motion.div>
-                  <div className="p-6">
-                    <h3 className="text-2xl font-bold mb-1">{executive.name}</h3>
-                    <p className="text-primary font-medium mb-4">{executive.position}</p>
-                    <p className="text-muted-foreground mb-6">{executive.bio}</p>
-                    <div className="flex space-x-3">
-                      <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-                        <Button variant="outline" size="icon" asChild>
-                          <a href={`mailto:${executive.email}`} aria-label={`Email ${executive.name}`}>
-                            <Mail className="h-4 w-4" />
-                          </a>
-                        </Button>
-                      </motion.div>
-                      {executive.linkedin && (
-                        <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-                          <Button variant="outline" size="icon" asChild>
-                            <a
-                              href={executive.linkedin}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              aria-label={`${executive.name}'s LinkedIn profile`}
-                            >
-                              <Linkedin className="h-4 w-4" />
-                            </a>
-                          </Button>
+                  <motion.div
+                    className="absolute w-full h-full"
+                    animate={{
+                      rotateY: flippedCard === index ? 180 : 0,
+                      zIndex: flippedCard === index ? 0 : 1,
+                    }}
+                    transition={{ duration: 0.6, type: "spring", stiffness: 300, damping: 20 }}
+                    style={{ transformStyle: "preserve-3d", backfaceVisibility: "hidden" }}
+                  >
+                    {/* Front of card */}
+                    <div className="absolute inset-0 bg-background rounded-lg overflow-hidden shadow-lg border border-border h-full w-full">
+                      <motion.div className="relative h-80" whileHover={{ scale: 1.05 }} transition={{ duration: 0.4 }}>
+                        <Image
+                          src={executive.image || "/placeholder.svg"}
+                          alt={executive.name}
+                          fill
+                          className="object-cover"
+                        />
+
+                        {/* Gradient overlay */}
+                        <motion.div
+                          className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0"
+                          whileHover={{ opacity: 1 }}
+                          transition={{ duration: 0.3 }}
+                        >
+                          <div className="absolute bottom-4 left-4 text-white">
+                            <p className="font-medium">Click to see full bio</p>
+                          </div>
                         </motion.div>
-                      )}
+                      </motion.div>
+                      <div className="p-6">
+                        <motion.h3 className="text-2xl font-bold mb-1" whileHover={{ color: "var(--primary)" }}>
+                          {executive.name}
+                        </motion.h3>
+                        <p className="text-primary font-medium mb-4">{executive.position}</p>
+                        <p className="text-muted-foreground mb-6 line-clamp-3">{executive.bio}</p>
+                        <div className="flex space-x-3">
+                          <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+                            <Button variant="outline" size="icon" asChild>
+                              <a
+                                href={`mailto:${executive.email}`}
+                                aria-label={`Email ${executive.name}`}
+                                onClick={(e) => e.stopPropagation()}
+                              >
+                                <Mail className="h-4 w-4" />
+                              </a>
+                            </Button>
+                          </motion.div>
+                          {executive.linkedin && (
+                            <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+                              <Button variant="outline" size="icon" asChild>
+                                <a
+                                  href={executive.linkedin}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  aria-label={`${executive.name}'s LinkedIn profile`}
+                                  onClick={(e) => e.stopPropagation()}
+                                >
+                                  <Linkedin className="h-4 w-4" />
+                                </a>
+                              </Button>
+                            </motion.div>
+                          )}
+                        </div>
+
+                        {/* Flip card indicator */}
+                        <motion.div
+                          className="absolute bottom-4 right-4 text-muted-foreground flex items-center text-sm"
+                          whileHover={{ scale: 1.1, color: "var(--primary)" }}
+                        >
+                          <span className="mr-1">Full Bio</span>
+                          <ChevronDown className="h-4 w-4" />
+                        </motion.div>
+                      </div>
                     </div>
-                  </div>
+                  </motion.div>
+
+                  {/* Back of card */}
+                  <motion.div
+                    className="absolute w-full h-full"
+                    animate={{
+                      rotateY: flippedCard === index ? 0 : -180,
+                      zIndex: flippedCard === index ? 1 : 0,
+                    }}
+                    transition={{ duration: 0.6, type: "spring", stiffness: 300, damping: 20 }}
+                    style={{ transformStyle: "preserve-3d", backfaceVisibility: "hidden" }}
+                  >
+                    <div className="absolute inset-0 bg-background rounded-lg overflow-hidden shadow-lg border border-border h-full w-full p-6 flex flex-col">
+                      <motion.div
+                        className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4"
+                        animate={{ rotate: 360 }}
+                        transition={{
+                          duration: 2,
+                          repeat: Number.POSITIVE_INFINITY,
+                          repeatType: "loop",
+                          ease: "linear",
+                        }}
+                      >
+                        <span className="text-primary font-bold text-xl">{executive.name.charAt(0)}</span>
+                      </motion.div>
+
+                      <h3 className="text-2xl font-bold mb-2 text-center">{executive.name}</h3>
+                      <p className="text-primary font-medium mb-4 text-center">{executive.position}</p>
+
+                      <div className="flex-grow overflow-y-auto pr-2 custom-scrollbar">
+                        <p className="text-muted-foreground mb-4">{executive.bio}</p>
+                        <p className="text-muted-foreground mb-4">
+                          {(executive as any).extendedBio ||
+                            "With extensive experience in maritime engineering and leadership, they have been instrumental in driving our company's growth and innovation."}
+                        </p>
+
+                        <h4 className="font-semibold mb-2">Areas of Expertise:</h4>
+                        <ul className="list-disc pl-5 mb-4 text-muted-foreground">
+                          <li>Naval Architecture</li>
+                          <li>Maritime Operations</li>
+                          <li>Strategic Leadership</li>
+                          <li>Project Management</li>
+                        </ul>
+                      </div>
+
+                      <div className="mt-4 flex justify-between items-center">
+                        <div className="flex space-x-3">
+                          <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+                            <Button variant="outline" size="icon" asChild>
+                              <a
+                                href={`mailto:${executive.email}`}
+                                aria-label={`Email ${executive.name}`}
+                                onClick={(e) => e.stopPropagation()}
+                              >
+                                <Mail className="h-4 w-4" />
+                              </a>
+                            </Button>
+                          </motion.div>
+                          {executive.linkedin && (
+                            <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+                              <Button variant="outline" size="icon" asChild>
+                                <a
+                                  href={executive.linkedin}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  aria-label={`${executive.name}'s LinkedIn profile`}
+                                  onClick={(e) => e.stopPropagation()}
+                                >
+                                  <Linkedin className="h-4 w-4" />
+                                </a>
+                              </Button>
+                            </motion.div>
+                          )}
+                        </div>
+
+                        {/* Flip back indicator */}
+                        <motion.div
+                          className="text-muted-foreground flex items-center text-sm"
+                          whileHover={{ scale: 1.1, color: "var(--primary)" }}
+                        >
+                          <span className="mr-1">Back</span>
+                          <ChevronUp className="h-4 w-4" />
+                        </motion.div>
+                      </div>
+                    </div>
+                  </motion.div>
                 </motion.div>
               ))}
             </div>
@@ -156,39 +309,109 @@ export default function LeadershipPage() {
               {leadershipData.directors.map((director, index) => (
                 <motion.div
                   key={index}
-                  className="bg-background rounded-lg overflow-hidden shadow-md border border-border"
+                  className="bg-background rounded-lg overflow-hidden shadow-md border border-border relative perspective-500"
                   custom={index}
                   initial="hidden"
                   animate={isDirectorsInView ? "visible" : "hidden"}
                   variants={cardVariants}
                   whileHover={{
                     y: -10,
+                    rotateY: 5,
+                    rotateX: 2,
+                    z: 10,
                     boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
                   }}
                   transition={{ type: "spring", stiffness: 300, damping: 15 }}
+                  style={{ transformStyle: "preserve-3d" }}
                 >
-                  <motion.div className="relative h-64" whileHover={{ scale: 1.05 }} transition={{ duration: 0.4 }}>
+                  <motion.div
+                    className="relative h-64"
+                    whileHover={{
+                      scale: 1.05,
+                      filter: "brightness(1.1)",
+                    }}
+                    transition={{ duration: 0.4 }}
+                  >
                     <Image
                       src={director.image || "/placeholder.svg"}
                       alt={director.name}
                       fill
                       className="object-cover"
                     />
+
+                    {/* Gradient overlay with info on hover */}
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 flex items-end"
+                      whileHover={{ opacity: 1 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <div className="p-4 text-white">
+                        <p className="text-sm font-medium">{(director as any).education || "Naval Engineering, MIT"}</p>
+                        <p className="text-xs">{(director as any).experience || "15+ years in maritime technology"}</p>
+                      </div>
+                    </motion.div>
                   </motion.div>
                   <div className="p-5">
-                    <h3 className="text-xl font-bold mb-1">{director.name}</h3>
+                    <motion.h3
+                      className="text-xl font-bold mb-1"
+                      whileHover={{ color: "var(--primary)" }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      {director.name}
+                    </motion.h3>
                     <p className="text-primary font-medium mb-3">{director.position}</p>
-                    <p className="text-muted-foreground text-sm mb-4">{director.bio}</p>
-                    <div className="flex space-x-2">
+
+                    {/* Expandable bio */}
+                    <div className="relative">
+                      <motion.p
+                        className={`text-muted-foreground text-sm ${expandedBio === index ? "" : "line-clamp-2"}`}
+                        animate={{ height: expandedBio === index ? "auto" : "2.5rem" }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        {director.bio}
+                      </motion.p>
+
+                      {director.bio.length > 100 && (
+                        <motion.button
+                          className="text-primary text-xs font-medium mt-1 flex items-center"
+                          onClick={(e) => {
+                            e.stopPropagation()
+                            setExpandedBio(expandedBio === index ? null : index)
+                          }}
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                        >
+                          {expandedBio === index ? (
+                            <>
+                              Read less <ChevronUp className="h-3 w-3 ml-1" />
+                            </>
+                          ) : (
+                            <>
+                              Read more <ChevronDown className="h-3 w-3 ml-1" />
+                            </>
+                          )}
+                        </motion.button>
+                      )}
+                    </div>
+
+                    <div className="flex space-x-2 mt-4">
                       <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                         <Button variant="outline" size="sm" asChild>
-                          <a href={`mailto:${director.email}`}>
-                            <Mail className="h-3 w-3 mr-1" />
-                            Contact
+                          <a href={`mailto:${director.email}`} className="group">
+                            <Mail className="h-3 w-3 mr-1 group-hover:text-primary transition-colors" />
+                            <span className="group-hover:text-primary transition-colors">Contact</span>
                           </a>
                         </Button>
                       </motion.div>
                     </div>
+
+                    {/* Shine effect */}
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -z-10"
+                      initial={{ x: "-100%" }}
+                      whileHover={{ x: "100%" }}
+                      transition={{ duration: 0.8, ease: "easeInOut" }}
+                    />
                   </div>
                 </motion.div>
               ))}
@@ -196,7 +419,7 @@ export default function LeadershipPage() {
           </div>
 
           <motion.div
-            className="bg-muted p-8 rounded-lg"
+            className="bg-muted p-8 rounded-lg relative overflow-hidden"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -204,31 +427,86 @@ export default function LeadershipPage() {
             whileHover={{ scale: 1.02 }}
             ref={joinRef}
           >
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            {/* Background pattern */}
+            <motion.div
+              className="absolute inset-0 opacity-5"
+              animate={{
+                backgroundPosition: ["0% 0%", "100% 100%"],
+              }}
+              transition={{
+                duration: 20,
+                ease: "linear",
+                repeat: Number.POSITIVE_INFINITY,
+                repeatType: "reverse",
+              }}
+              style={{
+                backgroundImage: "url('/images/about/pattern-grid.svg')",
+                backgroundSize: "cover",
+              }}
+            />
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center relative z-10">
               <div>
-                <h2 className="text-2xl font-bold mb-4">Join Our Team</h2>
+                <motion.h2
+                  className="text-2xl font-bold mb-4"
+                  whileHover={{ color: "var(--primary)" }}
+                  transition={{ duration: 0.2 }}
+                >
+                  Join Our Team
+                </motion.h2>
                 <p className="text-muted-foreground mb-6">
                   We're always looking for talented professionals to join our team. If you're passionate about maritime
                   engineering and want to work with industry leaders, explore our current openings.
                 </p>
-                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <Button asChild className="transition-all duration-300 hover:shadow-lg">
-                    <Link href="/careers/openings">View Career Opportunities</Link>
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="relative inline-block">
+                  <Button
+                    asChild
+                    className="transition-all duration-300 hover:shadow-lg relative overflow-hidden group"
+                  >
+                    <Link href="/careers/openings">
+                      <span className="relative z-10">View Career Opportunities</span>
+                      <motion.div
+                        className="absolute inset-0 bg-primary/20 -z-10"
+                        initial={{ x: "-100%" }}
+                        whileHover={{ x: 0 }}
+                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                      />
+                    </Link>
                   </Button>
                 </motion.div>
               </div>
               <motion.div
                 className="relative h-64 rounded-lg overflow-hidden"
-                whileHover={{ scale: 1.05 }}
+                whileHover={{
+                  scale: 1.05,
+                  rotateY: 5,
+                  rotateX: 2,
+                  z: 10,
+                }}
                 transition={{ type: "spring", stiffness: 300, damping: 15 }}
+                style={{ transformStyle: "preserve-3d" }}
               >
                 <Image src="/images/about/team-working.jpg" alt="Naval Dockyard Team" fill className="object-cover" />
+
+                {/* Interactive overlay */}
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 flex items-end"
+                  whileHover={{ opacity: 1 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <div className="p-6 text-white">
+                    <h3 className="text-xl font-bold mb-2">Collaborative Environment</h3>
+                    <p className="text-sm">
+                      Join a team of passionate professionals working on cutting-edge maritime projects
+                    </p>
+                  </div>
+                </motion.div>
               </motion.div>
             </div>
           </motion.div>
         </div>
       </section>
-    </>
+    </div>
   )
 }
 

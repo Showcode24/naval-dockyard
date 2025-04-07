@@ -6,24 +6,28 @@ import Navbar from "@/components/layout/navbar"
 import Footer from "@/components/layout/footer"
 import { ThemeProvider } from "@/components/theme-provider"
 import PreLoader from "@/components/ui/preloader"
+import { Suspense } from "react"
 
 // Font definitions
 const rajdhani = Rajdhani({
   subsets: ["latin"],
   weight: ["500", "600", "700"],
   variable: "--font-rajdhani",
+  display: "swap",
 })
 
 const barlow = Barlow_Condensed({
   subsets: ["latin"],
   weight: ["400", "500", "600"],
   variable: "--font-barlow",
+  display: "swap",
 })
 
 const roboto = Roboto({
   subsets: ["latin"],
   weight: ["400", "500", "700"],
   variable: "--font-roboto",
+  display: "swap",
 })
 
 export const metadata: Metadata = {
@@ -83,7 +87,9 @@ export default function RootLayout({
       </head>
       <body className="font-roboto">
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
-          <PreLoader />
+          <Suspense fallback={null}>
+            <PreLoader />
+          </Suspense>
           <div className="flex min-h-screen flex-col">
             <Navbar />
             <main className="flex-1">{children}</main>

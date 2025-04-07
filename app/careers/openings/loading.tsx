@@ -1,5 +1,5 @@
 import { Skeleton } from "@/components/ui/skeleton"
-import { TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 export default function Loading() {
   return (
@@ -28,23 +28,25 @@ export default function Loading() {
           {/* Tabs skeleton */}
           <div className="mb-16">
             <div className="flex justify-center mb-8">
-              <TabsList className="grid grid-cols-5 w-full max-w-3xl">
-                <TabsTrigger value="all" disabled>
-                  All
-                </TabsTrigger>
-                <TabsTrigger value="tanker" disabled>
-                  Tankers
-                </TabsTrigger>
-                <TabsTrigger value="cargo" disabled>
-                  Cargo
-                </TabsTrigger>
-                <TabsTrigger value="passenger" disabled>
-                  Passenger
-                </TabsTrigger>
-                <TabsTrigger value="offshore" disabled>
-                  Offshore
-                </TabsTrigger>
-              </TabsList>
+              <Tabs>
+                <TabsList className="grid grid-cols-5 w-full max-w-3xl">
+                  <TabsTrigger value="all" disabled>
+                    All
+                  </TabsTrigger>
+                  <TabsTrigger value="tanker" disabled>
+                    Tankers
+                  </TabsTrigger>
+                  <TabsTrigger value="cargo" disabled>
+                    Cargo
+                  </TabsTrigger>
+                  <TabsTrigger value="passenger" disabled>
+                    Passenger
+                  </TabsTrigger>
+                  <TabsTrigger value="offshore" disabled>
+                    Offshore
+                  </TabsTrigger>
+                </TabsList>
+              </Tabs>
             </div>
 
             {/* Project cards skeleton */}

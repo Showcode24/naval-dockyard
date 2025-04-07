@@ -12,7 +12,7 @@ export const footerLinks = {
     { label: "Ship Repair & Maintenance", href: "/services/ship-repair" },
     { label: "Dry Docking & Vessel Overhauls", href: "/services/dry-docking" },
     { label: "Fabrication & Engineering", href: "/services/fabrication" },
-    { label: "Naval Architecture", href: "/services/naval-architecture" },
+    { label: "Ship Design & Construction", href: "/services/naval-architecture" },
     { label: "Offshore Support", href: "/services/offshore-support" },
   ],
 }

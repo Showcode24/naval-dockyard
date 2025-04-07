@@ -10,7 +10,7 @@ export const contactData = {
     "Ship Repair & Maintenance",
     "Dry Docking & Vessel Overhauls",
     "Fabrication & Engineering",
-    "Naval Architecture & Marine Engineering",
+    "Ship Design & Construction & Marine Engineering",
     "Offshore & Oil & Gas Support",
     "Emergency Repairs",
     "Preventative Maintenance Programs",

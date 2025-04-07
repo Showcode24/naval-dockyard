@@ -51,7 +51,7 @@ export default function InternshipsPage() {
                 <h3 className="text-xl font-bold mb-4">Student Internships</h3>
                 <p className="text-muted-foreground mb-6">
                   3-6 month structured internships for engineering students seeking practical experience in maritime
-                  engineering, naval architecture, and related fields.
+                  engineering, Ship Design & Construction, and related fields.
                 </p>
                 <ul className="space-y-3 mb-6">
                   <li className="flex items-start">

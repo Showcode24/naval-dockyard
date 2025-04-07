@@ -93,8 +93,8 @@ export const serviceSummaryData: ServiceSummary[] = [
     ],
   },
   {
-    title: "Naval Architecture",
-    description: "Expert naval architecture and design services",
+    title: "Ship Design & Construction",
+    description: "Expert Ship Design & Construction and design services",
     extendedDescription:
       "Our naval architects provide consultation for new builds, modifications, and vessel performance analysis tailored to West African maritime conditions.",
     image: "/images/services/naval-architecture.jpg",

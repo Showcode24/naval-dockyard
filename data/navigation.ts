@@ -56,9 +56,9 @@ export const navData = [
       },
       {
         key: "services-architecture",
-        title: "Naval Architecture",
+        title: "Ship Design & Construction",
         href: "/services/naval-architecture",
-        description: "Expert naval architecture and design services",
+        description: "Expert Ship Design & Construction and design services",
       },
       {
         key: "services-offshore",

@@ -58,7 +58,7 @@ export default function ContactPage() {
   return (
     <>
       <section className="pt-32 pb-16 bg-[url('/contact-us.jpg')] bg-cover bg-center text-white relative">
-        
+
         <div className="absolute inset-0 bg-black/70 z-0"></div>
 
         <div className="container mx-auto relative z-10">
@@ -550,7 +550,7 @@ export default function ContactPage() {
                 Port City, PC 12345
               </p>
               <p className="text-sm text-muted-foreground">
-                Our engineering and design center with naval architecture and project planning teams.
+                Our engineering and design center with Ship Design & Construction and project planning teams.
               </p>
             </div>
           </div>

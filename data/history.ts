@@ -40,7 +40,7 @@ export const historyData = {
       year: "Innovation",
       title: "Engineering Division",
       description:
-        "Established dedicated Naval Architecture and Marine Engineering division to provide comprehensive design services.",
+        "Established dedicated Ship Design & Construction and Marine Engineering division to provide comprehensive design services.",
     },
     {
       year: "Diversification",
