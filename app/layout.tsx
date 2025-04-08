@@ -45,13 +45,13 @@ export const metadata: Metadata = {
         rel: "icon",
         type: "image/png",
         sizes: "32x32",
-        url: "/favicon-32x32.png",
+        url: "/favicon-32x32",
       },
       {
         rel: "icon",
         type: "image/png",
         sizes: "16x16",
-        url: "/favicon-16x16.png",
+        url: "/favicon-16x16",
       },
     ],
   },
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     siteName: "Naval Dockyard Limited",
     images: [
       {
-        url: "/dockyard-logo.png",
+        url: "/images/logo/dockyard-logo-2.png",
         width: 1200,
         height: 630,
         alt: "Naval Dockyard Limited",

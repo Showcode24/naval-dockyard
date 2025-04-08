@@ -122,7 +122,7 @@ export default function Navbar() {
         <div className="flex flex-col gap-6 py-4 mt-4">
           <Link href="/" className="flex items-center gap-2" onClick={closeSheet}>
             <div className="relative h-10 w-10">
-              <Image src="/navy-logo.png" alt="Nigerian Navy" fill className="object-contain" />
+              <Image src="/images/logo/dockyard-logo-2.png" alt="Nigerian Navy" fill className="object-contain" />
             </div>
             <span className="font-bold text-lg">Naval Dockyard Ltd</span>
           </Link>
@@ -191,7 +191,7 @@ export default function Navbar() {
 
             <Link href="/" className="flex items-center gap-2">
               <div className="relative h-10 w-10">
-                <Image src="/navy-logo.png" alt="Nigerian Navy" fill className="object-contain" />
+                <Image src="/images/logo/dockyard-logo-2.png" alt="Nigerian Navy" fill className="object-contain" />
               </div>
               <span className="font-bold text-lg text-foreground whitespace-nowrap">Naval Dockyard Ltd</span>
             </Link>

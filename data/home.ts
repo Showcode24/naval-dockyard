@@ -194,7 +194,7 @@ export interface Client {
 export const clientsData: Client[] = [
   {
     name: "Nigerian Navy",
-    logo: "/images/clients/navy-logo.png",
+    logo: "/images/logo/dockyard-logo-2.png",
     highlighted: true,
   },
   {

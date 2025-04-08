@@ -442,7 +442,7 @@ export default function DryDockingPage() {
               }}
             >
               <Image
-                src="https://images.unsplash.com/photo-1574100004472-e536d3b6bacc?q=80&w=2070&auto=format&fit=crop"
+                src="/images/img/dry-docking.webp"
                 alt="Dry Docking Process"
                 width={600}
                 height={400}

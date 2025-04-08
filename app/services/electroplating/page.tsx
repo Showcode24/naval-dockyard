@@ -238,7 +238,7 @@ export default function ElectroplatingPage() {
               }}
             >
               <Image
-                src="https://images.unsplash.com/photo-1635348729202-07471f1ae5c9?q=80&w=2070&auto=format&fit=crop"
+                src="/images/img/electroplating.webp"
                 alt="Electroplating Services"
                 width={600}
                 height={400}
@@ -281,10 +281,10 @@ export default function ElectroplatingPage() {
                     <Image
                       src={
                         index === 0
-                          ? "https://images.unsplash.com/photo-1635348729202-07471f1ae5c9?q=80&w=2070&auto=format&fit=crop"
+                          ? "/images/img/electroplating.webp"
                           : index === 1
-                            ? "https://images.unsplash.com/photo-1589923188651-268a9765e432?q=80&w=2070&auto=format&fit=crop"
-                            : "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2070&auto=format&fit=crop"
+                            ? "/images/img/electroplating.webp"
+                            : "/images/img/electroplating.webp"
                       }
                       alt={service.title}
                       fill
@@ -396,7 +396,7 @@ export default function ElectroplatingPage() {
               }}
             >
               <Image
-                src="https://images.unsplash.com/photo-1581092921461-7d65ca45393a?q=80&w=2070&auto=format&fit=crop"
+                src="/images/img/electroplating.webp"
                 alt="Quality Assurance"
                 width={600}
                 height={400}
