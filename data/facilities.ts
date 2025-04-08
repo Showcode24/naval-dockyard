@@ -18,7 +18,7 @@ export const facilitiesData = {
       title: "Main Dry Dock",
       description:
         "Our largest dry dock facility capable of accommodating vessels up to 300 meters in length, including naval destroyers, commercial tankers, and container ships.",
-      image: "/images/facilities/dry-dock.jpg",
+      image: "/images/img/dry-docking-2.webp",
       features: [
         "Computer-controlled pumping system for precise docking",
         "Advanced hull cleaning and preparation equipment",
@@ -31,7 +31,7 @@ export const facilitiesData = {
       title: "Fabrication Workshop",
       description:
         "Comprehensive metal fabrication facility equipped for steel, aluminum, and specialty alloy work. Capable of producing custom components from small fittings to large structural elements.",
-      image: "/images/facilities/fabrication.jpg",
+      image: "/images/img/fabrication.webp",
       features: [
         "CNC plasma and water jet cutting systems",
         "Automated welding stations for precision work",
@@ -49,7 +49,7 @@ export const facilitiesData = {
       title: "Engine Repair Center",
       description:
         "Specialized facility for marine propulsion system overhaul and repair, capable of servicing everything from small auxiliary engines to large main propulsion systems.",
-      image: "/images/facilities/engine-repair.jpg",
+      image: "/images/img/engine-repair.webp",
       features: [
         "Engine test beds for performance verification",
         "Precision machining for component repair",
@@ -67,7 +67,7 @@ export const facilitiesData = {
       title: "Surface Treatment Facility",
       description:
         "Environmentally controlled facility for surface preparation, painting, and coating application. Features advanced containment systems to prevent environmental contamination.",
-      image: "/images/facilities/surface-treatment.jpg",
+      image: "/images/img/electroplating.webp",
       features: [
         "Automated blasting systems for hull preparation",
         "Climate-controlled paint application chambers",

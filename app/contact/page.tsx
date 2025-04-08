@@ -57,7 +57,7 @@ export default function ContactPage() {
 
   return (
     <>
-      <section className="pt-32 pb-16 bg-[url('/contact-us.jpg')] bg-cover bg-center text-white relative">
+      <section className="pt-32 pb-16 bg-[url('/images/img/contact.webp')] bg-cover bg-center text-white relative">
 
         <div className="absolute inset-0 bg-black/70 z-0"></div>
 

@@ -486,7 +486,7 @@ export default function LeadershipPage() {
                 transition={{ type: "spring", stiffness: 300, damping: 15 }}
                 style={{ transformStyle: "preserve-3d" }}
               >
-                <Image src="/images/about/team-working.jpg" alt="Naval Dockyard Team" fill className="object-cover" />
+                <Image src="/images/img/team.webp" alt="Naval Dockyard Team" fill className="object-cover" />
 
                 {/* Interactive overlay */}
                 <motion.div

@@ -61,9 +61,15 @@ export const navData = [
         description: "Expert Ship Design & Construction and design services",
       },
       {
-        key: "services-offshore",
-        title: "Offshore & Oil & Gas Support",
-        href: "/services/offshore-support",
+        key: "services-electroplating",
+        title: "Electroplating",
+        href: "/services/electroplating",
+        description: "Specialized services for offshore platforms",
+      },
+      {
+        key: "services-galvanizing",
+        title: "Galvanizing",
+        href: "/services/galvanizing",
         description: "Specialized services for offshore platforms",
       },
     ],

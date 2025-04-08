@@ -46,6 +46,45 @@ export default function CallToAction() {
     tap: { scale: 0.95 },
   }
 
+  // Bubble animation variants
+  const bubbleVariants = {
+    initial: (custom: { x: number; y: number }) => ({
+      x: custom.x,
+      y: custom.y,
+      opacity: 0.7,
+    }),
+    animate: {
+      x: 0,
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 1,
+        ease: "easeOut",
+      },
+    },
+    float: {
+      y: [0, -15, 0, 15, 0],
+      x: [0, 10, 0, -10, 0],
+      opacity: [1, 0.8, 1, 0.9, 1],
+      scale: [1, 1.05, 1, 0.95, 1],
+      transition: {
+        duration: 8,
+        ease: "easeInOut",
+        repeat: Number.POSITIVE_INFINITY,
+        repeatType: "loop",
+      },
+    },
+  }
+
+  // Additional bubbles for more dynamic background
+  const bubbles = [
+    { size: "w-64 h-64", position: "top-0 right-0", bg: "bg-white/10", initialX: 100, initialY: -100, delay: 0.3 },
+    { size: "w-40 h-40", position: "bottom-0 left-0", bg: "bg-white/5", initialX: -50, initialY: 50, delay: 0.5 },
+    { size: "w-24 h-24", position: "top-20 left-20", bg: "bg-white/8", initialX: -70, initialY: -70, delay: 0.7 },
+    { size: "w-32 h-32", position: "bottom-10 right-20", bg: "bg-white/7", initialX: 80, initialY: 80, delay: 0.9 },
+    { size: "w-16 h-16", position: "top-40 right-1/4", bg: "bg-white/10", initialX: 40, initialY: -40, delay: 1.1 },
+  ]
+
   return (
     <motion.section
       ref={sectionRef}
@@ -55,18 +94,26 @@ export default function CallToAction() {
       transition={{ duration: 0.7 }}
     >
       {/* Animated background elements */}
-      <motion.div
-        className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full"
-        initial={{ x: 100, y: -100 }}
-        animate={isInView ? { x: 0, y: 0 } : {}}
-        transition={{ duration: 1, delay: 0.3 }}
-      />
-      <motion.div
-        className="absolute bottom-0 left-0 w-40 h-40 bg-white/5 rounded-full"
-        initial={{ x: -50, y: 50 }}
-        animate={isInView ? { x: 0, y: 0 } : {}}
-        transition={{ duration: 1, delay: 0.5 }}
-      />
+      {bubbles.map((bubble, index) => (
+        <motion.div
+          key={index}
+          className={`absolute ${bubble.position} ${bubble.size} ${bubble.bg} rounded-full`}
+          custom={{ x: bubble.initialX, y: bubble.initialY }}
+          variants={bubbleVariants}
+          initial="initial"
+          animate={isInView ? ["animate", "float"] : "initial"}
+          transition={{
+            animate: { duration: 1, delay: bubble.delay },
+            float: {
+              delay: bubble.delay + 1,
+              duration: 8 + index * 2, // Different durations for variety
+              repeat: Number.POSITIVE_INFINITY,
+              repeatType: "loop",
+              ease: "easeInOut",
+            },
+          }}
+        />
+      ))}
 
       <div className="container mx-auto px-4 text-center relative z-10">
         <motion.div variants={containerVariants} initial="hidden" animate={isInView ? "visible" : "hidden"}>
@@ -122,4 +169,3 @@ export default function CallToAction() {
     </motion.section>
   )
 }
-

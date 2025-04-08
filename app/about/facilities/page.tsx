@@ -60,7 +60,7 @@ export default function FacilitiesPage() {
         <motion.div
           className="absolute inset-0 opacity-10"
           style={{
-            backgroundImage: "url('/images/about/blueprint-pattern.svg')",
+            backgroundImage: "url('/images/img/history-today.webp')",
             backgroundSize: "cover",
             x: mousePosition.x * -20,
             y: mousePosition.y * -20,
@@ -177,7 +177,7 @@ export default function FacilitiesPage() {
               style={{ transformStyle: "preserve-3d" }}
             >
               <Image
-                src="/images/about/facilities-aerial.jpg"
+                src="/images/img/history-today.webp"
                 alt="Naval Dockyard Aerial View"
                 width={600}
                 height={400}

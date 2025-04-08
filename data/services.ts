@@ -1,4 +1,4 @@
-import { Wrench, Droplets, Hammer, Ruler, Cog } from "lucide-react"
+import { Wrench, Droplets, Hammer, Ruler, Cog, Zap, Shield } from 'lucide-react'
 
 export const serviceData = {
   categories: [
@@ -8,7 +8,7 @@ export const serviceData = {
       description:
         "Our comprehensive ship repair and maintenance services are designed to keep your vessel operating at peak performance. With experienced engineers and advanced equipment, we handle everything from routine maintenance to complex repairs.",
       icon: Wrench,
-      image: "/images/services/ship-repair-large.jpg",
+      image: "/images/img/ship-repair.webp",
       features: [
         {
           title: "Hull, Deck & Superstructure Repairs",
@@ -38,7 +38,7 @@ export const serviceData = {
       description:
         "Our advanced dry dock facilities enable complete vessel overhauls and thorough inspections. We provide comprehensive services to ensure your vessel meets all regulatory requirements and operates at maximum efficiency.",
       icon: Droplets,
-      image: "/images/services/dry-dock-large.jpg",
+      image: "/images/img/dry-docking.webp",
       features: [
         {
           title: "Full Docking & Undocking Services",
@@ -68,7 +68,7 @@ export const serviceData = {
       description:
         "Our fabrication team specializes in custom metal fabrication and engineering solutions for marine applications. We combine traditional craftsmanship with advanced technology to deliver precision components for any vessel type.",
       icon: Hammer,
-      image: "/images/services/fabrication-large.jpg",
+      image: "/images/img/fabrication.webp",
       features: [
         {
           title: "Custom Metal Fabrication",
@@ -98,7 +98,7 @@ export const serviceData = {
       description:
         "Our experienced naval architects and marine engineers provide expert consultation for new builds, modifications, and performance analysis to optimize your vessel's operation and compliance with regulations.",
       icon: Ruler,
-      image: "/images/services/naval-architecture-large.jpg",
+      image: "/images/img/ship-design.webp",
       features: [
         {
           title: "Consultation for New Builds & Modifications",
@@ -123,34 +123,93 @@ export const serviceData = {
       ],
     },
     {
-      title: "Offshore & Oil & Gas Support",
-      slug: "offshore-support",
+      title: "Electroplating",
+      slug: "electroplating",
       description:
-        "We provide specialized maintenance and repair services for offshore platforms, subsea infrastructure, and related marine equipment, ensuring safe and efficient operations in challenging environments.",
-      icon: Cog,
-      image: "/images/services/offshore-large.jpg",
+        "Our advanced electroplating services provide superior corrosion resistance and aesthetic finishes for marine components. Using state-of-the-art technology, we deliver high-quality metal coatings that extend component life in harsh saltwater environments.",
+      icon: Zap,
+      image: "/images/img/electroplating.webp",
       features: [
         {
-          title: "Maintenance & Repair for Offshore Platforms",
+          title: "Copper, Nickel & Chrome Plating",
           description:
-            "Comprehensive inspection, maintenance, and repair services for fixed and floating offshore structures.",
+            "Multi-layer plating processes that provide both decorative finishes and enhanced corrosion protection for marine components.",
         },
         {
-          title: "Pipeline & Subsea Infrastructure Support",
-          description: "Installation, maintenance, and repair of underwater pipelines and associated subsea equipment.",
+          title: "Precious Metal Plating",
+          description:
+            "Gold, silver, and other precious metal plating for specialized applications requiring superior conductivity and corrosion resistance.",
         },
         {
-          title: "Equipment Installations",
+          title: "Corrosion-Resistant Coatings",
           description:
-            "Professional installation of specialized equipment on offshore platforms and vessels, including cranes, winches, and drilling equipment.",
+            "Specialized electroplating solutions designed specifically for the marine environment, providing maximum protection against saltwater corrosion.",
         },
         {
-          title: "Safety System Upgrades",
+          title: "Custom Specifications for Marine Environments",
           description:
-            "Upgrading and maintenance of critical safety systems for offshore installations, ensuring compliance with international standards.",
+            "Tailored electroplating services to meet specific requirements for thickness, hardness, and performance in challenging marine conditions.",
         },
       ],
     },
+    {
+      title: "Galvanizing",
+      slug: "galvanizing",
+      description:
+        "Our industrial-scale hot-dip galvanizing services provide long-lasting protection against corrosion for steel components used in marine and offshore applications. This process creates a metallurgically bonded zinc coating that shields steel from harsh environmental conditions.",
+      icon: Shield,
+      image: "/images/img/galvanizing.webp",
+      features: [
+        {
+          title: "Hot-Dip Galvanizing for Steel Structures",
+          description:
+            "Immersion of steel components in molten zinc to create a durable, long-lasting protective coating that prevents corrosion in marine environments.",
+        },
+        {
+          title: "Batch Processing for Small Components",
+          description:
+            "Efficient processing of large quantities of smaller components, ensuring consistent quality and corrosion protection across all parts.",
+        },
+        {
+          title: "Quality Testing & Certification",
+          description:
+            "Comprehensive testing of galvanized coatings for thickness, adhesion, and uniformity, with certification to relevant marine standards.",
+        },
+        {
+          title: "Extended Lifespan for Marine Metal Components",
+          description:
+            "Significantly increased service life for steel components exposed to saltwater and harsh weather conditions, reducing maintenance costs and downtime.",
+        },
+      ],
+    },
+    // {
+    //   title: "Offshore & Oil & Gas Support",
+    //   slug: "offshore-support",
+    //   description:
+    //     "We provide specialized maintenance and repair services for offshore platforms, subsea infrastructure, and related marine equipment, ensuring safe and efficient operations in challenging environments.",
+    //   icon: Cog,
+    //   image: "/images/img/offshore-large.webp",
+    //   features: [
+    //     {
+    //       title: "Maintenance & Repair for Offshore Platforms",
+    //       description:
+    //         "Comprehensive inspection, maintenance, and repair services for fixed and floating offshore structures.",
+    //     },
+    //     {
+    //       title: "Pipeline & Subsea Infrastructure Support",
+    //       description: "Installation, maintenance, and repair of underwater pipelines and associated subsea equipment.",
+    //     },
+    //     {
+    //       title: "Equipment Installations",
+    //       description:
+    //         "Professional installation of specialized equipment on offshore platforms and vessels, including cranes, winches, and drilling equipment.",
+    //     },
+    //     {
+    //       title: "Safety System Upgrades",
+    //       description:
+    //         "Upgrading and maintenance of critical safety systems for offshore installations, ensuring compliance with international standards.",
+    //     },
+    //   ],
+    // },
   ],
 }
-

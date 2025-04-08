@@ -1,5 +1,5 @@
 import type React from "react"
-import { Anchor, Wrench, Ruler, Shield, Ship, Droplets, Hammer, Cog } from "lucide-react"
+import { Anchor, Wrench, Ruler, Shield, Ship, Droplets, Hammer, Cog, Zap } from "lucide-react"
 
 // Hero section data
 export const heroData = {
@@ -55,7 +55,7 @@ export const serviceSummaryData: ServiceSummary[] = [
     description: "Comprehensive repair services for naval and commercial vessels",
     extendedDescription:
       "Our ship repair and maintenance services cover everything from hull repairs to complex propulsion system servicing for both military and commercial vessels.",
-    image: "/images/services/ship-repair.jpg",
+    image: "/images/img/ship-repair.webp",
     icon: Wrench,
     features: [
       "Hull, deck & superstructure repairs",
@@ -69,7 +69,7 @@ export const serviceSummaryData: ServiceSummary[] = [
     description: "Complete vessel overhauls and dry docking services",
     extendedDescription:
       "With advanced dry dock facilities, we provide full docking services for vessels of various sizes operating in West African waters.",
-    image: "/images/services/dry-dock.jpg",
+    image: "/images/img/dry-docking.webp",
     icon: Droplets,
     features: [
       "Full docking & undocking services",
@@ -83,7 +83,7 @@ export const serviceSummaryData: ServiceSummary[] = [
     description: "Custom metal fabrication and engineering solutions",
     extendedDescription:
       "Our fabrication and engineering team can create custom solutions for any vessel requirements, utilizing locally sourced materials where possible.",
-    image: "/images/services/fabrication.jpg",
+    image: "/images/img/fabrication.webp",
     icon: Hammer,
     features: [
       "Custom metal fabrication",
@@ -97,7 +97,7 @@ export const serviceSummaryData: ServiceSummary[] = [
     description: "Expert Ship Design & Construction and design services",
     extendedDescription:
       "Our naval architects provide consultation for new builds, modifications, and vessel performance analysis tailored to West African maritime conditions.",
-    image: "/images/services/naval-architecture.jpg",
+    image: "/images/img/ship-design.webp",
     icon: Ruler,
     features: [
       "Consultation for new builds & modifications",
@@ -106,18 +106,46 @@ export const serviceSummaryData: ServiceSummary[] = [
       "Regulatory compliance support",
     ],
   },
+  // {
+  //   title: "Offshore & Oil & Gas Support",
+  //   description: "Specialized services for Nigeria's offshore industry",
+  //   extendedDescription:
+  //     "We provide comprehensive maintenance and repair services for offshore platforms and related infrastructure supporting Nigeria's vital oil and gas industry.",
+  //   image: "/images/services/offshore.jpg",
+  //   icon: Cog,
+  //   features: [
+  //     "Maintenance & repair for offshore platforms",
+  //     "Pipeline & subsea infrastructure support",
+  //     "Equipment installations",
+  //     "Safety system upgrades",
+  //   ],
+  // },
   {
-    title: "Offshore & Oil & Gas Support",
-    description: "Specialized services for Nigeria's offshore industry",
+    title: "Electroplating",
+    description: "High-quality metal electroplating services for marine applications",
     extendedDescription:
-      "We provide comprehensive maintenance and repair services for offshore platforms and related infrastructure supporting Nigeria's vital oil and gas industry.",
-    image: "/images/services/offshore.jpg",
-    icon: Cog,
+      "Our advanced electroplating services provide superior corrosion resistance and aesthetic finishes for marine components operating in harsh saltwater environments.",
+    image: "/images/img/electroplating.webp",
+    icon: Zap,
     features: [
-      "Maintenance & repair for offshore platforms",
-      "Pipeline & subsea infrastructure support",
-      "Equipment installations",
-      "Safety system upgrades",
+      "Copper, nickel & chrome plating",
+      "Precious metal plating (gold, silver)",
+      "Corrosion-resistant coatings",
+      "Custom specifications for marine environments",
+    ],
+  },
+  {
+    title: "Galvanizing",
+    description: "Hot-dip galvanizing for superior corrosion protection",
+    extendedDescription:
+      "We offer industrial-scale hot-dip galvanizing services that provide long-lasting protection against corrosion for steel components used in marine and offshore applications.",
+    image: "/images/img/galvanizing.webp",
+    icon: Shield,
+    features: [
+      "Hot-dip galvanizing for steel structures",
+      "Batch processing for small components",
+      "Quality testing & certification",
+      "Extended lifespan for marine metal components",
     ],
   },
 ]
@@ -226,7 +254,7 @@ export const heroSlidesData = [
     primaryCTALink: "/schedule",
     secondaryCTA: "View Facilities",
     secondaryCTALink: "/facilities",
-    image: "/placeholder.svg",
+    image: "/images/img/facilities.webp",
   },
   {
     headline: "Expert Engineering & Technical Teams",
@@ -236,7 +264,7 @@ export const heroSlidesData = [
     primaryCTALink: "/team",
     secondaryCTA: "Our Expertise",
     secondaryCTALink: "/expertise",
-    image: "/placeholder.svg",
+    image: "/images/img/team.webp",
   },
 ]
 

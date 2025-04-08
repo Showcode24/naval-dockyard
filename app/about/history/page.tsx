@@ -64,7 +64,7 @@ export default function HistoryPage() {
             repeatType: "reverse",
           }}
           style={{
-            backgroundImage: "url('/images/about/blueprint-pattern.svg')",
+            backgroundImage: "url('/images/img/history.webp')",
             backgroundSize: "cover",
           }}
         />
@@ -140,7 +140,7 @@ export default function HistoryPage() {
               }}
             >
               <Image
-                src="/images/about/history-founding.jpg"
+                src="/images/img/history-founding.webp"
                 alt="Naval Dockyard Founding"
                 width={600}
                 height={400}
@@ -297,7 +297,7 @@ export default function HistoryPage() {
               style={{ transformStyle: "preserve-3d" }}
             >
               <Image
-                src="/images/about/history-today.jpg"
+                src="/images/img/history-today.webp"
                 alt="Naval Dockyard Today"
                 width={600}
                 height={400}

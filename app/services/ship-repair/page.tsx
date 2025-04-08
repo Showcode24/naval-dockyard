@@ -1,15 +1,17 @@
 "use client"
 
-import { useRef } from "react"
+import { useRef, useEffect } from "react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { shipRepairData } from "@/data/services/ship-repair"
 import { CheckCircle2, ArrowRight } from "lucide-react"
-import { motion } from "framer-motion"
-import { useInView } from "framer-motion"
+import { motion, useInView, useAnimation } from "framer-motion"
 
 export default function ShipRepairPage() {
+  const controls = useAnimation()
+  const heroY = useAnimation()
+
   // Refs for scroll detection
   const heroRef = useRef<HTMLDivElement>(null)
   const overviewRef = useRef<HTMLDivElement>(null)
@@ -25,6 +27,17 @@ export default function ShipRepairPage() {
   const processInView = useInView(processRef, { once: true, margin: "-100px 0px" })
   const qualityInView = useInView(qualityRef, { once: true, margin: "-100px 0px" })
   const ctaInView = useInView(ctaRef, { once: true, margin: "-100px 0px" })
+
+  // Parallax effect for hero section
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY
+      heroY.start({ y: scrollY * 0.5 })
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [heroY])
 
   // Animation variants
   const fadeInUp = {
@@ -139,23 +152,53 @@ export default function ShipRepairPage() {
 
   return (
     <>
-      <section className="pt-32 pb-16 bg-[url('/contact-us.jpg')] bg-cover bg-center text-white relative">
-        <div className="absolute inset-0 bg-black/70 z-0"></div>
-        <div className="container mx-auto page-header-content">
-          <motion.div
-            ref={heroRef}
-            className="max-w-3xl"
-            initial="hidden"
-            animate={heroInView ? "visible" : "hidden"}
-            variants={fadeInUp}
-          >
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Ship Repair & Maintenance</h1>
-            <p className="text-xl text-gray-300">
+      <motion.section
+        className="pt-32 pb-16 bg-secondary text-white relative overflow-hidden"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        ref={heroRef}
+      >
+        {/* Animated background elements */}
+        <motion.div
+          className="absolute inset-0 opacity-10"
+          animate={{
+            backgroundPosition: ["0% 0%", "100% 100%"],
+          }}
+          transition={{
+            duration: 20,
+            ease: "linear",
+            repeat: Number.POSITIVE_INFINITY,
+            repeatType: "reverse",
+          }}
+          style={{
+            backgroundImage:
+              "url('https://images.unsplash.com/photo-1574100004472-e536d3b6bacc?q=80&w=2070&auto=format&fit=crop')",
+            backgroundSize: "cover",
+          }}
+        />
+
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-3xl">
+            <motion.h1
+              className="text-4xl md:text-5xl font-bold mb-6"
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              Ship Repair & Maintenance
+            </motion.h1>
+            <motion.p
+              className="text-xl text-gray-300"
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
               Comprehensive repair services for all vessel types, from routine maintenance to complex overhauls
-            </p>
-          </motion.div>
+            </motion.p>
+          </div>
         </div>
-      </section>
+      </motion.section>
 
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
@@ -178,17 +221,35 @@ export default function ShipRepairPage() {
               </motion.ul>
             </motion.div>
             <motion.div
-              className="relative rounded-lg overflow-hidden shadow-xl"
+              className="relative rounded-lg overflow-hidden shadow-xl perspective-500"
               variants={imageReveal}
               initial="hidden"
               animate={overviewInView ? "visible" : "hidden"}
+              whileHover={{
+                scale: 1.03,
+                rotateY: 5,
+                rotateX: 5,
+                boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+              }}
+              transition={{
+                type: "spring",
+                stiffness: 400,
+                damping: 10,
+              }}
             >
               <Image
-                src="/images/services/ship-repair-main.jpg"
+                src="/images/img/history-today.webp"
                 alt="Ship Repair Services"
                 width={600}
                 height={400}
                 className="w-full h-auto"
+              />
+
+              {/* Overlay effect on hover */}
+              <motion.div
+                className="absolute inset-0 bg-primary/20 opacity-0"
+                whileHover={{ opacity: 1 }}
+                transition={{ duration: 0.3 }}
               />
             </motion.div>
           </div>
@@ -211,10 +272,20 @@ export default function ShipRepairPage() {
                   initial="hidden"
                   animate={servicesInView ? "visible" : "hidden"}
                   transition={{ delay: index * 0.1 }}
+                  whileHover={{
+                    y: -10,
+                    boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+                  }}
                 >
                   <div className="relative h-48">
                     <Image
-                      src={service.image || "/placeholder.svg"}
+                      src={
+                        index === 0
+                          ? "/images/img/dry-docking.webp"
+                          : index === 1
+                            ? "/images/img/ship-repair.webp"
+                            : "/images/img/facilities.webp"
+                      }
                       alt={service.title}
                       fill
                       className="object-cover"
@@ -255,6 +326,10 @@ export default function ShipRepairPage() {
                   initial="hidden"
                   animate={processInView ? "visible" : "hidden"}
                   transition={{ delay: index * 0.15 }}
+                  whileHover={{
+                    y: -5,
+                    boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
+                  }}
                 >
                   <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center text-xl font-bold">
                     {index + 1}
@@ -295,6 +370,8 @@ export default function ShipRepairPage() {
                 initial="hidden"
                 animate={qualityInView ? "visible" : "hidden"}
                 transition={{ delay: 0.4 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
                 <Button asChild>
                   <Link href="/contact">Request a Repair Quote</Link>
@@ -306,14 +383,36 @@ export default function ShipRepairPage() {
               variants={imageReveal}
               initial="hidden"
               animate={qualityInView ? "visible" : "hidden"}
+              whileHover={{
+                scale: 1.03,
+                rotateY: -5,
+                rotateX: 5,
+                boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+              }}
+              transition={{
+                type: "spring",
+                stiffness: 400,
+                damping: 10,
+              }}
             >
               <Image
-                src="/images/services/quality-assurance.jpg"
+                src="/images/img/ship-design.webp"
                 alt="Quality Assurance"
                 width={600}
                 height={400}
                 className="w-full h-auto"
               />
+
+              {/* Overlay effect on hover */}
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0"
+                whileHover={{ opacity: 1 }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className="absolute bottom-4 left-4 text-white font-bold text-lg opacity-0 hover:opacity-100 transition-opacity duration-300">
+                  Quality is our priority
+                </div>
+              </motion.div>
             </motion.div>
           </div>
         </div>
@@ -335,12 +434,12 @@ export default function ShipRepairPage() {
             initial="hidden"
             animate={ctaInView ? "visible" : "hidden"}
           >
-            <motion.div variants={itemFadeIn}>
+            <motion.div variants={itemFadeIn} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button variant="secondary" size="lg" asChild>
                 <Link href="/contact">Contact Emergency Team</Link>
               </Button>
             </motion.div>
-            <motion.div variants={itemFadeIn}>
+            <motion.div variants={itemFadeIn} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button variant="outline" className="text-blue border-white hover:bg-white/10" size="lg" asChild>
                 <a href={`tel:${shipRepairData.emergencyPhone}`}>{shipRepairData.emergencyPhone}</a>
               </Button>
@@ -351,4 +450,3 @@ export default function ShipRepairPage() {
     </>
   )
 }
-

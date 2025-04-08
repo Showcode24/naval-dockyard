@@ -7,11 +7,19 @@ import { serviceData } from "@/data/services"
 export default function ServicesPage() {
   return (
     <>
-      <section className="pt-32 pb-16 page-header text-white">
-        <div className="container mx-auto page-header-content">
+      <section
+        className="pt-32 pb-16 page-header text-white relative bg-cover bg-center h-[50vh] min-h-[400px]"
+        style={{
+          backgroundImage: "url('/images/img/service-hero.webp')"
+        }}
+      >
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-black/60"></div>
+
+        <div className="container mx-auto page-header-content relative z-10 h-full flex items-center">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Services</h1>
-            <p className="text-xl text-gray-300">
+            <p className="text-xl text-gray-200">
               Comprehensive ship repair, maintenance, and engineering services for naval and commercial vessels
             </p>
           </div>
