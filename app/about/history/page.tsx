@@ -323,7 +323,7 @@ export default function HistoryPage() {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                Naval Today
+                Naval Dockyard Today
               </motion.h2>
               <motion.p
                 className="text-lg text-muted-foreground mb-6"
