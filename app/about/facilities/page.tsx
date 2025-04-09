@@ -60,7 +60,7 @@ export default function FacilitiesPage() {
         <motion.div
           className="absolute inset-0 opacity-10"
           style={{
-            backgroundImage: "url('/images/img/history-today.webp')",
+            backgroundImage: "url('/images/facilities/facilities-01.webp')",
             backgroundSize: "cover",
             x: mousePosition.x * -20,
             y: mousePosition.y * -20,
@@ -177,7 +177,7 @@ export default function FacilitiesPage() {
               style={{ transformStyle: "preserve-3d" }}
             >
               <Image
-                src="/images/img/history-today.webp"
+                src="/images/facilities/facilities-02.webp"
                 alt="Naval Dockyard Aerial View"
                 width={600}
                 height={400}
@@ -663,7 +663,7 @@ export default function FacilitiesPage() {
             </motion.div>
 
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3234.662386079187!2d-76.61666508449007!3d39.28308037951393!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c8035b38510f79%3A0x9f3b3e7c8bf79715!2sPort%20of%20Baltimore!5e0!3m2!1sen!2sus!4v1648000000000!5m2!1sen!2sus"
+              src="https://www.google.com/maps?q=Naval+Dockyard+Limited+Lagos+Nigeria&output=embed"
               width="100%"
               height="100%"
               style={{ border: 0 }}

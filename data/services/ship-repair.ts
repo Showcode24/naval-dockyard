@@ -13,42 +13,42 @@ export const shipRepairData = {
       title: "Hull Repair & Maintenance",
       description:
         "Comprehensive hull repair services, including welding, plating, and coating to ensure structural integrity and longevity.",
-      image: "/images/ship-repair/ship-repair-1.webp",
+      image: "/images/img/hull-repair.jpg",
       capabilities: ["Steel and aluminum hull repairs", "Blasting and painting", "Ultrasonic testing"],
     },
     {
       title: "Engine Overhaul & Repair",
       description:
         "Expert engine overhaul and repair services to maximize performance and reliability, minimizing downtime.",
-      image: "/images/ship-repair/ship-repair-2.webp",
+      image: "/images/img/engine-repair.webp",
       capabilities: ["Main and auxiliary engine repairs", "Fuel system maintenance", "Cylinder head reconditioning"],
     },
     {
       title: "Electrical Systems Repair",
       description:
         "Diagnosis and repair of electrical systems, ensuring safe and efficient operation of all onboard equipment.",
-      image: "/images/ship-repair/ship-repair-3.webp",
+      image: "/images/img/electrical-repair.jpg",
       capabilities: ["Wiring and cable repairs", "Generator and motor repairs", "Navigation system maintenance"],
     },
     {
       title: "Piping Systems Repair",
       description:
         "Repair and maintenance of piping systems, including hydraulic, cooling, and fuel lines, to prevent leaks and ensure optimal performance.",
-      image: "/images/ship-repair/ship-repair-5.webp",
+      image: "https://maritimedevelopments.com/media/pagecontent/MDL-RDS-mob-2.jpg",
       capabilities: ["Pipe welding and fabrication", "Valve and pump repairs", "Leak detection and repair"],
     },
     {
       title: "Navigation & Communication Systems",
       description:
         "Maintenance and repair of navigation and communication systems to ensure safe and reliable vessel operation.",
-      image: "/images/ship-repair/ship-repair-6.webp",
+      image: "https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa25fde6f-acaa-426f-b3c8-5e11d4d9ac2f_1417x1054.jpeg",
       capabilities: ["Radar and GPS repairs", "Radio and satellite communication repairs", "Gyrocompass calibration"],
     },
     {
       title: "HVAC Systems Repair",
       description:
         "Repair and maintenance of heating, ventilation, and air conditioning systems to ensure crew comfort and equipment reliability.",
-      image: "/images/ship-repair/ship-repair-7.webp",
+      image: "https://img.freepik.com/free-photo/worker-refilling-hvac-system-refrigerant_482257-90516.jpg?semt=ais_hybrid&w=740",
       capabilities: [
         "Refrigeration system repairs",
         "Ductwork cleaning and repair",

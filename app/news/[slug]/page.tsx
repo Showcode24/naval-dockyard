@@ -37,8 +37,19 @@ export default function NewsDetailPage({ params }: { params: { slug: string } })
 
   return (
     <>
-      <section className="pt-32 pb-16 page-header text-white">
-        <div className="container mx-auto page-header-content">
+      <section className="pt-32 pb-16 page-header text-white relative">
+        {"image" in article && article.image && (
+          <div className="absolute inset-0 z-0">
+            <Image
+              src={article.image || "/placeholder.svg"}
+              alt={article.title}
+              fill
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-black/60 z-0" />
+          </div>
+        )}
+        <div className="container mx-auto page-header-content relative z-10">
           <div className="max-w-3xl">
             <Link href="/news" className="flex items-center text-gray-300 hover:text-white mb-4">
               <ArrowLeft className="mr-2 h-4 w-4" />
@@ -195,4 +206,3 @@ export default function NewsDetailPage({ params }: { params: { slug: string } })
     </>
   )
 }
-

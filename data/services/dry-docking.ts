@@ -129,7 +129,7 @@ export const dryDockingData = {
 
   heroImage: "/images/dry-docking/dry-dock-01.webp",
   overviewImage: "/images/dry-docking/dry-dock-02.webp",
-  processImage: "/images/dry-docking/dry-dock-11.webp",
+  processImage: "/images/dry-docking/dry-dock-03.webp",
 
   process: {
     description:

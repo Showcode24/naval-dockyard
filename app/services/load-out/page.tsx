@@ -238,7 +238,7 @@ export default function LoadOutPage() {
               }}
             >
               <Image
-                src="/images/img/load-out.webp"
+                src="https://thenavalarch.com/wp-content/uploads/Lifted-loadout-www.gspoffshore.com_.jpg"
                 alt="Load-out Services"
                 width={600}
                 height={400}
@@ -390,7 +390,7 @@ export default function LoadOutPage() {
               }}
             >
               <Image
-                src="/images/img/load-out-quality.webp"
+                src="https://thenavalarch.com/wp-content/uploads/Lifted-loadout-www.gspoffshore.com_.jpg"
                 alt="Quality Assurance"
                 width={600}
                 height={400}

@@ -389,7 +389,7 @@ export default function ShipRepairPage() {
               }}
             >
               <Image
-                src="/images/ship-repair/ship-repair-4.webp"
+                src="/images/img/ship-repair.webp"
                 alt="Quality Assurance"
                 width={600}
                 height={400}

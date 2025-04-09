@@ -238,7 +238,7 @@ export default function BerthingPage() {
               }}
             >
               <Image
-                src="/images/img/berthing.webp"
+                src="/images/commercial/mv-stark/mc-stark-04.jpg"
                 alt="Berthing Services"
                 width={600}
                 height={400}
@@ -390,7 +390,7 @@ export default function BerthingPage() {
               }}
             >
               <Image
-                src="/images/img/berthing-quality.webp"
+                src="/images/commercial/mv-aparna/mv-aparna-01.jpg"
                 alt="Quality Assurance"
                 width={600}
                 height={400}

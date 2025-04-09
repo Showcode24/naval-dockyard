@@ -76,17 +76,28 @@ export default function ProjectDetailPage({ params }: { params: { id: string } }
   // Find related projects (same category/vesselType, excluding current project)
   const relatedProjects = isCommercialId
     ? commercialProjectsData.projects
-        .filter((p) => p.vesselType === (project as CommercialProject).vesselType && p.id !== params.id)
-        .slice(0, 3)
+      .filter((p) => p.vesselType === (project as CommercialProject).vesselType && p.id !== params.id)
+      .slice(0, 3)
     : militaryProjectsData.projects
-        .filter((p) => p.category === (project as MilitaryProject).category && p.id !== params.id)
-        .slice(0, 3)
+      .filter((p) => p.category === (project as MilitaryProject).category && p.id !== params.id)
+      .slice(0, 3)
 
   return (
     <>
-      <section className="pt-32 pb-16 bg-[url('/contact-us.jpg')] bg-cover bg-center text-white relative">
-        <div className="absolute inset-0 bg-black/70 z-0"></div>
-        <div className="container mx-auto px-4 relative z-10">
+      <section className="pt-32 pb-16 relative">
+        {/* Use project image as background with overlay */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src={project.image || "/placeholder.svg"}
+            alt={project.title}
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-black/70 z-10"></div> {/* Overlay with reduced opacity */}
+        </div>
+
+        <div className="container mx-auto px-4 relative z-20"> {/* Increased z-index to ensure content is above overlay */}
           <div className="max-w-4xl">
             <div className="flex items-center gap-2 mb-4">
               <Link
@@ -97,7 +108,7 @@ export default function ProjectDetailPage({ params }: { params: { id: string } }
                 Back to {portfolioTitle}
               </Link>
             </div>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">{project.title}</h1>
+            <h1 className="text-3xl md:text-4xl text-white lg:text-5xl font-bold mb-4">{project.title}</h1>
             <div className="flex flex-wrap gap-3 mb-6">
               {isCommercialProject(project) ? (
                 <Badge variant="secondary" className="text-sm">
@@ -111,15 +122,15 @@ export default function ProjectDetailPage({ params }: { params: { id: string } }
 
               {isCommercialProject(project)
                 ? project.services.map((service: string, index: number) => (
-                    <Badge key={index} variant="outline" className="text-sm text-white/90 border-white/30">
-                      {service}
-                    </Badge>
-                  ))
+                  <Badge key={index} variant="outline" className="text-sm text-white/90 border-white/30">
+                    {service}
+                  </Badge>
+                ))
                 : project.tags.map((tag: string, index: number) => (
-                    <Badge key={index} variant="outline" className="text-sm text-white/90 border-white/30">
-                      {tag}
-                    </Badge>
-                  ))}
+                  <Badge key={index} variant="outline" className="text-sm text-white/90 border-white/30">
+                    {tag}
+                  </Badge>
+                ))}
             </div>
           </div>
         </div>
@@ -299,15 +310,15 @@ export default function ProjectDetailPage({ params }: { params: { id: string } }
                       <div className="flex flex-wrap gap-2 mt-2">
                         {isCommercialProject(project)
                           ? project.services.map((service: string, index: number) => (
-                              <Badge key={index} variant="outline" className="text-xs">
-                                {service}
-                              </Badge>
-                            ))
+                            <Badge key={index} variant="outline" className="text-xs">
+                              {service}
+                            </Badge>
+                          ))
                           : project.tags.map((tag: string, index: number) => (
-                              <Badge key={index} variant="outline" className="text-xs">
-                                {tag}
-                              </Badge>
-                            ))}
+                            <Badge key={index} variant="outline" className="text-xs">
+                              {tag}
+                            </Badge>
+                          ))}
                       </div>
                     </div>
                   </div>

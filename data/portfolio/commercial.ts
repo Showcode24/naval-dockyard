@@ -8,7 +8,7 @@ export const commercialProjectsData = {
       title: "Docking and Repair of Luxury Yacht MV APARNA",
       description:
         "The Naval Dockyard Limited recently docked the Luxury Yacht MV APARNA for routine preservative maintenance. The successful operation underscores the Yard's ability to seamlessly manage a range of vessel types—from naval and merchant ships to luxury yachts—while maintaining quality, speed, and cost efficiency. This feat reflects the Dockyard's reputation as a leader in ship construction, repairs, and engineering support within the maritime sector.",
-      image: "/images/portfolio/commercial/yacht-aparna.jpg",
+      image: "/images/commercial/mv-aparna/mv-aparna-01.jpg",
       vesselType: "passenger",
       services: ["Preservative Maintenance", "Luxury Vessel Servicing", "Engineering Support"],
       client: "Private Client",
@@ -30,7 +30,7 @@ export const commercialProjectsData = {
       title: "Undocking of MV Black Pearl and BNS Pendjari",
       description:
         "Naval Dockyard Limited docked and repaired the MV BLACK PEARL and BNS PENDJARI, each with over 8,000 Gross Tonnage, in its 10,000-Ton Main Graving Dock. The Yard executed extensive preservation and restorative maintenance including hull sandblasting and painting, shaft/rudder bearing replacement, ultrasonic testing, and steel/anode renewal. These efforts enhanced the vessels' operational readiness and contributed to maritime safety in the Gulf of Guinea.",
-      image: "/images/portfolio/commercial/black-pearl-pendjari.jpg",
+      image: "/images/commercial/mv-black-pearl/mv-black-pearl-01.jpg",
       vesselType: "cargo",
       services: ["Hull Maintenance", "Bearing Alignment", "Ultrasonic Testing", "Valve Servicing"],
       client: "West African Shipping Lines",
@@ -52,7 +52,7 @@ export const commercialProjectsData = {
       title: "Undocking of MV STARK and TMC EVOLUTION",
       description:
         "Naval Dockyard Limited successfully docked and repaired MV STARK and TMC EVOLUTION, with a combined tonnage of 8,600 Tons, in the 10,000 Ton Graving Dock. Services included grid blasting, hull painting, valve testing, and critical thruster repairs in collaboration with OEMs. The vessels were undocked in optimal operating condition, demonstrating NDL's continued support for the growth of Nigeria's Blue Economy and local maritime capacity.",
-      image: "/images/portfolio/commercial/stark-evolution.jpg",
+      image: "/images/commercial/mv-stark/mc-stark-02.jpg",
       vesselType: "offshore",
       services: ["Thruster Repairs", "Valve Pressure Testing", "Hull Painting", "Grid Blasting"],
       client: "Gulf Offshore Partners",
@@ -75,7 +75,7 @@ export const commercialProjectsData = {
     title: "Undocking of MV STARK and TMC EVOLUTION",
     description:
       "In a show of its engineering excellence, Naval Dockyard Limited undertook the docking and repair of MV STARK and TMC EVOLUTION, restoring both vessels to peak performance. The project involved OEM-supported thruster repairs, hull treatment, and the servicing of 38 sea chest valves, underscoring NDL's growing impact in maritime safety and Nigeria's Blue Economy development.",
-    image: "/images/portfolio/commercial/featured-stark-evolution.jpg",
+    image: "/images/commercial/mv-stark/mc-stark-03.jpg",
     category: "Docking & Restoration",
     highlights: [
       "Docking of two vessels simultaneously with combined tonnage of 8,600 Tons",

@@ -238,7 +238,7 @@ export default function BoatConstructionPage() {
               }}
             >
               <Image
-                src="/images/img/boat-construction.webp"
+                src="/images/ship-design-ship-design-12.webp"
                 alt="Boat Construction Services"
                 width={600}
                 height={400}
@@ -390,7 +390,7 @@ export default function BoatConstructionPage() {
               }}
             >
               <Image
-                src="/images/img/boat-construction-quality.webp"
+                src="/images/img/ship-design.webp"
                 alt="Quality Assurance"
                 width={600}
                 height={400}
