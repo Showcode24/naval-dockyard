@@ -173,7 +173,7 @@ export default function ShipRepairPage() {
           }}
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/photo-1574100004472-e536d3b6bacc?q=80&w=2070&auto=format&fit=crop')",
+              "url('/images/ship-repair/ship-repair-1.webp')",
             backgroundSize: "cover",
           }}
         />
@@ -238,7 +238,7 @@ export default function ShipRepairPage() {
               }}
             >
               <Image
-                src="/images/img/history-today.webp"
+                src="/images/fabrication/fabrication-07.webp"
                 alt="Ship Repair Services"
                 width={600}
                 height={400}
@@ -281,10 +281,10 @@ export default function ShipRepairPage() {
                     <Image
                       src={
                         index === 0
-                          ? "/images/img/dry-docking.webp"
+                          ? "/images/ship-repair/fabrication-01.webp"
                           : index === 1
-                            ? "/images/img/ship-repair.webp"
-                            : "/images/img/facilities.webp"
+                            ? "/images/ship-repair/fabrication-06. web"
+                            : "/images/fabrication/fabrication-01.webp"
                       }
                       alt={service.title}
                       fill
@@ -396,7 +396,7 @@ export default function ShipRepairPage() {
               }}
             >
               <Image
-                src="/images/img/ship-design.webp"
+                src="/images/ship-repair/ship-repair-4.webp"
                 alt="Quality Assurance"
                 width={600}
                 height={400}

@@ -140,8 +140,7 @@ export default function NavalArchitecturePage() {
             repeatType: "reverse",
           }}
           style={{
-            backgroundImage:
-              "url('/images/ship-design/ship-design-1.webp')",
+            backgroundImage: "url('/images/ship-design/ship-design-1.webp')",
             backgroundSize: "cover",
           }}
         />

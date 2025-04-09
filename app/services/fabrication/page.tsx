@@ -141,7 +141,7 @@ export default function FabricationPage() {
           }}
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2070&auto=format&fit=crop')",
+              "url('/images/fabrication/fabrication-01.webp')",
             backgroundSize: "cover",
           }}
         />
@@ -224,7 +224,7 @@ export default function FabricationPage() {
               }}
             >
               <Image
-                src="/images/img/fabrication.webp"
+                src="/images/fabrication/fabrication-02.webp"
                 alt="Fabrication Workshop"
                 width={600}
                 height={400}
@@ -267,10 +267,10 @@ export default function FabricationPage() {
                     <Image
                       src={
                         index === 0
-                          ? "/images/img/engine-repair.webp"
+                          ? "/images/fabrication/fabrication-03.webp"
                           : index === 1
-                            ? "/images/img/ship-repair.webp"
-                            : "/images/img/facilities.webp"
+                            ? "/images/fabrication/fabrication-04.webp"
+                            : "/images/fabrication/fabrication-05.webp"
                       }
                       alt={service.title}
                       fill
@@ -318,11 +318,7 @@ export default function FabricationPage() {
                 >
                   <div className="relative h-64">
                     <Image
-                      src={
-                        index % 2 === 0
-                          ? "/images/img/fabrication.webp"
-                          : "/images/img/engine-repair.webp"
-                      }
+                      src={`/images/fabrication/equipment-${index + 1}.webp`}
                       alt={item.name}
                       fill
                       className="object-cover"
