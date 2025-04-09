@@ -13,6 +13,7 @@ export const motorRewindingData = {
       title: "Motor Rewinding",
       description:
         "Complete rewinding services for AC and DC motors of all sizes, from fractional horsepower to large industrial units.",
+      image: "/images/motor-rewinding/motor-rewinding-1.webp",
       capabilities: [
         "Stator and rotor rewinding",
         "Custom coil manufacturing",
@@ -24,6 +25,7 @@ export const motorRewindingData = {
       title: "Motor Repair & Overhaul",
       description:
         "Comprehensive repair and overhaul services addressing mechanical and electrical issues in damaged or worn motors.",
+      image: "/images/motor-rewinding/motor-rewinding-2.webp",
       capabilities: [
         "Bearing replacement and shaft repair",
         "Commutator and slip ring reconditioning",
@@ -35,6 +37,7 @@ export const motorRewindingData = {
       title: "Testing & Certification",
       description:
         "Thorough testing and certification services to verify motor performance and reliability after repair.",
+      image: "/images/motor-rewinding/motor-rewinding-3.webp",
       capabilities: [
         "Insulation resistance testing",
         "Surge comparison testing",

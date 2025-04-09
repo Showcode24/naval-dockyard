@@ -279,7 +279,7 @@ export default function MarineLogisticsPage() {
                 >
                   <div className="relative h-48">
                     <Image
-                      src={`/images/img/marine-logistics-${index + 1}.webp`}
+                      src={service.image || `/images/img/marine-logistics-${index + 1}.webp`}
                       alt={service.title}
                       fill
                       className="object-cover"

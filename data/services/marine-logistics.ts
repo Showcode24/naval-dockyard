@@ -13,6 +13,7 @@ export const marineLogisticsData = {
       title: "Supply Chain Management",
       description:
         "Comprehensive maritime supply chain solutions ensuring timely delivery of parts, equipment, and consumables to vessels.",
+      image: "/images/marine-logistics/marine-logistics-1.webp",
       capabilities: [
         "Inventory management systems",
         "Just-in-time delivery services",
@@ -24,6 +25,7 @@ export const marineLogisticsData = {
       title: "Vessel Provisioning",
       description:
         "Complete provisioning services for all vessel types, from food and water to technical supplies and spare parts.",
+      image: "/images/marine-logistics/marine-logistics-2.webp",
       capabilities: [
         "Fresh food and beverage supply",
         "Technical consumables",
@@ -35,6 +37,7 @@ export const marineLogisticsData = {
       title: "Crew Logistics",
       description:
         "End-to-end crew logistics services including transportation, accommodation, and documentation support.",
+      image: "/images/marine-logistics/marine-logistics-3.webp",
       capabilities: [
         "Crew transportation services",
         "Accommodation arrangements",

@@ -5,7 +5,7 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { carpentryData } from "@/data/services/carpentry"
-import { CheckCircle2, ArrowRight } from 'lucide-react'
+import { CheckCircle2, ArrowRight } from "lucide-react"
 import { motion, useInView, useAnimation } from "framer-motion"
 
 export default function CarpentryPage() {
@@ -279,7 +279,7 @@ export default function CarpentryPage() {
                 >
                   <div className="relative h-48">
                     <Image
-                      src={`/images/img/carpentry-${index + 1}.webp`}
+                      src={service.image || `/images/img/carpentry-${index + 1}.webp`}
                       alt={service.title}
                       fill
                       className="object-cover"
@@ -444,4 +444,3 @@ export default function CarpentryPage() {
     </>
   )
 }
-

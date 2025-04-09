@@ -13,6 +13,7 @@ export const berthingData = {
       title: "Vessel Berthing",
       description:
         "Secure berthing facilities for commercial vessels, naval ships, and specialized watercraft.",
+      image: "/images/berthing/berthing-1.webp",
       capabilities: [
         "Deep water berths for large vessels",
         "Alongside berthing with modern fendering",
@@ -24,6 +25,7 @@ export const berthingData = {
       title: "Jetty Operations",
       description:
         "Comprehensive jetty services including cargo handling, vessel servicing, and crew support.",
+      image: "/images/berthing/berthing-2.webp",
       capabilities: [
         "Cargo loading and unloading",
         "Bunkering services",
@@ -35,6 +37,7 @@ export const berthingData = {
       title: "Support Services",
       description:
         "Integrated support services for berthed vessels, including technical assistance and logistics support.",
+      image: "/images/berthing/berthing-3.webp",
       capabilities: [
         "Shore power connections",
         "Technical support and maintenance",

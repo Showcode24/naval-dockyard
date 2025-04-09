@@ -13,6 +13,7 @@ export const carpentryData = {
       title: "Marine Carpentry",
       description:
         "Specialized woodworking services for vessels, including interior outfitting, cabinetry, and structural components.",
+      image: "/images/carpentry/carpentry-1.webp",
       capabilities: [
         "Custom cabinetry and built-ins",
         "Teak decking and trim work",
@@ -23,6 +24,7 @@ export const carpentryData = {
     {
       title: "Custom Furniture",
       description: "Design and fabrication of custom furniture pieces for maritime and commercial applications.",
+      image: "/images/carpentry/carpentry-2.webp",
       capabilities: [
         "Fixed and freestanding furniture",
         "Ergonomic designs for marine environments",
@@ -34,6 +36,7 @@ export const carpentryData = {
       title: "Repair & Restoration",
       description:
         "Expert repair and restoration services for wooden components, antique furniture, and historic vessels.",
+      image: "/images/carpentry/carpentry-3.webp",
       capabilities: [
         "Structural wood repairs",
         "Finish restoration and refinishing",

@@ -22,6 +22,28 @@ export const newsData = {
       author: "Ngozi Okafor",
       category: "Facilities",
     },
+    {
+      title: "Naval Dockyard Limited Partners with Dateline Energy to Construct LPG Barge",
+      slug: "ndl-dateline-energy-lpg-barge",
+      excerpt:
+        "Naval Dockyard Limited has signed an agreement with Dateline Energy Services to build a 4,000 metric ton LPG Coastal Gas Transportation Barge, boosting local content in Nigeria’s energy sector.",
+      content: "",
+      image: "/images/news/lpg-barge.jpg",
+      date: "September 2, 2023",
+      author: "Ibrahim Musa",
+      category: "Projects",
+    },
+    {
+      title: "Nigerian Navy Begins Construction of Two Additional Warships in Lagos",
+      slug: "construction-two-warships-ndl",
+      excerpt:
+        "The Nigerian Navy commenced the construction of Seaward Defence Boats 4 and 5 at the Naval Dockyard in Lagos, reinforcing its indigenous shipbuilding capacity.",
+      content: "",
+      image: "/images/news/warships-construction.jpg",
+      date: "December 18, 2023",
+      author: "Chinelo Abah",
+      category: "Projects",
+    },
   ],
 
   recentArticles: [
@@ -61,14 +83,32 @@ export const newsData = {
       date: "January 25, 2023",
       category: "Environment",
     },
+    {
+      title: "Naval Dockyard Offers Free Medical Outreach to Oniru Community",
+      slug: "free-medical-outreach-oniru",
+      excerpt:
+        "Naval Dockyard Limited provided free medical services to residents of Oniru, Lagos as part of its CSR efforts, offering eye care, dental services, and general consultations.",
+      image: "/images/news/medical-outreach.jpg",
+      date: "December 7, 2023",
+      category: "Community",
+    },
+    {
+      title: "Nigeria Customs Service Collaborates with Naval Dockyard for Vessel Maintenance",
+      slug: "customs-navy-collaboration-vessels",
+      excerpt:
+        "The Nigeria Customs Service has partnered with the Nigerian Navy for vessel maintenance, leveraging Naval Dockyard's technical capabilities to support maritime security.",
+      image: "/images/news/customs-collab.jpg",
+      date: "November 10, 2023",
+      category: "Projects",
+    },
   ],
 
   categories: [
-    { name: "Projects", count: 12, slug: "projects" },
+    { name: "Projects", count: 14, slug: "projects" },
     { name: "Technology", count: 8, slug: "technology" },
     { name: "Facilities", count: 5, slug: "facilities" },
     { name: "Certifications", count: 4, slug: "certifications" },
-    { name: "Community", count: 7, slug: "community" },
+    { name: "Community", count: 9, slug: "community" },
     { name: "Environment", count: 6, slug: "environment" },
     { name: "Events", count: 9, slug: "events" },
   ],
@@ -99,6 +139,10 @@ export const newsData = {
       slug: "specialized-fabrication-acquisition",
       date: "January 10, 2023",
     },
+    {
+      title: "Naval Dockyard Limited Honors Staff for Outstanding Long Service",
+      slug: "honors-staff-long-service",
+      date: "July 20, 2023",
+    },
   ],
 }
-

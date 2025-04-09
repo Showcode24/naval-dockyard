@@ -172,8 +172,7 @@ export default function ShipRepairPage() {
             repeatType: "reverse",
           }}
           style={{
-            backgroundImage:
-              "url('/images/ship-repair/ship-repair-1.webp')",
+            backgroundImage: "url('/images/img/ship-repair.webp')",
             backgroundSize: "cover",
           }}
         />
@@ -279,13 +278,7 @@ export default function ShipRepairPage() {
                 >
                   <div className="relative h-48">
                     <Image
-                      src={
-                        index === 0
-                          ? "/images/ship-repair/fabrication-01.webp"
-                          : index === 1
-                            ? "/images/ship-repair/fabrication-06. web"
-                            : "/images/fabrication/fabrication-01.webp"
-                      }
+                      src={service.image || "/placeholder.svg"}
                       alt={service.title}
                       fill
                       className="object-cover"

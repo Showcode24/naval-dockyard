@@ -5,7 +5,7 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { machineShopData } from "@/data/services/machine-shop"
-import { CheckCircle2, ArrowRight } from 'lucide-react'
+import { CheckCircle2, ArrowRight } from "lucide-react"
 import { motion, useInView, useAnimation } from "framer-motion"
 
 export default function MachineShopPage() {
@@ -279,7 +279,7 @@ export default function MachineShopPage() {
                 >
                   <div className="relative h-48">
                     <Image
-                      src={`/images/img/machine-shop-${index + 1}.webp`}
+                      src={service.image || `/images/img/machine-shop-${index + 1}.webp`}
                       alt={service.title}
                       fill
                       className="object-cover"
