@@ -108,7 +108,7 @@ export const dryDockingData = {
       ],
     },
     {
-      name: "Floating Dry Dock",
+      name: "Twin Dock",
       description:
         "Versatile floating dry dock that can be positioned as needed and provides flexibility for various vessel types and sizes.",
       image: "/images/services/dry-dock-facility2.jpg",
@@ -123,37 +123,6 @@ export const dryDockingData = {
         "Offshore support vessels",
         "Rapid deployment capability",
         "Flexible positioning",
-      ],
-    },
-    {
-      name: "Small Vessel Dock",
-      description:
-        "Specialized facility for smaller vessels including patrol boats, tugs, and fishing vessels, offering efficient service for vessels under 50 meters.",
-      image: "/images/services/dry-dock-facility3.jpg",
-      specifications: ["Length: 80 meters", "Width: 20 meters", "Depth: 8 meters", "Lifting capacity: 5,000 tons"],
-      capabilities: [
-        "Patrol boats and small naval vessels",
-        "Tugs and workboats",
-        "Fishing vessels",
-        "Quick turnaround services",
-      ],
-    },
-    {
-      name: "Syncrolift System",
-      description:
-        "Modern ship lift system that provides efficient and flexible docking capabilities for medium-sized vessels with rapid operation times.",
-      image: "/images/services/dry-dock-facility4.jpg",
-      specifications: [
-        "Platform size: 120 x 25 meters",
-        "Lifting capacity: 8,000 tons",
-        "Lift time: 2-3 hours",
-        "Transfer system to shore facility",
-      ],
-      capabilities: [
-        "Fast docking and undocking operations",
-        "Transfer to shore-based work areas",
-        "Multiple vessel handling capability",
-        "Flexible scheduling",
       ],
     },
   ],

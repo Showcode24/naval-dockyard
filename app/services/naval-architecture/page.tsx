@@ -141,7 +141,7 @@ export default function NavalArchitecturePage() {
           }}
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?q=80&w=2070&auto=format&fit=crop')",
+              "url('/images/ship-design/ship-design-1.webp')",
             backgroundSize: "cover",
           }}
         />
@@ -225,7 +225,7 @@ export default function NavalArchitecturePage() {
               }}
             >
               <Image
-                src="/images/img/ship-design.webp"
+                src="/images/ship-design/ship-design-2.webp"
                 alt="Ship Design & Construction"
                 width={600}
                 height={400}
@@ -268,10 +268,10 @@ export default function NavalArchitecturePage() {
                     <Image
                       src={
                         index === 0
-                          ? "/images/img/fabrication.webp"
+                          ? "/images/ship-design/ship-design-3.webp"
                           : index === 1
-                            ? "/images/img/facilities.webp"
-                            : "/images/img/electroplating.webp"
+                            ? "/images/ship-design/ship-design-4.webp"
+                            : "/images/ship-design/ship-design-5.webp"
                       }
                       alt={service.title}
                       fill
@@ -429,7 +429,7 @@ export default function NavalArchitecturePage() {
               }}
             >
               <Image
-                src="/images/img/ship-design.webp"
+                src="/images/ship-design/ship-design-6.webp"
                 alt="Design Process"
                 width={600}
                 height={400}

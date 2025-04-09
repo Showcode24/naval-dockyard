@@ -4,11 +4,11 @@ import { useRef, useEffect } from "react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { fabricationData } from "@/data/services/fabrication"
+import { berthingData } from "@/data/services/berthing"
 import { CheckCircle2, ArrowRight } from "lucide-react"
 import { motion, useInView, useAnimation } from "framer-motion"
 
-export default function FabricationPage() {
+export default function BerthingPage() {
   const controls = useAnimation()
   const heroY = useAnimation()
 
@@ -16,17 +16,17 @@ export default function FabricationPage() {
   const heroRef = useRef<HTMLDivElement>(null)
   const overviewRef = useRef<HTMLDivElement>(null)
   const servicesRef = useRef<HTMLDivElement>(null)
-  const equipmentRef = useRef<HTMLDivElement>(null)
+  const processRef = useRef<HTMLDivElement>(null)
   const qualityRef = useRef<HTMLDivElement>(null)
-  const materialsRef = useRef<HTMLDivElement>(null)
+  const ctaRef = useRef<HTMLDivElement>(null)
 
   // Check if sections are in view
   const heroInView = useInView(heroRef, { once: true, margin: "-100px 0px" })
   const overviewInView = useInView(overviewRef, { once: true, margin: "-100px 0px" })
   const servicesInView = useInView(servicesRef, { once: true, margin: "-100px 0px" })
-  const equipmentInView = useInView(equipmentRef, { once: true, margin: "-100px 0px" })
+  const processInView = useInView(processRef, { once: true, margin: "-100px 0px" })
   const qualityInView = useInView(qualityRef, { once: true, margin: "-100px 0px" })
-  const materialsInView = useInView(materialsRef, { once: true, margin: "-100px 0px" })
+  const ctaInView = useInView(ctaRef, { once: true, margin: "-100px 0px" })
 
   // Parallax effect for hero section
   useEffect(() => {
@@ -118,6 +118,38 @@ export default function FabricationPage() {
     },
   }
 
+  const processStepReveal = {
+    hidden: {
+      opacity: 0,
+      scale: 0.9,
+    },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.5,
+        ease: [0.22, 1, 0.36, 1],
+      },
+    },
+  }
+
+  const ctaReveal = {
+    hidden: {
+      opacity: 0,
+      y: 30,
+      scale: 0.98,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.7,
+        ease: [0.22, 1, 0.36, 1],
+      },
+    },
+  }
+
   return (
     <>
       <motion.section
@@ -141,7 +173,7 @@ export default function FabricationPage() {
           }}
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2070&auto=format&fit=crop')",
+              "url('https://images.unsplash.com/photo-1520383197986-3651ee0ca124?q=80&w=2069&auto=format&fit=crop')",
             backgroundSize: "cover",
           }}
         />
@@ -154,7 +186,7 @@ export default function FabricationPage() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              Fabrication & Engineering
+              Berthing & Jetty Services
             </motion.h1>
             <motion.p
               className="text-xl text-gray-300"
@@ -162,43 +194,25 @@ export default function FabricationPage() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              Custom metal fabrication and engineering solutions for marine applications
+              Secure vessel mooring and comprehensive support facilities for commercial and military vessels
             </motion.p>
           </div>
         </div>
       </motion.section>
 
       <section className="py-16 md:py-24">
-        <div className="container mx-auto">
+        <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20" ref={overviewRef}>
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={overviewInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.6 }}
-            >
-              <motion.h2
-                className="text-3xl font-bold mb-6"
-                initial={{ opacity: 0, x: -30 }}
-                animate={overviewInView ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.6 }}
-              >
-                Advanced Fabrication Capabilities
-              </motion.h2>
-              <motion.p
-                className="text-lg text-muted-foreground mb-6"
-                initial={{ opacity: 0, x: -30 }}
-                animate={overviewInView ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.2 }}
-              >
-                {fabricationData.overview}
-              </motion.p>
+            <motion.div initial="hidden" animate={overviewInView ? "visible" : "hidden"} variants={fadeInUp}>
+              <h2 className="text-3xl font-bold mb-6">Strategic Berthing Solutions</h2>
+              <p className="text-lg text-muted-foreground mb-6">{berthingData.overview}</p>
               <motion.ul
                 className="space-y-4"
                 variants={staggerChildren}
                 initial="hidden"
                 animate={overviewInView ? "visible" : "hidden"}
               >
-                {fabricationData.keyFeatures.map((feature, index) => (
+                {berthingData.keyFeatures.map((feature, index) => (
                   <motion.li key={index} className="flex items-start" variants={itemFadeIn}>
                     <CheckCircle2 className="h-5 w-5 text-primary mt-1 mr-3 flex-shrink-0" />
                     <span>{feature}</span>
@@ -224,8 +238,8 @@ export default function FabricationPage() {
               }}
             >
               <Image
-                src="/images/img/fabrication.webp"
-                alt="Fabrication Workshop"
+                src="/images/img/berthing.webp"
+                alt="Berthing Services"
                 width={600}
                 height={400}
                 className="w-full h-auto"
@@ -243,14 +257,14 @@ export default function FabricationPage() {
           <div className="mb-20" ref={servicesRef}>
             <motion.h2
               className="text-3xl font-bold mb-12 text-center"
-              initial={{ opacity: 0, y: 20 }}
-              animate={servicesInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6 }}
+              variants={fadeInUp}
+              initial="hidden"
+              animate={servicesInView ? "visible" : "hidden"}
             >
-              Our Fabrication Services
+              Our Berthing & Jetty Services
             </motion.h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {fabricationData.services.map((service, index) => (
+              {berthingData.services.map((service, index) => (
                 <motion.div
                   key={index}
                   className="bg-background rounded-lg overflow-hidden shadow-md border border-border h-full flex flex-col"
@@ -265,13 +279,7 @@ export default function FabricationPage() {
                 >
                   <div className="relative h-48">
                     <Image
-                      src={
-                        index === 0
-                          ? "/images/img/engine-repair.webp"
-                          : index === 1
-                            ? "/images/img/ship-repair.webp"
-                            : "/images/img/facilities.webp"
-                      }
+                      src={`/images/img/berthing-${index + 1}.webp`}
                       alt={service.title}
                       fill
                       className="object-cover"
@@ -294,61 +302,34 @@ export default function FabricationPage() {
             </div>
           </div>
 
-          <div className="mb-20" ref={equipmentRef}>
+          <div className="mb-20" ref={processRef}>
             <motion.h2
               className="text-3xl font-bold mb-12 text-center"
-              initial={{ opacity: 0, y: 20 }}
-              animate={equipmentInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6 }}
+              variants={fadeInUp}
+              initial="hidden"
+              animate={processInView ? "visible" : "hidden"}
             >
-              Our Equipment
+              Our Berthing Process
             </motion.h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {fabricationData.equipment.map((item, index) => (
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+              {berthingData.process.map((step, index) => (
                 <motion.div
                   key={index}
-                  className="bg-background rounded-lg overflow-hidden shadow-md border border-border h-full flex flex-col"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={equipmentInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ delay: index * 0.1, duration: 0.6 }}
+                  className="bg-muted p-6 rounded-lg relative"
+                  variants={processStepReveal}
+                  initial="hidden"
+                  animate={processInView ? "visible" : "hidden"}
+                  transition={{ delay: index * 0.15 }}
                   whileHover={{
-                    y: -10,
-                    boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+                    y: -5,
+                    boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
                   }}
                 >
-                  <div className="relative h-64">
-                    <Image
-                      src={
-                        index % 2 === 0
-                          ? "/images/img/fabrication.webp"
-                          : "/images/img/engine-repair.webp"
-                      }
-                      alt={item.name}
-                      fill
-                      className="object-cover"
-                    />
+                  <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center text-xl font-bold">
+                    {index + 1}
                   </div>
-                  <div className="p-6 flex-grow">
-                    <h3 className="text-xl font-bold mb-3">{item.name}</h3>
-                    <p className="text-muted-foreground mb-4">{item.description}</p>
-                    <div>
-                      <h4 className="font-medium mb-2">Specifications:</h4>
-                      <ul className="text-sm space-y-1">
-                        {item.specifications.map((spec, idx) => (
-                          <motion.li
-                            key={idx}
-                            initial={{ opacity: 0, x: -5 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.3, delay: idx * 0.05 }}
-                            viewport={{ once: true }}
-                            whileHover={{ x: 2 }}
-                          >
-                            {spec}
-                          </motion.li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
+                  <h3 className="text-xl font-bold mb-3 mt-4">{step.title}</h3>
+                  <p className="text-muted-foreground">{step.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -357,54 +338,37 @@ export default function FabricationPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center" ref={qualityRef}>
             <motion.div
               className="order-2 lg:order-1"
-              initial={{ opacity: 0, x: -30 }}
-              animate={qualityInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.6 }}
+              variants={fadeInUp}
+              initial="hidden"
+              animate={qualityInView ? "visible" : "hidden"}
             >
               <h2 className="text-3xl font-bold mb-6">Quality Assurance</h2>
-              <p className="text-lg text-muted-foreground mb-6">{fabricationData.qualityAssurance.description}</p>
+              <p className="text-lg text-muted-foreground mb-6">{berthingData.qualityAssurance.description}</p>
               <motion.ul
                 className="space-y-4 mb-8"
                 variants={staggerChildren}
                 initial="hidden"
                 animate={qualityInView ? "visible" : "hidden"}
               >
-                {fabricationData.qualityAssurance.standards.map((standard, index) => (
-                  <motion.li
-                    key={index}
-                    className="flex items-start"
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={qualityInView ? { opacity: 1, x: 0 } : {}}
-                    transition={{ duration: 0.5, delay: 0.1 * index + 0.3 }}
-                    whileHover={{ x: 5 }}
-                  >
-                    <motion.div whileHover={{ scale: 1.2, rotate: 360 }} transition={{ duration: 0.4 }}>
-                      <div className="h-5 w-5 text-primary mt-1 mr-3 flex-shrink-0 rounded-full bg-primary flex items-center justify-center">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="12"
-                          height="12"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="3"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          className="text-white"
-                        >
-                          <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                      </div>
-                    </motion.div>
+                {berthingData.qualityAssurance.standards.map((standard, index) => (
+                  <motion.li key={index} className="flex items-start" variants={itemFadeIn}>
+                    <CheckCircle2 className="h-5 w-5 text-primary mt-1 mr-3 flex-shrink-0" />
                     <div>
                       <strong>{standard.name}:</strong> {standard.description}
                     </div>
                   </motion.li>
                 ))}
               </motion.ul>
-              <motion.div className="mt-8" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <motion.div
+                variants={fadeIn}
+                initial="hidden"
+                animate={qualityInView ? "visible" : "hidden"}
+                transition={{ delay: 0.4 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
                 <Button asChild>
-                  <Link href="/contact">Request Fabrication Quote</Link>
+                  <Link href="/contact">Request Berthing Services</Link>
                 </Button>
               </motion.div>
             </motion.div>
@@ -426,7 +390,7 @@ export default function FabricationPage() {
               }}
             >
               <Image
-                src="/images/fabrication/fabrication-07.webp"
+                src="/images/img/berthing-quality.webp"
                 alt="Quality Assurance"
                 width={600}
                 height={400}
@@ -448,86 +412,32 @@ export default function FabricationPage() {
         </div>
       </section>
 
-      <section className="py-16 bg-muted" ref={materialsRef}>
-        <div className="container mx-auto">
-          <motion.h2
-            className="text-3xl font-bold mb-12 text-center"
-            initial={{ opacity: 0, y: 20 }}
-            animate={materialsInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-          >
-            Materials We Work With
-          </motion.h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {fabricationData.materials.map((material, index) => (
-              <motion.div
-                key={index}
-                className="bg-background p-6 rounded-lg shadow-md border border-border"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={materialsInView ? { opacity: 1, scale: 1 } : {}}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{
-                  y: -10,
-                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
-                }}
-              >
-                <motion.h3
-                  className="text-xl font-bold mb-3"
-                  whileHover={{ color: "var(--primary)" }}
-                  transition={{ duration: 0.2 }}
-                >
-                  {material.name}
-                </motion.h3>
-                <p className="text-muted-foreground mb-4">{material.description}</p>
-                <motion.div
-                  className="text-sm text-muted-foreground"
-                  whileHover={{
-                    backgroundColor: "var(--primary-50)",
-                    color: "var(--primary)",
-                    padding: "8px",
-                    borderRadius: "4px",
-                  }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <strong>Applications:</strong> {material.applications}
-                </motion.div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <motion.section
-        className="py-16 bg-primary text-white mx-auto container mt-10 mb-10 rounded-2xl"
-        initial={{ opacity: 0, y: 30, scale: 0.98 }}
-        whileInView={{ opacity: 1, y: 0, scale: 1 }}
-        transition={{ duration: 0.7 }}
-        viewport={{ once: true }}
+        className="py-16 bg-primary mx-auto container rounded-2xl mb-10"
+        ref={ctaRef}
+        variants={ctaReveal}
+        initial="hidden"
+        animate={ctaInView ? "visible" : "hidden"}
       >
-        <div className="container mx-auto text-center">
-          <motion.h2
-            className="text-3xl font-bold mb-6"
-            initial={{ opacity: 0, y: -20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
+        <div className="px-4 text-center">
+          <h2 className="text-3xl text-white font-bold mb-6">Emergency Berthing Services</h2>
+          <p className="text-lg text-white mb-8 max-w-2xl mx-auto">{berthingData.emergencyServices}</p>
+          <motion.div
+            className="flex flex-col sm:flex-row justify-center gap-4"
+            variants={staggerChildren}
+            initial="hidden"
+            animate={ctaInView ? "visible" : "hidden"}
           >
-            Custom Fabrication Projects
-          </motion.h2>
-          <motion.p
-            className="text-lg mb-8 max-w-2xl mx-auto"
-            initial={{ opacity: 0, y: -20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            Our engineering team is ready to discuss your custom fabrication needs. From concept to completion, we
-            provide comprehensive solutions for even the most complex marine applications.
-          </motion.p>
-          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <Button variant="secondary" size="lg" asChild>
-              <Link href="/contact">Discuss Your Project</Link>
-            </Button>
+            <motion.div variants={itemFadeIn} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Button variant="secondary" size="lg" asChild>
+                <Link href="/contact">Request Priority Berthing</Link>
+              </Button>
+            </motion.div>
+            <motion.div variants={itemFadeIn} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Button variant="outline" className="text-blue border-white hover:bg-white/10" size="lg" asChild>
+                <a href={`tel:${berthingData.emergencyPhone}`}>{berthingData.emergencyPhone}</a>
+              </Button>
+            </motion.div>
           </motion.div>
         </div>
       </motion.section>

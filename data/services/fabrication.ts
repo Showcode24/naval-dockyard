@@ -17,7 +17,7 @@ export const fabricationData = {
       title: "Custom Metal Fabrication",
       description:
         "Design and fabrication of custom metal components, structures, and systems for marine applications, tailored to specific vessel requirements.",
-      image: "/images/services/fabrication-custom.jpg",
+      image: "/images/fabrication/fabrication-01.webp",
       capabilities: [
         "Hull and structural components",
         "Deck equipment and fittings",
@@ -30,7 +30,7 @@ export const fabricationData = {
       title: "Welding & Structural Engineering",
       description:
         "Specialized welding services for all marine metals, including aluminum, steel, and exotic alloys, with full structural engineering capabilities.",
-      image: "/images/services/fabrication-welding.jpg",
+      image: "/images/fabrication/fabrication-02.webp",
       capabilities: [
         "ABS, Lloyd's, and DNV certified welding procedures",
         "Structural analysis and design",
@@ -43,7 +43,7 @@ export const fabricationData = {
       title: "Pipe Fitting and Production",
       description:
         "Manufacturing and installation of complex piping systems for all vessel applications, including fuel, water, hydraulic, and specialized systems.",
-      image: "/images/services/fabrication-pipe.jpg",
+      image: "/images/fabrication/fabrication-03.webp",
       capabilities: [
         "Custom pipe fabrication in various materials",
         "Complex piping system design",
@@ -56,7 +56,7 @@ export const fabricationData = {
       title: "Precision Machining",
       description:
         "CNC machining services for high-precision components, ensuring exact specifications for critical parts used in marine applications.",
-      image: "/images/services/fabrication-machining.jpg",
+      image: "/images/fabrication/fabrication-04.webp",
       capabilities: [
         "CNC milling and turning",
         "Multi-axis machining for complex geometries",
@@ -69,7 +69,7 @@ export const fabricationData = {
       title: "Sheet Metal Fabrication",
       description:
         "Comprehensive sheet metal fabrication services for marine applications, including cutting, forming, and finishing of various metals.",
-      image: "/images/services/fabrication-sheet.jpg",
+      image: "/images/fabrication/fabrication-05.webp",
       capabilities: [
         "Precision cutting and forming",
         "Custom ventilation and ducting",
@@ -82,7 +82,7 @@ export const fabricationData = {
       title: "Mechanical System Integration",
       description:
         "Design, fabrication, and installation of integrated mechanical systems, ensuring proper function and compatibility with existing vessel systems.",
-      image: "/images/services/fabrication-mechanical.jpg",
+      image: "/images/fabrication/fabrication-06.webp",
       capabilities: [
         "Propulsion system components",
         "Hydraulic system integration",

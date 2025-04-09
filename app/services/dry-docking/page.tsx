@@ -138,8 +138,7 @@ export default function DryDockingPage() {
             repeatType: "reverse",
           }}
           style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2070&auto=format&fit=crop')",
+            backgroundImage: "url('/images/dry-docking/dry-dock-01.webp')",
             backgroundSize: "cover",
           }}
         />
@@ -222,7 +221,7 @@ export default function DryDockingPage() {
               }}
             >
               <Image
-                src="/images/img/dry-docking-2.webp"
+                src="/images/dry-docking/dry-dock-02.webp"
                 alt="Dry Dock Facilities"
                 width={600}
                 height={400}
@@ -263,13 +262,7 @@ export default function DryDockingPage() {
                 >
                   <div className="relative h-48">
                     <Image
-                      src={
-                        index === 0
-                          ? "/images/img/dry-docking.webp"
-                          : index === 1
-                            ? "/images/img/facilities.webp"
-                            : "/images/img/fabrication.webp"
-                      }
+                      src={`/images/dry-docking/dry-dock-0${index + 3}.webp`}
                       alt={service.title}
                       fill
                       className="object-cover"
@@ -316,11 +309,7 @@ export default function DryDockingPage() {
                 >
                   <div className="relative h-64">
                     <Image
-                      src={
-                        index % 2 === 0
-                          ? "/images/img/dry-docking.webp"
-                          : "/images/img/dry-docking-2.webp"
-                      }
+                      src={`/images/dry-docking/dry-dock-0${index % 2 === 0 ? 8 : 9}.webp`}
                       alt={facility.name}
                       fill
                       className="object-cover"
@@ -442,7 +431,7 @@ export default function DryDockingPage() {
               }}
             >
               <Image
-                src="/images/img/dry-docking.webp"
+                src="/images/dry-docking/dry-dock-10.webp"
                 alt="Dry Docking Process"
                 width={600}
                 height={400}
