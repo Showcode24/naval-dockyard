@@ -1,4 +1,5 @@
 export const boatConstructionData = {
+  heroImage: "/images/barge/barge-06.webp",
   overview:
     "Our Boat & Barge Construction services provide comprehensive design, fabrication, and outfitting solutions for commercial and specialized vessels. With advanced facilities and experienced shipbuilders, we deliver high-quality watercraft tailored to your specific operational requirements and performance expectations.",
   keyFeatures: [
@@ -8,11 +9,12 @@ export const boatConstructionData = {
     "Rigorous quality control and testing",
     "Regulatory compliance and certification support",
   ],
+  overviewImage: "/images/barge/barge-06.webp",
   services: [
     {
       title: "Custom Boat Construction",
-      description:
-        "Design and construction of custom boats for commercial, military, and specialized applications.",
+      description: "Design and construction of custom boats for commercial, military, and specialized applications.",
+      image: "/images/barge/barge-08.webp",
       capabilities: [
         "Workboats and crew transfer vessels",
         "Patrol and security craft",
@@ -24,17 +26,14 @@ export const boatConstructionData = {
       title: "Barge Construction",
       description:
         "Fabrication of barges and floating platforms for cargo transport, work platforms, and specialized applications.",
-      capabilities: [
-        "Deck cargo barges",
-        "Liquid cargo barges",
-        "Accommodation barges",
-        "Specialized work platforms",
-      ],
+      image: "/images/barge/barge-04.webp",
+      capabilities: ["Deck cargo barges", "Liquid cargo barges", "Accommodation barges", "Specialized work platforms"],
     },
     {
       title: "Vessel Outfitting",
       description:
         "Comprehensive outfitting services including mechanical systems, electrical systems, and interior accommodations.",
+      image: "/images/barge/barge-06.webp",
       capabilities: [
         "Propulsion system installation",
         "Electrical and control systems",
@@ -46,7 +45,8 @@ export const boatConstructionData = {
   process: [
     {
       title: "Design & Engineering",
-      description: "Collaborative design process to develop vessel specifications that meet operational requirements and regulatory standards.",
+      description:
+        "Collaborative design process to develop vessel specifications that meet operational requirements and regulatory standards.",
     },
     {
       title: "Hull Construction",
@@ -83,6 +83,7 @@ export const boatConstructionData = {
       },
     ],
   },
+  qualityImage: "/images/barge/barge-01.webp",
   emergencyServices:
     "We offer expedited vessel repair and modification services for urgent operational needs. Our skilled team can provide rapid response to address critical issues and minimize downtime for your fleet.",
   emergencyPhone: "+1-800-555-6789",

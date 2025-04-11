@@ -1,187 +1,138 @@
 export const navalArchitectureData = {
   overview:
-    "Our experienced naval architects and marine engineers provide expert consultation for new builds, modifications, and performance analysis to optimize your vessel's operation and compliance with regulations. We combine theoretical knowledge with practical shipyard experience to deliver solutions that are both innovative and implementable.",
+    "Our naval architecture and marine engineering team provides comprehensive design services for new vessel construction, modifications, and performance optimization. With decades of combined experience and state-of-the-art design tools, we deliver innovative solutions that meet the highest standards of safety, efficiency, and regulatory compliance.",
 
   keyFeatures: [
-    "Comprehensive vessel design and modification services",
+    "Comprehensive vessel design from concept to detailed engineering",
     "Advanced 3D modeling and simulation capabilities",
     "Structural analysis and optimization",
-    "Stability and seakeeping analysis",
+    "Hydrodynamic performance evaluation",
+    "Stability analysis and compliance verification",
+    "Propulsion system design and optimization",
     "Regulatory compliance expertise across multiple classification societies",
-    "Integration with fabrication and repair services for seamless project execution",
-    "Performance optimization for fuel efficiency and operational effectiveness",
   ],
 
   services: [
     {
-      title: "Vessel Modification Design",
+      title: "New Vessel Design",
       description:
-        "Comprehensive design services for vessel modifications, including structural changes, system upgrades, and repurposing projects.",
-      image: "/images/services/naval-architecture-modification.jpg",
+        "Complete design services for new vessel construction, from concept development through detailed engineering and construction support.",
       capabilities: [
-        "Structural modifications and reinforcements",
-        "Superstructure additions and alterations",
-        "System integration and upgrades",
-        "Conversion projects for vessel repurposing",
-        "Detailed production engineering",
+        "Concept design and feasibility studies",
+        "Preliminary and contract design packages",
+        "Detailed design and production engineering",
+        "Construction oversight and technical support",
+        "Sea trial planning and execution",
       ],
     },
     {
-      title: "Structural Analysis & Engineering",
+      title: "Vessel Modification & Conversion",
       description:
-        "Advanced structural analysis using finite element methods to ensure structural integrity and compliance with classification society requirements.",
-      image: "/images/services/naval-architecture-structural.jpg",
+        "Engineering services for vessel modifications, repurposing, and life extension projects to meet changing operational requirements.",
       capabilities: [
-        "Finite element analysis (FEA)",
-        "Structural optimization for weight reduction",
-        "Fatigue and fracture analysis",
-        "Vibration analysis and mitigation",
-        "Structural reinforcement design",
-      ],
-    },
-    {
-      title: "Stability & Seakeeping Analysis",
-      description:
-        "Comprehensive stability and seakeeping analysis to ensure vessel safety and performance in various operating conditions.",
-      image: "/images/services/naval-architecture-stability.jpg",
-      capabilities: [
-        "Intact stability analysis",
-        "Damage stability assessment",
-        "Seakeeping prediction and analysis",
-        "Roll stabilization system design",
-        "Operational limitation assessment",
+        "Feasibility studies for vessel conversion",
+        "Structural modifications and reinforcement design",
+        "System integration and upgrade engineering",
+        "Regulatory compliance verification",
+        "Stability reassessment after modification",
       ],
     },
     {
       title: "Performance Optimization",
       description:
-        "Analysis and design services to optimize vessel performance, including fuel efficiency, speed, and maneuverability.",
-      image: "/images/services/naval-architecture-performance.jpg",
+        "Analysis and design services focused on improving vessel performance, efficiency, and operational capabilities.",
       capabilities: [
-        "Hull form optimization",
-        "Propulsion system analysis and improvement",
-        "Computational fluid dynamics (CFD) analysis",
-        "Resistance and propulsion predictions",
-        "Fuel consumption reduction strategies",
-      ],
-    },
-    {
-      title: "Regulatory Compliance Support",
-      description:
-        "Expert guidance on navigating complex maritime regulations and ensuring vessel compliance with applicable standards and requirements.",
-      image: "/images/services/naval-architecture-regulatory.jpg",
-      capabilities: [
-        "Classification society rule compliance",
-        "International maritime regulation assessment",
-        "Environmental regulation compliance",
-        "Documentation preparation for approval",
-        "Liaison with regulatory authorities",
-      ],
-    },
-    {
-      title: "3D Modeling & Visualization",
-      description:
-        "Advanced 3D modeling and visualization services to support design development, communication, and production planning.",
-      image: "/images/services/naval-architecture-modeling.jpg",
-      capabilities: [
-        "Detailed 3D modeling of vessel structures and systems",
-        "Visualization for design review and approval",
-        "Interference detection and resolution",
-        "Production modeling for fabrication",
-        "As-built documentation",
+        "Hydrodynamic performance analysis",
+        "Propulsion system optimization",
+        "Fuel efficiency improvements",
+        "Seakeeping and maneuverability enhancement",
+        "Operational profile analysis and optimization",
       ],
     },
   ],
 
   designTools: [
     {
-      name: "Ship Design & Construction Software Suite",
+      name: "3D Modeling & CAD Systems",
       description:
-        "Comprehensive software package for hull design, hydrostatics, stability, and performance analysis, providing integrated solutions for vessel design and analysis.",
+        "Advanced computer-aided design tools for precise modeling of vessel structures, systems, and components.",
       capabilities: [
-        "Hull surface modeling and fairing",
-        "Hydrostatic and stability calculations",
+        "AVEVA Marine",
+        "Rhino 3D with naval architecture plugins",
+        "AutoCAD",
+        "SolidWorks",
+        "Integrated hull form development and fairing",
+      ],
+    },
+    {
+      name: "Hydrodynamic Analysis Software",
+      description:
+        "Specialized software for analyzing vessel performance in various sea conditions and operational scenarios.",
+      capabilities: [
+        "Computational Fluid Dynamics (CFD) analysis",
         "Resistance and propulsion prediction",
-        "Seakeeping and maneuvering analysis",
-        "Weight distribution and management",
+        "Seakeeping analysis",
+        "Maneuvering simulation",
+        "Wake field optimization",
       ],
     },
     {
-      name: "Structural Analysis Software",
+      name: "Structural Analysis Tools",
       description:
-        "Advanced finite element analysis software for structural modeling, analysis, and optimization of vessel structures and components.",
+        "Engineering software for analyzing structural integrity, strength, and compliance with classification society rules.",
       capabilities: [
-        "Linear and non-linear structural analysis",
-        "Dynamic and fatigue analysis",
-        "Thermal stress analysis",
-        "Composite material analysis",
+        "Finite Element Analysis (FEA)",
         "Structural optimization",
+        "Fatigue analysis",
+        "Vibration analysis",
+        "Classification society rule checking",
       ],
     },
     {
-      name: "Computational Fluid Dynamics (CFD)",
-      description:
-        "Sophisticated CFD software for analyzing fluid flow around vessel hulls and appendages, optimizing performance and efficiency.",
+      name: "Stability & Loading Software",
+      description: "Specialized tools for analyzing vessel stability, loading conditions, and regulatory compliance.",
       capabilities: [
-        "Hull resistance prediction",
-        "Propeller performance analysis",
-        "Appendage interaction studies",
-        "Free surface flow simulation",
-        "Ventilation and air flow analysis",
-      ],
-    },
-    {
-      name: "3D CAD/CAM System",
-      description:
-        "Integrated 3D design and production system supporting the entire design-to-production process with seamless data transfer.",
-      capabilities: [
-        "Detailed 3D modeling of all vessel components",
-        "Production information generation",
-        "CNC machine data output",
-        "Interference checking",
-        "Design revision management",
+        "Intact stability analysis",
+        "Damage stability assessment",
+        "Loading condition development",
+        "Longitudinal strength calculation",
+        "Regulatory compliance verification",
       ],
     },
   ],
 
   designProcess: {
     description:
-      "Our design process is structured to ensure thorough understanding of requirements, innovative solutions, and efficient implementation. We work closely with clients throughout the process to ensure that the final design meets all technical, operational, and regulatory requirements.",
+      "Our design process follows a systematic approach that ensures all technical, operational, and regulatory requirements are met while optimizing for performance, efficiency, and cost-effectiveness.",
     steps: [
       {
         title: "Requirements Definition",
         description:
-          "Comprehensive assessment of client needs, operational requirements, and regulatory constraints to establish clear design parameters.",
+          "Working closely with clients to define vessel requirements, operational profile, and performance criteria.",
       },
       {
-        title: "Concept Development",
-        description:
-          "Creation of initial design concepts exploring various approaches to meeting the defined requirements, with evaluation of pros and cons.",
+        title: "Concept Design",
+        description: "Development of initial design concepts, general arrangement, and key performance parameters.",
       },
       {
         title: "Preliminary Design",
         description:
-          "Development of the selected concept into a preliminary design with basic calculations, general arrangements, and system definitions.",
-      },
-      {
-        title: "Detailed Analysis",
-        description:
-          "In-depth analysis of the preliminary design including structural analysis, stability assessment, and performance predictions.",
+          "Refinement of selected concept with more detailed engineering, including structural layout, systems, and equipment selection.",
       },
       {
         title: "Detailed Design",
         description:
-          "Creation of detailed design documentation including structural details, system specifications, and production information.",
-      },
-      {
-        title: "Regulatory Approval",
-        description:
-          "Submission of design documentation to relevant regulatory authorities and classification societies for review and approval.",
+          "Comprehensive engineering of all vessel systems, structures, and components with production-ready documentation.",
       },
       {
         title: "Production Support",
         description:
-          "Ongoing support during the production phase to address technical questions, evaluate modifications, and ensure design intent is maintained.",
+          "Technical support during construction, including clarification of design details and resolution of construction issues.",
+      },
+      {
+        title: "Testing & Verification",
+        description:
+          "Development and execution of test plans to verify that the vessel meets all design requirements and performance criteria.",
       },
     ],
   },
@@ -190,38 +141,23 @@ export const navalArchitectureData = {
     {
       name: "Classification Society Rules",
       description:
-        "Comprehensive rules and standards established by classification societies such as ABS, Lloyd's Register, and DNV GL governing vessel design and construction.",
+        "Compliance with rules and standards from major classification societies that govern vessel design, construction, and operation.",
       approach:
-        "Our team maintains current knowledge of all major classification society rules and works closely with surveyors to ensure compliance throughout the design process.",
+        "Our team maintains current knowledge of classification society requirements and incorporates these standards into all design phases.",
     },
     {
       name: "International Maritime Organization (IMO) Regulations",
       description:
-        "International regulations governing safety, environmental protection, and security aspects of vessel design and operation.",
+        "Adherence to international conventions and codes governing safety, environmental protection, and operational standards.",
       approach:
-        "We incorporate IMO requirements into all designs from the concept stage, ensuring that vessels meet current and anticipated future regulations.",
+        "We integrate IMO requirements into our designs from the earliest stages to ensure full compliance with all applicable regulations.",
     },
     {
       name: "Flag State Requirements",
       description:
-        "Specific requirements imposed by the vessel's country of registration, which may include additional standards beyond international regulations.",
+        "Compliance with specific requirements of vessel flag states, which may include additional regulations beyond international standards.",
       approach:
-        "Our team researches and addresses specific flag state requirements for each project, ensuring that all national regulations are satisfied.",
-    },
-    {
-      name: "Environmental Regulations",
-      description:
-        "Increasingly stringent regulations governing emissions, ballast water management, and other environmental aspects of vessel operation.",
-      approach:
-        "We integrate environmentally sustainable solutions into our designs, helping clients meet current requirements and prepare for future regulations.",
-    },
-    {
-      name: "Special Purpose Vessel Codes",
-      description:
-        "Specialized codes and standards for vessels with specific operational purposes, such as offshore support, research, or special operations.",
-      approach:
-        "Our experience with various vessel types allows us to navigate specialized codes and develop compliant designs for unique operational requirements.",
+        "Our team researches and incorporates flag state requirements specific to each project to ensure vessels can be registered as intended.",
     },
   ],
 }
-

@@ -13,6 +13,7 @@ export const loadOutData = {
       title: "Engineering & Planning",
       description:
         "Detailed engineering analysis and planning for safe and efficient load-out operations of heavy structures.",
+      image: "https://thenavalarch.com/wp-content/uploads/Lifted-loadout-www.gspoffshore.com_.jpg",
       capabilities: [
         "Structural analysis and load calculations",
         "Ballasting plans and stability assessments",
@@ -24,6 +25,7 @@ export const loadOutData = {
       title: "Equipment Mobilization",
       description:
         "Deployment of specialized load-out equipment including skid tracks, hydraulic systems, and monitoring tools.",
+      image: "https://thenavalarch.com/wp-content/uploads/Lifted-loadout-www.gspoffshore.com_.jpg",
       capabilities: [
         "Hydraulic skidding systems",
         "Self-propelled modular transporters (SPMTs)",
@@ -35,6 +37,7 @@ export const loadOutData = {
       title: "Execution & Monitoring",
       description:
         "Precise execution of load-out operations with continuous monitoring of structural integrity and environmental conditions.",
+      image: "https://thenavalarch.com/wp-content/uploads/Lifted-loadout-www.gspoffshore.com_.jpg",
       capabilities: [
         "Real-time load monitoring",
         "Structural deformation tracking",

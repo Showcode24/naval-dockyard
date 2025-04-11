@@ -158,7 +158,7 @@ export const serviceData = {
       description:
         "Our industrial-scale hot-dip galvanizing services provide long-lasting protection against corrosion for steel components used in marine and offshore applications. This process creates a metallurgically bonded zinc coating that shields steel from harsh environmental conditions.",
       icon: Shield,
-      image: "/images/img/galvanizing.webp",
+      image: "/images/electroplating/electroplating-03.webp",
       features: [
         {
           title: "Hot-Dip Galvanizing for Steel Structures",

@@ -502,58 +502,59 @@ export default function ContactPage() {
             <h2 className="text-2xl font-bold mb-8 text-center">Our Locations</h2>
             <div className="rounded-lg overflow-hidden shadow-lg h-[400px]">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3234.662386079187!2d-76.61666508449007!3d39.28308037951393!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c8035b38510f79%3A0x9f3b3e7c8bf79715!2sPort%20of%20Baltimore!5e0!3m2!1sen!2sus!4v1648000000000!5m2!1sen!2sus"
+                src="https://www.google.com/maps?q=Naval+Dockyard+Limited+Lagos+Nigeria&output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
-                allowFullScreen
+                allowfullscreen
                 loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              ></iframe>
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
             <div className="bg-background p-6 rounded-lg shadow-md border border-border">
-              <h3 className="text-xl font-bold mb-4">Main Shipyard</h3>
+              <h3 className="text-xl font-bold mb-4">Main Dockyard</h3>
               <p className="text-muted-foreground mb-4">
-                123 Dockyard Road
+                Naval Dockyard Limited
                 <br />
-                Naval Base, Port City
+                Ahmadu Bello Way, Victoria Island
                 <br />
-                PC 12345
+                Lagos, Nigeria
               </p>
               <p className="text-sm text-muted-foreground">
-                Our main facility with full dry dock capabilities, fabrication shops, and administrative offices.
+                Our primary facility for ship repair and maintenance, including dry dock services and engineering support.
               </p>
             </div>
             <div className="bg-background p-6 rounded-lg shadow-md border border-border">
-              <h3 className="text-xl font-bold mb-4">Service Center</h3>
+              <h3 className="text-xl font-bold mb-4">Technical Services</h3>
               <p className="text-muted-foreground mb-4">
-                456 Harbor Avenue
+                Naval Dockyard Annex
                 <br />
-                Port City
+                Nigerian Navy Base
                 <br />
-                PC 12345
+                Lagos, Nigeria
               </p>
               <p className="text-sm text-muted-foreground">
-                Specialized facility for quick repairs, maintenance, and technical support.
+                Facility dedicated to rapid-response repairs, logistics, and technical support for naval operations.
               </p>
             </div>
             <div className="bg-background p-6 rounded-lg shadow-md border border-border">
-              <h3 className="text-xl font-bold mb-4">Design Office</h3>
+              <h3 className="text-xl font-bold mb-4">Engineering Office</h3>
               <p className="text-muted-foreground mb-4">
-                789 Maritime Plaza
+                Engineering & Design Unit
                 <br />
-                Suite 300
+                Naval Dockyard Complex
                 <br />
-                Port City, PC 12345
+                Victoria Island, Lagos
               </p>
               <p className="text-sm text-muted-foreground">
-                Our engineering and design center with Ship Design & Construction and project planning teams.
+                Hosts naval architects, marine engineers, and project planning teams for shipbuilding and design projects.
               </p>
             </div>
           </div>
+
         </div>
       </section>
     </>

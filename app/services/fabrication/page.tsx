@@ -140,8 +140,7 @@ export default function FabricationPage() {
             repeatType: "reverse",
           }}
           style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2070&auto=format&fit=crop')",
+            backgroundImage: "url('/images/fabrication/fabrication-08.webp')",
             backgroundSize: "cover",
           }}
         />
@@ -224,7 +223,7 @@ export default function FabricationPage() {
               }}
             >
               <Image
-                src="/images/img/fabrication.webp"
+                src="/images/fabrication/fabrication-09.webp"
                 alt="Fabrication Workshop"
                 width={600}
                 height={400}
@@ -265,13 +264,7 @@ export default function FabricationPage() {
                 >
                   <div className="relative h-48">
                     <Image
-                      src={
-                        index === 0
-                          ? "/images/img/engine-repair.webp"
-                          : index === 1
-                            ? "/images/img/ship-repair.webp"
-                            : "/images/img/facilities.webp"
-                      }
+                      src={service.image || "/placeholder.svg"}
                       alt={service.title}
                       fill
                       className="object-cover"
@@ -317,16 +310,7 @@ export default function FabricationPage() {
                   }}
                 >
                   <div className="relative h-64">
-                    <Image
-                      src={
-                        index % 2 === 0
-                          ? "/images/img/fabrication.webp"
-                          : "/images/img/engine-repair.webp"
-                      }
-                      alt={item.name}
-                      fill
-                      className="object-cover"
-                    />
+                    <Image src={item.image || "/placeholder.svg"} alt={item.name} fill className="object-cover" />
                   </div>
                   <div className="p-6 flex-grow">
                     <h3 className="text-xl font-bold mb-3">{item.name}</h3>

@@ -4,9 +4,9 @@ import { useRef, useEffect } from "react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { navalArchitectureData } from "@/data/services/naval-architecture"
 import { CheckCircle2, ArrowRight } from "lucide-react"
 import { motion, useInView, useAnimation } from "framer-motion"
+import { navalArchitectureData } from "@/data/services/naval-architecture"
 
 export default function NavalArchitecturePage() {
   const controls = useAnimation()
@@ -140,8 +140,7 @@ export default function NavalArchitecturePage() {
             repeatType: "reverse",
           }}
           style={{
-            backgroundImage:
-              "url('/images/ship-design/ship-design-1.webp')",
+            backgroundImage: "url('/images/ship-design/ship-design-1.webp')",
             backgroundSize: "cover",
           }}
         />

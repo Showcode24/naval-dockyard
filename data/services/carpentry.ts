@@ -1,4 +1,7 @@
 export const carpentryData = {
+  heroImage: "https://img.freepik.com/premium-photo/african-american-carpenter-drills-piece-wood-carpentry-workshop_720544-564.jpg",
+  overviewImage: "https://media.defense.gov/2017/Aug/14/2001792565/-1/-1/0/170811-M-UA291-0042D.JPG",
+  qualityImage: "https://www.rmmarine.it/wp-content/uploads/2020/12/Sea-water-intake-RM-Marine-Carpentry.jpg",
   overview:
     "Our Carpentry & Furniture Works provide custom woodworking solutions for maritime and commercial applications. From vessel interiors to custom furniture, our skilled craftsmen combine traditional woodworking techniques with modern technology to create beautiful, functional, and durable wooden components and furnishings.",
   keyFeatures: [
@@ -13,6 +16,7 @@ export const carpentryData = {
       title: "Marine Carpentry",
       description:
         "Specialized woodworking services for vessels, including interior outfitting, cabinetry, and structural components.",
+      image: "https://img.freepik.com/premium-photo/african-american-carpenter-drills-piece-wood-carpentry-workshop_720544-564.jpg",
       capabilities: [
         "Custom cabinetry and built-ins",
         "Teak decking and trim work",
@@ -23,6 +27,7 @@ export const carpentryData = {
     {
       title: "Custom Furniture",
       description: "Design and fabrication of custom furniture pieces for maritime and commercial applications.",
+      image: "https://media.defense.gov/2017/Aug/14/2001792565/-1/-1/0/170811-M-UA291-0042D.JPG",
       capabilities: [
         "Fixed and freestanding furniture",
         "Ergonomic designs for marine environments",
@@ -34,6 +39,7 @@ export const carpentryData = {
       title: "Repair & Restoration",
       description:
         "Expert repair and restoration services for wooden components, antique furniture, and historic vessels.",
+      image: "https://www.rmmarine.it/wp-content/uploads/2020/12/Sea-water-intake-RM-Marine-Carpentry.jpg",
       capabilities: [
         "Structural wood repairs",
         "Finish restoration and refinishing",

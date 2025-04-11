@@ -1,4 +1,9 @@
 export const berthingData = {
+  // Adding hero image from existing images
+  heroImage: "/images/commercial/mv-stark/mc-stark-01.jpg",
+  heroTitle: "Berthing & Jetty Services",
+  heroSubtitle: "Secure and efficient vessel mooring solutions for commercial and military vessels",
+
   overview:
     "Our Berthing & Jetty Services provide comprehensive vessel mooring, docking, and support facilities for commercial and military vessels. With strategic waterfront locations and modern infrastructure, we offer secure berthing solutions with access to a full range of vessel support services.",
   keyFeatures: [
@@ -8,11 +13,14 @@ export const berthingData = {
     "24/7 security and monitoring",
     "Integrated vessel support services",
   ],
+  // Adding overview image from existing images
+  overviewImage: "/images/commercial/mv-stark/mc-stark-02.jpg",
+
   services: [
     {
       title: "Vessel Berthing",
-      description:
-        "Secure berthing facilities for commercial vessels, naval ships, and specialized watercraft.",
+      description: "Secure berthing facilities for commercial vessels, naval ships, and specialized watercraft.",
+      image: "/images/commercial/mv-stark/mc-stark-05.jpg",
       capabilities: [
         "Deep water berths for large vessels",
         "Alongside berthing with modern fendering",
@@ -22,8 +30,8 @@ export const berthingData = {
     },
     {
       title: "Jetty Operations",
-      description:
-        "Comprehensive jetty services including cargo handling, vessel servicing, and crew support.",
+      description: "Comprehensive jetty services including cargo handling, vessel servicing, and crew support.",
+      image: "/images/commercial/mv-stark/mc-stark-01.jpg",
       capabilities: [
         "Cargo loading and unloading",
         "Bunkering services",
@@ -35,6 +43,7 @@ export const berthingData = {
       title: "Support Services",
       description:
         "Integrated support services for berthed vessels, including technical assistance and logistics support.",
+      image: "/images/commercial/mv-stark/mc-stark-02.jpg",
       capabilities: [
         "Shore power connections",
         "Technical support and maintenance",
@@ -83,6 +92,9 @@ export const berthingData = {
       },
     ],
   },
+  // Adding quality image from existing images
+  qualityImage: "/images/commercial/mv-stark/mc-stark-05.jpg",
+
   emergencyServices:
     "We offer priority berthing services for vessels requiring emergency docking or support. Our rapid response team can provide immediate assistance for vessels in distress or requiring urgent services.",
   emergencyPhone: "+1-800-555-7890",

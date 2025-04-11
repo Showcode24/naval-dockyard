@@ -68,7 +68,7 @@ export const navData = [
       },
       {
         key: "services-logistics",
-        title: "Marine Logistics Base Services",
+        title: "Marine Logistics & Load-out Base Services",
         href: "/services/marine-logistics",
         description: "Complete logistics support and base operations for marine services",
       },
@@ -96,12 +96,12 @@ export const navData = [
         href: "/services/berthing",
         description: "Secure berthing and jetty support for vessels",
       },
-      {
-        key: "services-loadout",
-        title: "Load-Out Services",
-        href: "/services/load-out",
-        description: "Efficient load-out operations for offshore structures and equipment",
-      },
+      // {
+      //   key: "services-loadout",
+      //   title: "Load-Out Services",
+      //   href: "/services/load-out",
+      //   description: "Efficient load-out operations for offshore structures and equipment",
+      // },
       {
         key: "services-machine-shop",
         title: "Machine Shop & Foundry Services",
@@ -140,12 +140,12 @@ export const navData = [
         href: "/portfolio/commercial",
         description: "Explore our commercial vessel projects",
       },
-      {
-        key: "portfolio-gallery",
-        title: "Project Gallery",
-        href: "/portfolio/gallery",
-        description: "Before and after transformations of vessel repairs",
-      },
+      // {
+      //   key: "portfolio-gallery",
+      //   title: "Project Gallery",
+      //   href: "/portfolio/gallery",
+      //   description: "Before and after transformations of vessel repairs",
+      // },
     ],
   },
   {

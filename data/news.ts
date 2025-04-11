@@ -1,104 +1,101 @@
+type Article = {
+  title: string;
+  slug: string;
+  excerpt: string;
+  content?: string;
+  image: string;
+  date: string;
+  author?: string;
+  category: string;
+};
+
+const sortByNewestDate = (a: Article, b: Article): number => new Date(b.date).getTime() - new Date(a.date).getTime();
+
 export const newsData = {
   featuredArticles: [
     {
-      title: "Naval Dockyard Limited Completes Major Naval Vessel Overhaul Ahead of Schedule",
-      slug: "naval-vessel-overhaul-ahead-schedule",
+      title: "Naval Dockyard Limited Partners with Dateline Energy Services to Construct LPG Coastal Gas Transportation Barge",
+      slug: "ndl-dateline-energy-lpg-barge",
       excerpt:
-        "Our team has successfully completed a comprehensive overhaul of a Nigerian Navy vessel three weeks ahead of the projected timeline, demonstrating our commitment to efficiency and excellence in military vessel maintenance.",
+        "In September 2023, Naval Dockyard Limited entered into a partnership with Dateline Energy Services for the construction of a 4,000 metric ton Liquefied Petroleum Gas (LPG) Coastal Gas Transportation Barge, aiming to enhance Nigeria's maritime and energy sectors.",
       content: "",
-      image: "/images/news/naval-overhaul.jpg",
-      date: "June 15, 2023",
-      author: "Adebayo Johnson",
+      image: "https://cdn.businessday.ng/2023/09/Dateline-energy-1.png",
+      date: "September 2, 2023",
+      author: "Ibrahim Musa",
       category: "Projects",
     },
     {
-      title: "New Dry Dock Facility Expansion Increases Capacity by 35%",
-      slug: "dry-dock-expansion-increases-capacity",
+      title: "NDL Successfully Undocks MV Stark and TMC Evolution",
+      slug: "ndl-undocks-mv-stark-tmc-evolution",
       excerpt:
-        "Naval Dockyard Limited has completed a major expansion of our main dry dock facility, increasing our capacity to service larger vessels and handle multiple projects simultaneously.",
+        "In October 2024, NDL demonstrated its capabilities by successfully docking and repairing MV Stark and TMC Evolution, vessels with a combined tonnage of about 8,600 tons, restoring them to optimal operational efficiency.",
       content: "",
-      image: "/images/news/drydock-expansion.jpg",
-      date: "May 3, 2023",
+      image: "/images/commercial/mv-stark/mc-stark-04.jpg",
+      date: "October 19, 2024",
       author: "Ngozi Okafor",
+      category: "Projects",
+    },
+    {
+      title: "NDL Participates in Defence Research and Development Bureau Seminar/Exhibition 2024",
+      slug: "ndl-drdb-seminar-exhibition-2024",
+      excerpt:
+        "In October 2024, NDL showcased its contributions to ship design and development at the Defence Research and Development Bureau Seminar/Exhibition, highlighting advancements in maritime defense and vessel maintenance.",
+      content: "",
+      image: "https://defence.gov.ng/wp-content/uploads/2024/10/WhatsApp-Image-2024-10-15-at-22.27.56-1024x458.jpeg",
+      date: "October 15, 2024",
+      author: "Chinelo Abah",
+      category: "Events",
+    },
+    {
+      title: "NDL Partners with Caverton Marine Limited to Revitalize GRP Boatbuilding Facilities",
+      slug: "ndl-caverton-grp-boatbuilding",
+      excerpt:
+        "In December 2024, NDL signed a concession agreement with Caverton Marine Limited to manage, overhaul, and lease the Glass Reinforced Plastic (GRP) boatbuilding warehouse, aiming to enhance local production capabilities for various vessels.",
+      content: "",
+      image: "https://cdn.businessday.ng/wp-content/uploads/2024/12/ae55ff91-98cb-43e8-8fb4-a8e2cefb16b6-600x400.jpeg",
+      date: "December 10, 2024",
+      author: "Adebayo Johnson",
       category: "Facilities",
     },
-  ],
+    {
+      title: "NDL Hosts 'Protocol Renaissance in Nigeria' Event in Collaboration with ACPPN",
+      slug: "ndl-acppn-protocol-renaissance",
+      excerpt:
+        "In November 2024, NDL partnered with the Association of Certified Protocol Practitioners in Nigeria to host the 'Protocol Renaissance in Nigeria' event, fostering networking and collaboration among industry professionals.",
+      content: "",
+      image: "https://pmexpressng.com/wp-content/uploads/2024/11/IMG-20241130-WA0051.jpg",
+      date: "November 29, 2024",
+      author: "Ibrahim Musa",
+      category: "Events",
+    },
+  ].sort(sortByNewestDate),
 
   recentArticles: [
     {
-      title: "Naval Dockyard Limited Achieves ISO 45001 Certification for Workplace Safety",
-      slug: "iso-45001-certification-workplace-safety",
+      title: "NDL Refurbishes Six Benin Republic Navy Warships",
+      slug: "ndl-refurbishes-beninese-warships",
       excerpt:
-        "Our commitment to workplace safety has been recognized with ISO 45001 certification, highlighting our comprehensive health and safety management systems.",
-      image: "/images/news/safety-certification.jpg",
-      date: "April 18, 2023",
-      category: "Certifications",
+        "In March 2024, NDL commenced refurbishment of six warships belonging to the Benin Republic Navy, enhancing security in the Gulf of Guinea.",
+      image: "/images/commercial/benin-navy-ship/benin-ship-08.jpg",
+      date: "March 4, 2024",
+      category: "Projects",
     },
     {
-      title: "New Advanced Welding Technology Implemented for Specialized Repairs",
-      slug: "advanced-welding-technology-specialized-repairs",
+      title: "NDL Hosts Workshop on Marketing Strategies for Nigerian Navy",
+      slug: "ndl-workshop-marketing-strategies",
       excerpt:
-        "Naval Dockyard Limited has invested in state-of-the-art welding technology that enables more precise and efficient repairs for specialized materials used in modern vessels.",
-      image: "/images/news/welding-technology.jpg",
-      date: "March 22, 2023",
-      category: "Technology",
+        "In September 2024, NDL organized a workshop titled 'Navigating Commercial Water: Marketing Strategies for Nigerian Navy', aiming to develop effective marketing strategies for the Nigerian Navy.",
+      image: "https://peopleandpowermag.com/wp-content/uploads/2024/09/NAVAL-ENGINEERING-PIVOTAL-3.jpg",
+      date: "September 12, 2024",
+      category: "Events",
     },
-    {
-      title: "Naval Dockyard Limited Partners with Maritime Academy for Apprenticeship Program",
-      slug: "maritime-academy-apprenticeship-program",
-      excerpt:
-        "A new partnership with the Nigerian Maritime Academy will bring apprentices to Naval Dockyard Limited, helping to train the next generation of skilled shipyard workers.",
-      image: "/images/news/apprenticeship.jpg",
-      date: "February 10, 2023",
-      category: "Community",
-    },
-    {
-      title: "Environmental Initiatives Reduce Shipyard Emissions by 25%",
-      slug: "environmental-initiatives-reduce-emissions",
-      excerpt:
-        "Our ongoing environmental sustainability program has successfully reduced overall emissions by 25% through implementation of new technologies and processes.",
-      image: "/images/news/environmental.jpg",
-      date: "January 25, 2023",
-      category: "Environment",
-    },
-  ],
+  ].sort(sortByNewestDate),
 
   categories: [
-    { name: "Projects", count: 12, slug: "projects" },
-    { name: "Technology", count: 8, slug: "technology" },
-    { name: "Facilities", count: 5, slug: "facilities" },
-    { name: "Certifications", count: 4, slug: "certifications" },
-    { name: "Community", count: 7, slug: "community" },
-    { name: "Environment", count: 6, slug: "environment" },
-    { name: "Events", count: 9, slug: "events" },
+    { name: "Projects", count: 6, slug: "projects" },
+    { name: "Facilities", count: 1, slug: "facilities" },
+    { name: "Events", count: 3, slug: "events" },
   ],
 
-  pressReleases: [
-    {
-      title: "Naval Dockyard Limited Awarded Major Contract for Naval Fleet Maintenance",
-      slug: "naval-fleet-maintenance-contract",
-      date: "May 30, 2023",
-    },
-    {
-      title: "Naval Dockyard Limited Announces Partnership with European Shipbuilder",
-      slug: "european-shipbuilder-partnership",
-      date: "April 12, 2023",
-    },
-    {
-      title: "New Managing Director Appointed to Lead Naval Dockyard Limited's Expansion",
-      slug: "new-managing-director-expansion",
-      date: "March 5, 2023",
-    },
-    {
-      title: "Naval Dockyard Limited Recognized for Excellence in Workplace Safety",
-      slug: "workplace-safety-recognition",
-      date: "February 18, 2023",
-    },
-    {
-      title: "Naval Dockyard Limited Completes Acquisition of Specialized Fabrication Equipment",
-      slug: "specialized-fabrication-acquisition",
-      date: "January 10, 2023",
-    },
-  ],
-}
-
+  pressReleases: [],
+};

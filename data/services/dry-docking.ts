@@ -17,7 +17,7 @@ export const dryDockingData = {
       title: "Vessel Docking & Undocking",
       description:
         "Safe and efficient docking and undocking procedures for vessels of all sizes, with precise control and monitoring throughout the process.",
-      image: "/images/services/dry-dock-docking.jpg",
+      image: "/images/dry-docking/dry-dock-03.webp",
       capabilities: [
         "Computer-controlled pumping systems for precise water level management",
         "Experienced docking masters overseeing all operations",
@@ -30,7 +30,7 @@ export const dryDockingData = {
       title: "Hull Cleaning & Surface Preparation",
       description:
         "Thorough cleaning and preparation of hull surfaces for inspection and coating application, using environmentally responsible methods.",
-      image: "/images/services/dry-dock-cleaning.jpg",
+      image: "/images/dry-docking/dry-dock-04.webp",
       capabilities: [
         "High-pressure water blasting up to 40,000 PSI",
         "Abrasive blasting with various media types",
@@ -43,7 +43,7 @@ export const dryDockingData = {
       title: "Hull Coating & Painting",
       description:
         "Application of marine-grade coating systems to protect hull surfaces from corrosion and marine growth, improving vessel performance and longevity.",
-      image: "/images/services/dry-dock-painting.jpg",
+      image: "/images/dry-docking/dry-dock-05.webp",
       capabilities: [
         "Application of anti-corrosion coating systems",
         "Anti-fouling coating application",
@@ -56,7 +56,7 @@ export const dryDockingData = {
       title: "Underwater Equipment Servicing",
       description:
         "Maintenance and repair of underwater equipment including propellers, rudders, thrusters, and sea chests while the vessel is in dry dock.",
-      image: "/images/services/dry-dock-underwater.jpg",
+      image: "/images/dry-docking/dry-dock-06.webp",
       capabilities: [
         "Propeller removal, repair, and installation",
         "Rudder and steering gear maintenance",
@@ -69,7 +69,7 @@ export const dryDockingData = {
       title: "Hull Structural Repairs",
       description:
         "Comprehensive structural repairs to vessel hulls, including steel replacement, crack repairs, and reinforcement of critical areas.",
-      image: "/images/services/dry-dock-structural.jpg",
+      image: "/images/dry-docking/dry-dock-07.webp",
       capabilities: [
         "Steel plate replacement and insert installation",
         "Weld crack detection and repair",
@@ -82,7 +82,7 @@ export const dryDockingData = {
       title: "Complete Vessel Overhauls",
       description:
         "Comprehensive overhaul of vessels including all major systems, structures, and equipment to extend operational life and improve performance.",
-      image: "/images/services/dry-dock-overhaul.jpg",
+      image: "/images/dry-docking/dry-dock-08.webp",
       capabilities: [
         "Coordinated scheduling of multiple work packages",
         "Simultaneous work on multiple vessel systems",
@@ -98,7 +98,7 @@ export const dryDockingData = {
       name: "Main Graving Dock",
       description:
         "Our largest dry dock facility, capable of accommodating vessels up to 300 meters in length, including naval destroyers, commercial tankers, and container ships.",
-      image: "/images/services/dry-dock-facility1.jpg",
+      image: "/images/dry-docking/dry-dock-09.webp",
       specifications: ["Length: 300 meters", "Width: 45 meters", "Depth: 15 meters", "Lifting capacity: 40,000 tons"],
       capabilities: [
         "Naval vessels up to destroyer class",
@@ -111,7 +111,7 @@ export const dryDockingData = {
       name: "Twin Dock",
       description:
         "Versatile floating dry dock that can be positioned as needed and provides flexibility for various vessel types and sizes.",
-      image: "/images/services/dry-dock-facility2.jpg",
+      image: "/images/dry-docking/dry-dock-10.webp",
       specifications: [
         "Length: 150 meters",
         "Width: 30 meters",
@@ -126,6 +126,10 @@ export const dryDockingData = {
       ],
     },
   ],
+
+  heroImage: "/images/dry-docking/dry-dock-01.webp",
+  overviewImage: "/images/dry-docking/dry-dock-02.webp",
+  processImage: "/images/dry-docking/dry-dock-03.webp",
 
   process: {
     description:
@@ -174,4 +178,3 @@ export const dryDockingData = {
 
   emergencyPhone: "+1 (234) 567-8999",
 }
-

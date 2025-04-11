@@ -93,12 +93,16 @@ export const fabricationData = {
     },
   ],
 
+  heroImage: "/images/fabrication/fabrication-hero.webp",
+  overviewImage: "/images/fabrication/fabrication-overview.webp",
+  qualityImage: "/images/fabrication/fabrication-07.webp",
+
   equipment: [
     {
       name: "CNC Plasma Cutting System",
       description:
         "High-definition plasma cutting system for precise cutting of various metals up to 50mm thick with minimal heat-affected zone.",
-      image: "/images/services/fabrication-equipment1.jpg",
+      image: "https://www.stylecnc.com/uploads/200310/1-2003101S64OW.jpg",
       specifications: [
         "Cutting area: 12m x 3m",
         "Thickness capacity: up to 50mm",
@@ -111,7 +115,7 @@ export const fabricationData = {
       name: "CNC Water Jet Cutting System",
       description:
         "Ultra-high pressure water jet cutting system for precision cutting of various materials without thermal effects, ideal for specialized alloys.",
-      image: "/images/services/fabrication-equipment2.jpg",
+      image: "https://fibrefusion.com/wp-content/uploads/Driver-Waterjet-Cutting.jpg",
       specifications: [
         "Cutting area: 6m x 3m",
         "Pressure: 90,000 PSI",
@@ -124,7 +128,7 @@ export const fabricationData = {
       name: "CNC Machining Center",
       description:
         "5-axis CNC machining center for complex component manufacturing with high precision and repeatability.",
-      image: "/images/services/fabrication-equipment3.jpg",
+      image: "/images/img/cnc-machine.webp",
       specifications: [
         "Work envelope: 2m x 1m x 1m",
         "5-axis simultaneous machining",
@@ -134,10 +138,10 @@ export const fabricationData = {
       ],
     },
     {
-      name: "Automated Welding Systems",
+      name: "Welding Systems",
       description:
         "Advanced automated welding systems for consistent, high-quality welds in various materials and joint configurations.",
-      image: "/images/services/fabrication-equipment4.jpg",
+      image: "https://www.crown.co.za/images/magazines/african-fusion/2025/Reeflex_Welding_machines_made_in_SA_for_African_mines.jpg",
       specifications: [
         "Processes: MIG, TIG, SAW, FCAW",
         "Materials: carbon steel, stainless steel, aluminum, exotic alloys",
@@ -219,4 +223,3 @@ export const fabricationData = {
     ],
   },
 }
-
