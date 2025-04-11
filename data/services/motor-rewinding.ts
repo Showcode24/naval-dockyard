@@ -1,4 +1,7 @@
 export const motorRewindingData = {
+  heroImage: "https://media.istockphoto.com/id/910154416/photo/rewinding-an-electric-motor-african-man-at-work.jpg?s=612x612&w=0&k=20&c=Jaj6BiEjRrcm6xf_H8qOQqWgmp-qMuRan-w8cGzyzDI=",
+  overviewImage: "https://dam-assets.fluke.com/s3fs-public/novice2-F-tis60_15a_h-1500x1000_0.jpg",
+  qualityImage: "https://www.teuntin.co.za/wp-content/uploads/2016/07/Rewinding-1.jpg",
   overview:
     "Our Electrical Motor Rewinding services provide comprehensive repair, maintenance, and rewinding solutions for all types of electric motors. With specialized equipment and experienced technicians, we restore motors to optimal performance, extending their service life and improving operational efficiency.",
   keyFeatures: [

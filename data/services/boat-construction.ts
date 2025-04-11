@@ -1,4 +1,5 @@
 export const boatConstructionData = {
+  heroImage: "/images/barge/barge-06.webp",
   overview:
     "Our Boat & Barge Construction services provide comprehensive design, fabrication, and outfitting solutions for commercial and specialized vessels. With advanced facilities and experienced shipbuilders, we deliver high-quality watercraft tailored to your specific operational requirements and performance expectations.",
   keyFeatures: [
@@ -8,6 +9,7 @@ export const boatConstructionData = {
     "Rigorous quality control and testing",
     "Regulatory compliance and certification support",
   ],
+  overviewImage: "/images/barge/barge-06.webp",
   services: [
     {
       title: "Custom Boat Construction",
@@ -81,6 +83,7 @@ export const boatConstructionData = {
       },
     ],
   },
+  qualityImage: "/images/barge/barge-01.webp",
   emergencyServices:
     "We offer expedited vessel repair and modification services for urgent operational needs. Our skilled team can provide rapid response to address critical issues and minimize downtime for your fleet.",
   emergencyPhone: "+1-800-555-6789",

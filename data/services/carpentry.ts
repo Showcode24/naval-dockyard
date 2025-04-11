@@ -1,4 +1,7 @@
 export const carpentryData = {
+  heroImage: "https://img.freepik.com/premium-photo/african-american-carpenter-drills-piece-wood-carpentry-workshop_720544-564.jpg",
+  overviewImage: "https://media.defense.gov/2017/Aug/14/2001792565/-1/-1/0/170811-M-UA291-0042D.JPG",
+  qualityImage: "https://www.rmmarine.it/wp-content/uploads/2020/12/Sea-water-intake-RM-Marine-Carpentry.jpg",
   overview:
     "Our Carpentry & Furniture Works provide custom woodworking solutions for maritime and commercial applications. From vessel interiors to custom furniture, our skilled craftsmen combine traditional woodworking techniques with modern technology to create beautiful, functional, and durable wooden components and furnishings.",
   keyFeatures: [

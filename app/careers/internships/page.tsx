@@ -6,7 +6,7 @@ import { CheckCircle2 } from "lucide-react"
 export default function InternshipsPage() {
   return (
     <>
-      <section className="pt-32 pb-16 bg-[url('/contact-us.jpg')] bg-cover bg-center text-white relative">
+      <section className="pt-32 pb-16 bg-[url('/images/img/internship-01.webp')] bg-cover bg-center text-white relative">
         <div className="absolute inset-0 bg-black/70 z-0"></div>
         <div className="container mx-auto page-header-content">
           <div className="max-w-3xl">
@@ -36,7 +36,7 @@ export default function InternshipsPage() {
             </div>
             <div className="relative rounded-lg overflow-hidden shadow-xl h-[400px]">
               <Image
-                src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                src="/images/img/internship-02.webp"
                 alt="Naval Dockyard Interns"
                 fill
                 className="object-cover"
@@ -165,7 +165,7 @@ export default function InternshipsPage() {
               </div>
               <div className="relative h-64 rounded-lg overflow-hidden">
                 <Image
-                  src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                  src="/images/img/internship-03.webp"
                   alt="Team working on project"
                   fill
                   className="object-cover"
@@ -187,7 +187,7 @@ export default function InternshipsPage() {
               <Link href="/contact">Apply for a Program</Link>
             </Button>
             <Button variant="outline" size="lg" asChild>
-              <Link href="/careers">Explore Career Opportunities</Link>
+              <Link href="/careers/openings">Explore Career Opportunities</Link>
             </Button>
           </div>
         </div>
