@@ -128,7 +128,7 @@ export const fabricationData = {
       name: "CNC Machining Center",
       description:
         "5-axis CNC machining center for complex component manufacturing with high precision and repeatability.",
-      image: "https://m.cncmachiningcentre.com/photo/pc36694758-cnc_gantry_machining_center_gantry_double_column_gmc_1611_small_gantry_milling_machine_machining_center.jpg",
+      image: "/images/img/cnc-machine.webp",
       specifications: [
         "Work envelope: 2m x 1m x 1m",
         "5-axis simultaneous machining",

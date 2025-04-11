@@ -20,19 +20,19 @@ export interface StatItem {
 
 export const statsData: StatItem[] = [
   {
-    value: 120,
+    value: 24,
     label: "Ships Serviced Annually",
     description: "Naval and commercial vessels maintained each year",
     icon: Ship,
   },
   {
-    value: 35,
+    value: 6,
     label: "Active Naval Projects",
     description: "Current military vessel projects in progress",
     icon: Shield,
   },
   {
-    value: 450,
+    value: 10,
     label: "Civilian Vessels Completed",
     description: "Commercial vessels successfully serviced",
     icon: Anchor,
@@ -159,25 +159,25 @@ export interface Testimonial {
 
 export const testimonialData: Testimonial[] = [
   {
-    name: "Rear Admiral Ibrahim Adamu",
-    position: "Nigerian Navy Fleet Commander",
+    name: "Capt. MV Stark",
+    position: "Capt. MV Stark",
     quote:
       "Naval Dockyard Limited has consistently delivered exceptional repair and maintenance services for our naval vessels. Their attention to detail and commitment to quality is unmatched in the region.",
   },
   {
     name: "Mrs. Amina Okonkwo",
-    position: "Fleet Manager, West African Shipping Lines",
+    position: "Managing Director, Westfield",
     quote:
       "We've been working with Naval Dockyard Limited for over 5 years, and they've never let us down. Their team's expertise and efficiency have saved us both time and money on our commercial fleet maintenance.",
   },
   {
-    name: "Dr. Emmanuel Okafor",
-    position: "Director of Operations, Niger Delta Oil & Gas",
+    name: "Captain Albert Ezin Badou",
+    position: "CNS, Republic of Benin",
     quote:
       "For offshore platform maintenance, Naval Dockyard Limited has been our trusted partner. Their specialized knowledge of marine engineering has been invaluable to our operations in the Niger Delta.",
   },
   {
-    name: "Captain Oluwaseun Adeyemi",
+    name: "Dr. Emmanuel Okafor",
     position: "Vessel Owner",
     quote:
       "The quality of work and personal attention I received for my vessel's overhaul was extraordinary. The team at Naval Dockyard Limited treats every ship with the same level of care, regardless of size.",

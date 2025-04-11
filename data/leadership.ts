@@ -4,13 +4,13 @@ export const leadershipData = {
       name: "Rear Admiral I.E. Shehu",
       position: "Admiral Superintendent Naval Dockyard Limited",
       bio: "With extensive naval experience, the Admiral Superintendent brings exceptional leadership and strategic vision to Naval Dockyard Limited. Prior to this role, they commanded key naval operations and oversaw major fleet maintenance projects.",
-      image: "/images/leadership/ceo.jpg",
+      image: "/images/executives/asn.png",
     },
     {
       name: "Commodore I.U. Agwu",
       position: "General Manager Plans",
       bio: "As General Manager Plans, they oversee all planning and strategic aspects of our facilities. With extensive experience in maritime planning and operations, they ensure maximum efficiency while maintaining our high quality standards.",
-      image: "/images/leadership/plans.jpg",
+      image: "/images/executives/gm-plans.png",
     },
     {
       name: "Commodore A.O. Obisesan",

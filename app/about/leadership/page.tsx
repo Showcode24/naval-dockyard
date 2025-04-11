@@ -145,7 +145,7 @@ export default function LeadershipPage() {
                           src={executive.image || "/placeholder.svg"}
                           alt={executive.name}
                           fill
-                          className="object-cover"
+                          className="object-cover object-top rounded-t-lg"
                         />
 
                         {/* Gradient overlay */}

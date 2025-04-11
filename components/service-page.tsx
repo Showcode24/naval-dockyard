@@ -546,7 +546,7 @@ export default function ServicePage({
                 <Link href={contactPath}>Request Expedited Service</Link>
               </Button>
               {data.emergencyPhone && (
-                <Button variant="outline" className="border-white text-white hover:bg-white/10" size="lg" asChild>
+                <Button variant="outline" className="border-white text-black hover:bg-white/10" size="lg" asChild>
                   <a href={`tel:${data.emergencyPhone}`}>{data.emergencyPhone}</a>
                 </Button>
               )}
