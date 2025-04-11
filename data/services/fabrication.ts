@@ -102,7 +102,7 @@ export const fabricationData = {
       name: "CNC Plasma Cutting System",
       description:
         "High-definition plasma cutting system for precise cutting of various metals up to 50mm thick with minimal heat-affected zone.",
-      image: "/images/fabrication/equipment-1.webp",
+      image: "https://www.stylecnc.com/uploads/200310/1-2003101S64OW.jpg",
       specifications: [
         "Cutting area: 12m x 3m",
         "Thickness capacity: up to 50mm",
@@ -115,7 +115,7 @@ export const fabricationData = {
       name: "CNC Water Jet Cutting System",
       description:
         "Ultra-high pressure water jet cutting system for precision cutting of various materials without thermal effects, ideal for specialized alloys.",
-      image: "/images/fabrication/equipment-2.webp",
+      image: "https://fibrefusion.com/wp-content/uploads/Driver-Waterjet-Cutting.jpg",
       specifications: [
         "Cutting area: 6m x 3m",
         "Pressure: 90,000 PSI",
@@ -128,7 +128,7 @@ export const fabricationData = {
       name: "CNC Machining Center",
       description:
         "5-axis CNC machining center for complex component manufacturing with high precision and repeatability.",
-      image: "/images/fabrication/equipment-3.webp",
+      image: "https://m.cncmachiningcentre.com/photo/pc36694758-cnc_gantry_machining_center_gantry_double_column_gmc_1611_small_gantry_milling_machine_machining_center.jpg",
       specifications: [
         "Work envelope: 2m x 1m x 1m",
         "5-axis simultaneous machining",
@@ -138,10 +138,10 @@ export const fabricationData = {
       ],
     },
     {
-      name: "Automated Welding Systems",
+      name: "Welding Systems",
       description:
         "Advanced automated welding systems for consistent, high-quality welds in various materials and joint configurations.",
-      image: "/images/fabrication/equipment-4.webp",
+      image: "https://www.crown.co.za/images/magazines/african-fusion/2025/Reeflex_Welding_machines_made_in_SA_for_African_mines.jpg",
       specifications: [
         "Processes: MIG, TIG, SAW, FCAW",
         "Materials: carbon steel, stainless steel, aluminum, exotic alloys",

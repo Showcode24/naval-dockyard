@@ -6,7 +6,7 @@ import { Shield, Users, Award, Heart, BookOpen, Compass, Zap, Clock } from "luci
 export default function BenefitsPage() {
   return (
     <>
-      <section className="pt-32 pb-16 bg-[url('/contact-us.jpg')] bg-cover bg-center text-white relative">
+      <section className="pt-32 pb-16 bg-[url('/images/facilities/facilities-01.webp')] bg-cover bg-center text-white relative">
         <div className="absolute inset-0 bg-black/70 z-0"></div>
         <div className="container mx-auto page-header-content">
           <div className="max-w-3xl">
@@ -76,7 +76,7 @@ export default function BenefitsPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
             <div className="relative rounded-lg overflow-hidden shadow-xl h-[400px]">
               <Image
-                src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                src="/images/img/team.webp"
                 alt="Team collaboration"
                 fill
                 className="object-cover"

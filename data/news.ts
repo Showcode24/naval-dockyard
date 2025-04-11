@@ -1,3 +1,16 @@
+type Article = {
+  title: string;
+  slug: string;
+  excerpt: string;
+  content?: string;
+  image: string;
+  date: string;
+  author?: string;
+  category: string;
+};
+
+const sortByNewestDate = (a: Article, b: Article): number => new Date(b.date).getTime() - new Date(a.date).getTime();
+
 export const newsData = {
   featuredArticles: [
     {
@@ -55,7 +68,7 @@ export const newsData = {
       author: "Ibrahim Musa",
       category: "Events",
     },
-  ],
+  ].sort(sortByNewestDate),
 
   recentArticles: [
     {
@@ -76,16 +89,7 @@ export const newsData = {
       date: "September 12, 2024",
       category: "Events",
     },
-    // {
-    //   title: "Nigerian Society of Engineers Visits NDL to Explore Collaboration Opportunities",
-    //   slug: "nse-visit-ndl-collaboration",
-    //   excerpt:
-    //     "In September 2024, the Nigerian Society of Engineers visited NDL to discuss potential collaborations, including workshops and seminars, to enhance engineering practices in Nigeria.",
-    //   image: "/images/news/nse-visit-ndl.jpg",
-    //   date: "September 17, 2024",
-    //   category: "Events",
-    // },
-  ],
+  ].sort(sortByNewestDate),
 
   categories: [
     { name: "Projects", count: 6, slug: "projects" },

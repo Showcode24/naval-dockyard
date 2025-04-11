@@ -13,7 +13,7 @@ export const carpentryData = {
       title: "Marine Carpentry",
       description:
         "Specialized woodworking services for vessels, including interior outfitting, cabinetry, and structural components.",
-      image: "/images/carpentry/carpentry-1.webp",
+      image: "https://img.freepik.com/premium-photo/african-american-carpenter-drills-piece-wood-carpentry-workshop_720544-564.jpg",
       capabilities: [
         "Custom cabinetry and built-ins",
         "Teak decking and trim work",
@@ -24,7 +24,7 @@ export const carpentryData = {
     {
       title: "Custom Furniture",
       description: "Design and fabrication of custom furniture pieces for maritime and commercial applications.",
-      image: "/images/carpentry/carpentry-2.webp",
+      image: "https://media.defense.gov/2017/Aug/14/2001792565/-1/-1/0/170811-M-UA291-0042D.JPG",
       capabilities: [
         "Fixed and freestanding furniture",
         "Ergonomic designs for marine environments",
@@ -36,7 +36,7 @@ export const carpentryData = {
       title: "Repair & Restoration",
       description:
         "Expert repair and restoration services for wooden components, antique furniture, and historic vessels.",
-      image: "/images/carpentry/carpentry-3.webp",
+      image: "https://www.rmmarine.it/wp-content/uploads/2020/12/Sea-water-intake-RM-Marine-Carpentry.jpg",
       capabilities: [
         "Structural wood repairs",
         "Finish restoration and refinishing",

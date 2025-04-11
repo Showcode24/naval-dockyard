@@ -13,7 +13,7 @@ export const machineShopData = {
       title: "CNC Machining",
       description:
         "Precision machining services using advanced CNC equipment for the production of complex components.",
-      image: "/images/machine-shop/machine-shop-1.webp",
+      image: "https://www.metalockengineering.com/media/4h1d0m0j/cnc-mill-press-machining-2.jpg?mode=crop&width=800&height=600&format=webp&quality=75",
       capabilities: [
         "Multi-axis CNC milling and turning",
         "Large-scale machining capabilities",
@@ -24,7 +24,7 @@ export const machineShopData = {
     {
       title: "Foundry Services",
       description: "Comprehensive metal casting services for the production of custom components in various alloys.",
-      image: "/images/machine-shop/machine-shop-2.webp",
+      image: "https://www.kaytek.es/wp-content/uploads/2022/02/fundicion-vizcaya.jpg",
       capabilities: [
         "Sand casting for large components",
         "Investment casting for precision parts",
@@ -35,7 +35,7 @@ export const machineShopData = {
     {
       title: "Fabrication & Welding",
       description: "Custom metal fabrication and welding services for maritime and industrial applications.",
-      image: "/images/machine-shop/machine-shop-3.webp",
+      image: "/images/img/welding.PNG",
       capabilities: [
         "Structural steel fabrication",
         "Pipe fitting and fabrication",

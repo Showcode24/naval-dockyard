@@ -173,7 +173,7 @@ export default function MachineShopPage() {
           }}
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=2070&auto=format&fit=crop')",
+              "url('/images/img/foundry.jpg')",
             backgroundSize: "cover",
           }}
         />
@@ -238,7 +238,7 @@ export default function MachineShopPage() {
               }}
             >
               <Image
-                src="/images/img/machine-shop.webp"
+                src="/images/img/foundry.jpg"
                 alt="Machine Shop Services"
                 width={600}
                 height={400}
@@ -390,7 +390,7 @@ export default function MachineShopPage() {
               }}
             >
               <Image
-                src="/images/img/machine-shop-quality.webp"
+                src="https://www.trueblueenergy.com/wp-content/uploads/2018/12/engineering.jpg"
                 alt="Quality Assurance"
                 width={600}
                 height={400}

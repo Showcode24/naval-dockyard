@@ -173,7 +173,7 @@ export default function CarpentryPage() {
           }}
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=2069&auto=format&fit=crop')",
+              "url('/images/img/carpentry.jpg')",
             backgroundSize: "cover",
           }}
         />
@@ -238,7 +238,7 @@ export default function CarpentryPage() {
               }}
             >
               <Image
-                src="/images/img/carpentry.webp"
+                src="https://media.istockphoto.com/id/1457936102/photo/african-american-carpenter-man-use-tape-measure-to-work-with-timber-on-table-during-work-in.jpg?s=612x612&w=0&k=20&c=yWNyEKtR89_EGVkHQ14wzWWreeDYYUjgtH89Fvffd70="
                 alt="Carpentry Services"
                 width={600}
                 height={400}
@@ -390,7 +390,7 @@ export default function CarpentryPage() {
               }}
             >
               <Image
-                src="/images/img/carpentry-quality.webp"
+                src="https://epoxycraft.com/wp-content/uploads/2024/10/Picture1.png"
                 alt="Quality Assurance"
                 width={600}
                 height={400}

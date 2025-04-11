@@ -173,7 +173,7 @@ export default function MarineLogisticsPage() {
           }}
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/photo-1504639725590-34d0984388bd?q=80&w=1974&auto=format&fit=crop')",
+              "url('/images/img/logistics.webp')",
             backgroundSize: "cover",
           }}
         />
@@ -238,7 +238,7 @@ export default function MarineLogisticsPage() {
               }}
             >
               <Image
-                src="/images/img/marine-logistics.webp"
+                src="/images/img/logistics.webp"
                 alt="Marine Logistics Services"
                 width={600}
                 height={400}
@@ -390,7 +390,7 @@ export default function MarineLogisticsPage() {
               }}
             >
               <Image
-                src="/images/img/marine-logistics-quality.webp"
+                src="/images/img/logistics.webp"
                 alt="Quality Assurance"
                 width={600}
                 height={400}

@@ -16,7 +16,7 @@ export const galvanizingData = {
       title: "Hot-Dip Galvanizing for Steel Structures",
       description:
         "Immersion of steel components in molten zinc to create a durable, long-lasting protective coating that prevents corrosion in marine environments.",
-      image: "/images/galvanizing/galvanizing-03.webp",
+      image: "/images/electroplating/electroplating-02.webp",
       capabilities: [
         "Processing of large structural components up to 12 meters",
         "Double-dipping techniques for oversized structures",
@@ -29,7 +29,7 @@ export const galvanizingData = {
       title: "Batch Processing for Small Components",
       description:
         "Efficient processing of large quantities of smaller components, ensuring consistent quality and corrosion protection across all parts.",
-      image: "/images/galvanizing/galvanizing-04.webp",
+      image: "/images/electroplating/electroplating-03.webp",
       capabilities: [
         "High-volume processing capabilities",
         "Specialized jigging for small parts",
@@ -42,7 +42,7 @@ export const galvanizingData = {
       title: "Quality Testing & Certification",
       description:
         "Comprehensive testing of galvanized coatings for thickness, adhesion, and uniformity, with certification to relevant marine standards.",
-      image: "/images/galvanizing/galvanizing-05.webp",
+      image: "/images/electroplating/electroplating-04.webp",
       capabilities: [
         "Coating thickness measurement using magnetic gauges",
         "Adhesion testing to ASTM standards",
@@ -53,9 +53,9 @@ export const galvanizingData = {
     },
   ],
 
-  heroImage: "/images/galvanizing/galvanizing-01.webp",
-  overviewImage: "/images/galvanizing/galvanizing-02.webp",
-  qualityImage: "/images/galvanizing/galvanizing-06.webp",
+  heroImage: "/images/electroplating/electroplating-03.webp",
+  overviewImage: "https://www.dormanlongeng.com/wp-content/uploads/2024/09/image00036-scaled.jpeg",
+  qualityImage: "https://www.dormanlongeng.com/wp-content/uploads/2024/09/image00034-scaled.jpeg",
   
   process: [
     {

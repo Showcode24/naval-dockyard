@@ -135,7 +135,7 @@ export default function Galvanizing() {
       </section>
 
       {/* Emergency Services Section */}
-      <section className="py-12 bg-primary text-white">
+      <section className="py-12 bg-primary text-white mx-auto container rounded-2xl mb-10">
         <div className="container mx-auto text-center">
           <h2 className="text-3xl font-bold mb-6">Expedited Galvanizing Services</h2>
           <p className="text-lg mb-8 max-w-2xl mx-auto">
@@ -145,7 +145,7 @@ export default function Galvanizing() {
             <Button variant="secondary" size="lg" asChild>
               <Link href="/contact">Request Expedited Service</Link>
             </Button>
-            <Button variant="outline" className="border-white hover:bg-white/10" size="lg" asChild>
+            <Button variant="outline" className="border-white text-black hover:bg-white/10" size="lg" asChild>
               <a href={`tel:${galvanizingData.emergencyPhone}`}>{galvanizingData.emergencyPhone}</a>
             </Button>
           </div>

@@ -13,7 +13,7 @@ export const motorRewindingData = {
       title: "Motor Rewinding",
       description:
         "Complete rewinding services for AC and DC motors of all sizes, from fractional horsepower to large industrial units.",
-      image: "/images/motor-rewinding/motor-rewinding-1.webp",
+      image: "https://media.istockphoto.com/id/910154416/photo/rewinding-an-electric-motor-african-man-at-work.jpg?s=612x612&w=0&k=20&c=Jaj6BiEjRrcm6xf_H8qOQqWgmp-qMuRan-w8cGzyzDI=",
       capabilities: [
         "Stator and rotor rewinding",
         "Custom coil manufacturing",
@@ -25,7 +25,7 @@ export const motorRewindingData = {
       title: "Motor Repair & Overhaul",
       description:
         "Comprehensive repair and overhaul services addressing mechanical and electrical issues in damaged or worn motors.",
-      image: "/images/motor-rewinding/motor-rewinding-2.webp",
+      image: "https://www.teuntin.co.za/wp-content/uploads/2016/07/Rewinding-1.jpg",
       capabilities: [
         "Bearing replacement and shaft repair",
         "Commutator and slip ring reconditioning",
@@ -37,7 +37,7 @@ export const motorRewindingData = {
       title: "Testing & Certification",
       description:
         "Thorough testing and certification services to verify motor performance and reliability after repair.",
-      image: "/images/motor-rewinding/motor-rewinding-3.webp",
+      image: "https://dam-assets.fluke.com/s3fs-public/novice2-F-tis60_15a_h-1500x1000_0.jpg",
       capabilities: [
         "Insulation resistance testing",
         "Surge comparison testing",

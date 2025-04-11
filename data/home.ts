@@ -125,7 +125,7 @@ export const serviceSummaryData: ServiceSummary[] = [
     description: "High-quality metal electroplating services for marine applications",
     extendedDescription:
       "Our advanced electroplating services provide superior corrosion resistance and aesthetic finishes for marine components operating in harsh saltwater environments.",
-    image: "/images/img/electroplating.webp",
+    image: "/images/electroplating/electroplating-05.webp",
     icon: Zap,
     features: [
       "Copper, nickel & chrome plating",
@@ -139,7 +139,7 @@ export const serviceSummaryData: ServiceSummary[] = [
     description: "Hot-dip galvanizing for superior corrosion protection",
     extendedDescription:
       "We offer industrial-scale hot-dip galvanizing services that provide long-lasting protection against corrosion for steel components used in marine and offshore applications.",
-    image: "/images/img/galvanizing.webp",
+    image: "/images/electroplating/electroplating-03.webp",
     icon: Shield,
     features: [
       "Hot-dip galvanizing for steel structures",
@@ -194,32 +194,22 @@ export interface Client {
 export const clientsData: Client[] = [
   {
     name: "Nigerian Navy",
-    logo: "/images/logo/dockyard-logo-2.png",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/e/e7/Badge_of_the_Nigerian_Navy.svg",
     highlighted: true,
   },
   {
-    name: "West African Shipping Lines",
-    logo: "/images/clients/shipping-logo.png",
+    name: "NIMASA",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/c/c0/Wp7.NIM.LOGO.jpg",
     highlighted: false,
   },
   {
-    name: "Lagos Maritime Authority",
-    logo: "/images/clients/maritime-logo.png",
+    name: "Republic of Benin Navy",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/The_Westfield_Group_logo.svg/640px-The_Westfield_Group_logo.svg.png",
     highlighted: false,
   },
   {
-    name: "Niger Delta Oil & Gas",
-    logo: "/images/clients/oil-gas-logo.png",
-    highlighted: false,
-  },
-  {
-    name: "Nigerian Maritime Administration",
-    logo: "/images/clients/defense-logo.png",
-    highlighted: false,
-  },
-  {
-    name: "Gulf of Guinea Security Initiative",
-    logo: "/images/clients/marine-logo.png",
+    name: "Westfield",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Coat_of_arms_of_Benin.svg/1200px-Coat_of_arms_of_Benin.svg.png",
     highlighted: false,
   },
 ]

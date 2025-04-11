@@ -173,7 +173,7 @@ export default function MotorRewindingPage() {
           }}
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/photo-1581092921461-7d65ca45393a?q=80&w=2070&auto=format&fit=crop')",
+              "url('https://qess.net/wp-content/uploads/2019/02/rewinding.jpg')",
             backgroundSize: "cover",
           }}
         />
@@ -238,7 +238,7 @@ export default function MotorRewindingPage() {
               }}
             >
               <Image
-                src="/images/img/motor-rewinding.webp"
+                src="https://rewindingpower.com/img/hp-rewinding-services.jpg"
                 alt="Motor Rewinding Services"
                 width={600}
                 height={400}
@@ -390,7 +390,7 @@ export default function MotorRewindingPage() {
               }}
             >
               <Image
-                src="/images/img/motor-rewinding-quality.webp"
+                src="https://www.capearm.co.za/wp-content/uploads/2022/03/2019-11-motor-rewinding-service-atlanta-ga.jpg"
                 alt="Quality Assurance"
                 width={600}
                 height={400}

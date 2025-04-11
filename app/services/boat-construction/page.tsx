@@ -173,7 +173,7 @@ export default function BoatConstructionPage() {
           }}
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/photo-1605281317010-fe5ffe798166?q=80&w=2044&auto=format&fit=crop')",
+              "url('/images/barge/barge-01.webp')",
             backgroundSize: "cover",
           }}
         />
@@ -238,7 +238,7 @@ export default function BoatConstructionPage() {
               }}
             >
               <Image
-                src="/images/ship-design-ship-design-12.webp"
+                src="/images/barge/barge-03.webp"
                 alt="Boat Construction Services"
                 width={600}
                 height={400}

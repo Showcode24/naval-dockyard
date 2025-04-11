@@ -12,7 +12,7 @@ export const boatConstructionData = {
     {
       title: "Custom Boat Construction",
       description: "Design and construction of custom boats for commercial, military, and specialized applications.",
-      image: "/images/ship-design/ship-design-5.webp",
+      image: "/images/barge/barge-08.webp",
       capabilities: [
         "Workboats and crew transfer vessels",
         "Patrol and security craft",
@@ -24,14 +24,14 @@ export const boatConstructionData = {
       title: "Barge Construction",
       description:
         "Fabrication of barges and floating platforms for cargo transport, work platforms, and specialized applications.",
-      image: "/images/ship-design/ship-design-8.webp",
+      image: "/images/barge/barge-04.webp",
       capabilities: ["Deck cargo barges", "Liquid cargo barges", "Accommodation barges", "Specialized work platforms"],
     },
     {
       title: "Vessel Outfitting",
       description:
         "Comprehensive outfitting services including mechanical systems, electrical systems, and interior accommodations.",
-      image: "/images/ship-design/ship-design-10.webp",
+      image: "/images/barge/barge-06.webp",
       capabilities: [
         "Propulsion system installation",
         "Electrical and control systems",
