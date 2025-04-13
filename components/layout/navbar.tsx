@@ -120,12 +120,12 @@ export default function Navbar() {
           <span className="sr-only">Toggle menu</span>
         </Button>
       </SheetTrigger>
-      <SheetContent side="left" className="w-[300px] sm:w-[400px]">
+      <SheetContent side="left" className="w-[300px] sm:w-[400px] overflow-y-auto">
         {/* Screen reader only title and description */}
         <SheetTitle className="sr-only">Navigation</SheetTitle>
         <SheetDescription className="sr-only">Browse our site sections and services.</SheetDescription>
 
-        <div className="flex flex-col gap-6 py-4 mt-4">
+        <div className="flex flex-col gap-6 py-4 mt-4 h-full">
           <Link href="/" className="flex items-center gap-2" onClick={closeSheet}>
             <div className="relative h-10 w-10">
               <Image src="/images/logo/dockyard-logo-2.png" alt="Nigerian Navy" fill className="object-contain" />
@@ -133,51 +133,55 @@ export default function Navbar() {
             <span className="font-bold text-lg">Naval Dockyard Ltd</span>
           </Link>
 
-          <Accordion type="single" collapsible className="w-full">
-            {navData.map((item) => (
-              <AccordionItem key={item.key} value={item.key}>
-                {item.subItems ? (
-                  <>
-                    <AccordionTrigger className="py-3 text-base font-medium">{item.title}</AccordionTrigger>
-                    <AccordionContent>
-                      <div className="flex flex-col space-y-2 pl-4">
-                        {item.subItems.map((subItem) => (
-                          <Link
-                            key={subItem.key}
-                            href={subItem.href}
-                            className="py-2 text-sm flex items-center gap-2 hover:text-blue-500 transition-colors"
-                            onClick={closeSheet}
-                          >
-                            <ChevronRight className="h-4 w-4" />
-                            <div>
-                              <div className="font-medium">{subItem.title}</div>
-                              <div className="text-xs text-muted-foreground">{subItem.description}</div>
-                            </div>
-                          </Link>
-                        ))}
-                      </div>
-                    </AccordionContent>
-                  </>
-                ) : (
-                  <div className="py-3">
-                    <Link
-                      href={item.href}
-                      className="flex items-center text-base font-medium hover:text-blue-500 transition-colors"
-                      onClick={closeSheet}
-                    >
-                      {item.title}
-                    </Link>
-                  </div>
-                )}
-              </AccordionItem>
-            ))}
-          </Accordion>
+          <div className="flex-1 overflow-y-auto">
+            <Accordion type="single" collapsible className="w-full">
+              {navData.map((item) => (
+                <AccordionItem key={item.key} value={item.key}>
+                  {item.subItems ? (
+                    <>
+                      <AccordionTrigger className="py-3 text-base font-medium">{item.title}</AccordionTrigger>
+                      <AccordionContent>
+                        <div className="flex flex-col space-y-2 pl-4">
+                          {item.subItems.map((subItem) => (
+                            <Link
+                              key={subItem.key}
+                              href={subItem.href}
+                              className="py-2 text-sm flex items-center gap-2 hover:text-blue-500 transition-colors"
+                              onClick={closeSheet}
+                            >
+                              <ChevronRight className="h-4 w-4" />
+                              <div>
+                                <div className="font-medium">{subItem.title}</div>
+                                <div className="text-xs text-muted-foreground">{subItem.description}</div>
+                              </div>
+                            </Link>
+                          ))}
+                        </div>
+                      </AccordionContent>
+                    </>
+                  ) : (
+                    <div className="py-3">
+                      <Link
+                        href={item.href}
+                        className="flex items-center text-base font-medium hover:text-blue-500 transition-colors"
+                        onClick={closeSheet}
+                      >
+                        {item.title}
+                      </Link>
+                    </div>
+                  )}
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
 
-          <Button className="w-full" asChild>
-            <Link href="/contact" onClick={closeSheet}>
-              Get a Quote
-            </Link>
-          </Button>
+          <div className="mt-auto pt-4">
+            <Button className="w-full" asChild>
+              <Link href="/contact" onClick={closeSheet}>
+                Get a Quote
+              </Link>
+            </Button>
+          </div>
         </div>
       </SheetContent>
     </Sheet>
