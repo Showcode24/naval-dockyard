@@ -2,7 +2,7 @@ export const jobOpeningsData = {
   overview:
     "At Naval Dockyard, we offer rewarding careers in the maritime industry. Join our team of skilled professionals working on challenging projects for naval and commercial clients. We value innovation, expertise, and commitment to excellence.",
 
-  recruitmentProcess: [
+  recruitmentProcess: [                       
     "Application review by our HR team",
     "Initial phone or video screening interview",
     "Technical assessment or skills test (for technical positions)",
