@@ -16,7 +16,10 @@ export interface StatItem {
   label: string
   description: string
   icon: React.ElementType
+  link: string
 }
+
+
 
 export const statsData: StatItem[] = [
   {
@@ -24,20 +27,24 @@ export const statsData: StatItem[] = [
     label: "Ships Serviced Annually",
     description: "Naval and commercial vessels maintained each year",
     icon: Ship,
+    link: "/portfolio/military", 
   },
   {
     value: 6,
     label: "Active Naval Projects",
     description: "Current military vessel projects in progress",
     icon: Shield,
+    link: "/portfolio/military",
   },
   {
     value: 10,
     label: "Civilian Vessels Completed",
     description: "Commercial vessels successfully serviced",
     icon: Anchor,
+    link: "/portfolio/commercial",
   },
 ]
+
 
 // Service summary for homepage
 export interface ServiceSummary {
@@ -209,6 +216,36 @@ export const clientsData: Client[] = [
   },
   {
     name: "Westfield",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Coat_of_arms_of_Benin.svg/1200px-Coat_of_arms_of_Benin.svg.png",
+    highlighted: false,
+  },
+  {
+    name: "Admirality Maritime Services Limited",
+    logo: "https://amsl.ng/assets/images/logo.png",
+    highlighted: false,
+  },
+  {
+    name: "DormanLong Engineering Limited",
+    logo: "https://image.pitchbook.com/Bi1dS4otodVGdUqlGdiETTCvj3K1665398808780_200x200",
+    highlighted: false,
+  },
+  {
+    name: "Portplus limited",
+    logo: "https://portplusltd.com/wp-content/themes/portplus/images/logo.png",
+    highlighted: false,
+  },
+  {
+    name: "Century Group",
+    logo: "https://ceslintlgroup.com/wp-content/uploads/2024/05/cropped-CG-Large_200.png",
+    highlighted: false,
+  },
+  {
+    name: "Shipowners Association of Nigeria",
+    logo: "https://lh5.googleusercontent.com/proxy/bCmv6N_gpd0F-nRm_H3l_5D_dtb5pK7ywepGM-3pUDs0BYhSXZZN5s-_0Pwkcgc8T8-rFe07-6SOU1NEuQpt",
+    highlighted: false,
+  },
+  {
+    name: "GOG Marine",
     logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Coat_of_arms_of_Benin.svg/1200px-Coat_of_arms_of_Benin.svg.png",
     highlighted: false,
   },

@@ -2,25 +2,53 @@
 
 import type React from "react"
 
-import { useRef, useState } from "react"
+import { useRef, useState, useEffect } from "react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { leadershipData } from "@/data/leadership"
-import { Mail, Linkedin, ChevronDown, ChevronUp } from "lucide-react"
+import { ChevronDown, ChevronUp } from "lucide-react"
 import { motion, useInView } from "framer-motion"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 
 export default function LeadershipPage() {
   const heroRef = useRef(null)
   const executivesRef = useRef(null)
-  const directorsRef = useRef(null)
   const joinRef = useRef(null)
   const [expandedBio, setExpandedBio] = useState<number | null>(null)
-  const [flippedCard, setFlippedCard] = useState<number | null>(null)
+  const [autoPlayEnabled, setAutoPlayEnabled] = useState(true)
 
   const isExecutivesInView = useInView(executivesRef, { once: true, amount: 0.1 })
-  const isDirectorsInView = useInView(directorsRef, { once: true, amount: 0.1 })
   const isJoinInView = useInView(joinRef, { once: true, amount: 0.3 })
+
+  // Auto-cycle through executive bios
+  useEffect(() => {
+    if (!autoPlayEnabled || !isExecutivesInView) return
+
+    const interval = setInterval(() => {
+      setExpandedBio((prev) => {
+        // If we're at the end of the list, go back to null (all closed)
+        if (prev === leadershipData.executives.length - 1) {
+          return null
+        }
+        // If all are closed (null), open the first one
+        if (prev === null) {
+          return 0
+        }
+        // Otherwise, open the next one
+        return prev + 1
+      })
+    }, 3000) // Change every 3 seconds
+
+    return () => clearInterval(interval)
+  }, [isExecutivesInView, autoPlayEnabled])
+
+  // Disable auto-play when user interacts manually
+  const handleManualToggle = (index: number) => {
+    setAutoPlayEnabled(false)
+    setExpandedBio(expandedBio === index ? null : index)
+  }
 
   const cardVariants = {
     hidden: { opacity: 0, y: 50 },
@@ -122,57 +150,67 @@ export default function LeadershipPage() {
               {leadershipData.executives.map((executive, index) => (
                 <motion.div
                   key={index}
-                  className="relative perspective-1000 h-[550px]"
                   custom={index}
                   initial="hidden"
                   animate={isExecutivesInView ? "visible" : "hidden"}
                   variants={cardVariants}
-                  onClick={() => setFlippedCard(flippedCard === index ? null : index)}
                 >
-                  <motion.div
-                    className="absolute w-full h-full"
-                    animate={{
-                      rotateY: flippedCard === index ? 180 : 0,
-                      zIndex: flippedCard === index ? 0 : 1,
-                    }}
-                    transition={{ duration: 0.6, type: "spring", stiffness: 300, damping: 20 }}
-                    style={{ transformStyle: "preserve-3d", backfaceVisibility: "hidden" }}
-                  >
-                    {/* Front of card */}
-                    <div className="absolute inset-0 bg-background rounded-lg overflow-hidden shadow-lg border border-border h-full w-full">
-                      <motion.div className="relative h-80" whileHover={{ scale: 1.05 }} transition={{ duration: 0.4 }}>
-                        <Image
-                          src={executive.image || "/placeholder.svg"}
+                  <Card className="overflow-hidden h-full border border-border/40 hover:border-primary/40 transition-all duration-300 hover:shadow-lg">
+                    <div className="bg-gradient-to-r from-primary/10 to-secondary/10 pt-8 pb-4 px-6 flex justify-center">
+                      <Avatar className="h-32 w-32 border-4 border-background shadow-lg">
+                        <AvatarImage
+                          src={executive.image || "/placeholder.svg?height=128&width=128"}
                           alt={executive.name}
-                          fill
-                          className="object-cover object-top rounded-t-lg"
+                          className="object-cover"
                         />
-
-                        {/* Gradient overlay */}
-                        <motion.div
-                          className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0"
-                          whileHover={{ opacity: 1 }}
-                          transition={{ duration: 0.3 }}
-                        >
-                          <div className="absolute bottom-4 left-4 text-white">
-                            {/* <p className="font-medium">Click to see full bio</p> */}
-                          </div>
-                        </motion.div>
-                      </motion.div>
-                      <div className="p-6">
-                        <motion.h3 className="text-2xl font-bold mb-1" whileHover={{ color: "var(--primary)" }}>
-                          {executive.name}
-                        </motion.h3>
-                        <p className="text-primary font-medium mb-4">{executive.position}</p>
-                        {/* <p className="text-muted-foreground mb-6 line-clamp-3">{executive.bio}</p> */}
-                      </div>
+                        <AvatarFallback className="text-4xl">
+                          {executive.name
+                            .split(" ")
+                            .map((n) => n[0])
+                            .join("")}
+                        </AvatarFallback>
+                      </Avatar>
                     </div>
-                  </motion.div>
+                    <CardHeader className="text-center pt-4 pb-2">
+                      <CardTitle className="text-xl font-bold">{executive.name}</CardTitle>
+                      <CardDescription className="text-primary font-medium">{executive.position}</CardDescription>
+                    </CardHeader>
+                    <CardContent className="px-6 pb-2">
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{
+                          height: expandedBio === index ? "auto" : 0,
+                          opacity: expandedBio === index ? 1 : 0,
+                        }}
+                        transition={{ duration: 0.3 }}
+                        className="overflow-hidden"
+                      >
+                        <p className="text-muted-foreground mb-4">{executive.bio}</p>
+                      </motion.div>
+                    </CardContent>
+                    <CardFooter className="flex justify-center pt-2 pb-4 px-6">
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        onClick={() => handleManualToggle(index)}
+                        className="flex items-center gap-1 text-xs"
+                      >
+                        {expandedBio === index ? (
+                          <>
+                            Less info <ChevronUp className="h-3 w-3" />
+                          </>
+                        ) : (
+                          <>
+                            More info <ChevronDown className="h-3 w-3" />
+                          </>
+                        )}
+                      </Button>
+                    </CardFooter>
+                  </Card>
                 </motion.div>
               ))}
             </div>
           </div>
-
 
           <motion.div
             className="bg-muted p-8 rounded-lg relative overflow-hidden"
@@ -265,4 +303,3 @@ export default function LeadershipPage() {
     </div>
   )
 }
-

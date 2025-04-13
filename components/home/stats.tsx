@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react"
 import { statsData } from "@/data/home"
 import { motion, useInView, AnimatePresence } from "framer-motion"
+import Link from "next/link" // Import Link component [^1][^2]
 
 export default function Stats() {
   const [counters, setCounters] = useState(statsData.map(() => 0))
@@ -100,82 +101,82 @@ export default function Stats() {
           }}
         >
           {statsData.map((stat, index) => (
-            <motion.div
-              key={index}
-              custom={index}
-              variants={cardVariants}
-              whileHover="hover"
-              className="text-center dark:bg-secondary-foreground/10 p-8 rounded-lg transform-gpu"
-              style={{
-                perspective: "1000px",
-                transformStyle: "preserve-3d",
-              }}
-            >
-              <motion.div className="mb-4 relative" variants={iconVariants}>
-                <stat.icon className="h-12 w-12 mx-auto text-primary" />
-                <motion.div
-                  className="absolute inset-0 bg-primary/10 rounded-full"
-                  initial={{ scale: 0 }}
-                  animate={isInView ? { scale: 1.5, opacity: [0, 0.5, 0] } : {}}
-                  transition={{
-                    duration: 1.5,
-                    delay: index * 0.2,
-                    repeat: Number.POSITIVE_INFINITY,
-                    repeatDelay: 3,
-                  }}
-                />
-              </motion.div>
-
+            <Link href={stat.link} key={index} className="block cursor-pointer">
               <motion.div
-                className="text-4xl md:text-5xl font-bold mb-2 text-primary"
-                initial={{ opacity: 0 }}
-                animate={isInView ? { opacity: 1 } : {}}
-                transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
+                custom={index}
+                variants={cardVariants}
+                whileHover="hover"
+                className="text-center dark:bg-secondary-foreground/10 p-8 rounded-lg transform-gpu"
+                style={{
+                  perspective: "1000px",
+                  transformStyle: "preserve-3d",
+                }}
               >
-                <AnimatePresence>
-                  {isInView && (
-                    <motion.span
-                      key={counters[index]}
-                      initial={{ y: 20, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      exit={{ y: -20, opacity: 0 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      {counters[index]}
-                    </motion.span>
-                  )}
-                </AnimatePresence>
-                <motion.span
-                  initial={{ scale: 0 }}
-                  animate={isInView ? { scale: 1, rotate: [0, 20, 0] } : {}}
+                <motion.div className="mb-4 relative" variants={iconVariants}>
+                  <stat.icon className="h-12 w-12 mx-auto text-primary" />
+                  <motion.div
+                    className="absolute inset-0 bg-primary/10 rounded-full"
+                    initial={{ scale: 0 }}
+                    animate={isInView ? { scale: 1.5, opacity: [0, 0.5, 0] } : {}}
+                    transition={{
+                      duration: 1.5,
+                      delay: index * 0.2,
+                      repeat: Number.POSITIVE_INFINITY,
+                      repeatDelay: 3,
+                    }}
+                  />
+                </motion.div>
+
+                <motion.div
+                  className="text-4xl md:text-5xl font-bold mb-2 text-primary"
+                  initial={{ opacity: 0 }}
+                  animate={isInView ? { opacity: 1 } : {}}
+                  transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
+                >
+                  <AnimatePresence>
+                    {isInView && (
+                      <motion.span
+                        key={counters[index]}
+                        initial={{ y: 20, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        exit={{ y: -20, opacity: 0 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        {counters[index]}
+                      </motion.span>
+                    )}
+                  </AnimatePresence>
+                  <motion.span
+                    initial={{ scale: 0 }}
+                    animate={isInView ? { scale: 1, rotate: [0, 20, 0] } : {}}
+                    transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
+                  >
+                    +
+                  </motion.span>
+                </motion.div>
+
+                <motion.h3
+                  className="text-xl font-medium dark:text-white"
+                  initial={{ opacity: 0 }}
+                  animate={isInView ? { opacity: 1 } : {}}
+                  transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
+                >
+                  {stat.label}
+                </motion.h3>
+
+                <motion.p
+                  className="text-muted-foreground mt-2"
+                  initial={{ opacity: 0 }}
+                  animate={isInView ? { opacity: 1 } : {}}
                   transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
                 >
-                  +
-                </motion.span>
+                  {stat.description}
+                </motion.p>
               </motion.div>
-
-              <motion.h3
-                className="text-xl font-medium dark:text-white"
-                initial={{ opacity: 0 }}
-                animate={isInView ? { opacity: 1 } : {}}
-                transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
-              >
-                {stat.label}
-              </motion.h3>
-
-              <motion.p
-                className="text-muted-foreground mt-2"
-                initial={{ opacity: 0 }}
-                animate={isInView ? { opacity: 1 } : {}}
-                transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
-              >
-                {stat.description}
-              </motion.p>
-            </motion.div>
+            </Link>
           ))}
         </motion.div>
       </div>
     </section>
   )
 }
-

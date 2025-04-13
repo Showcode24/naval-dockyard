@@ -34,28 +34,34 @@ export default function ClientsSection() {
     }),
   }
 
-  // Animation that runs automatically
+  // New enhanced animation with left-to-right flip and more elegant effects
   const logoAnimationVariants = {
     initial: {
       scale: 1,
-      filter: "grayscale(100%)",
-      rotate: 0,
+      opacity: 0.7,
+      rotateY: 0,
     },
-    animate: {
-      scale: [1, 1.1, 1.1, 1],
-      rotate: [0, -1, 1, -1, 0],
-      filter: ["grayscale(100%)", "grayscale(0%)", "grayscale(0%)", "grayscale(100%)"],
+    animate: (i: number) => ({
+      scale: [1, 1.05, 1.05, 1],
+      opacity: [0.7, 1, 1, 0.7],
+      rotateY: [0, 180, 360, 0], // Left to right flip (Y-axis)
+      filter: [
+        "grayscale(100%) brightness(0.9)",
+        "grayscale(0%) brightness(1.1)",
+        "grayscale(0%) brightness(1.1)",
+        "grayscale(100%) brightness(0.9)",
+      ],
       transition: {
-        duration: 3,
+        duration: 5,
         repeat: Number.POSITIVE_INFINITY,
-        repeatDelay: 2,
-        times: [0, 0.3, 0.7, 1],
+        repeatDelay: 2 + i * 0.5, // Staggered delays for each logo
+        ease: [0.6, 0.01, -0.05, 0.95], // Custom easing for more elegant motion
       },
-    },
+    }),
   }
 
   return (
-    <section ref={sectionRef} className="py-16 bg-white text-black overflow-hidden">
+    <section ref={sectionRef} className="py-16 bg-gradient-to-b from-white to-gray-50 text-black overflow-hidden">
       <div className="container mx-auto px-4">
         <motion.div
           className="text-center mb-12"
@@ -82,20 +88,31 @@ export default function ClientsSection() {
               variants={itemVariants}
               className="flex justify-center items-center p-4 w-full sm:w-1/3 md:w-1/4 lg:w-1/6 max-w-[200px]"
             >
-              <motion.div
-                className="flex items-center justify-center"
-                initial="initial"
-                animate="animate"
-                variants={logoAnimationVariants}
-              >
-                <Image
-                  src={client.logo || "/placeholder.svg"}
-                  alt={client.name}
-                  width={150}
-                  height={60}
-                  className="h-16 w-auto object-contain transition-all duration-500"
-                />
-              </motion.div>
+              {/* Perspective wrapper for 3D effect */}
+              <div className="perspective-[1200px] relative">
+                <motion.div
+                  className="flex items-center justify-center transform-style-preserve-3d"
+                  custom={index}
+                  initial="initial"
+                  animate="animate"
+                  variants={logoAnimationVariants}
+                  whileHover={{
+                    scale: 1.15,
+                    filter: "grayscale(0%) brightness(1.2)",
+                    rotateY: 0,
+                    opacity: 1,
+                    transition: { duration: 0.4 },
+                  }}
+                >
+                  <Image
+                    src={client.logo || "/placeholder.svg"}
+                    alt={client.name}
+                    width={150}
+                    height={60}
+                    className="h-16 w-auto object-contain transition-all duration-500"
+                  />
+                </motion.div>
+              </div>
             </motion.div>
           ))}
         </motion.div>
