@@ -34,7 +34,7 @@ export const tendersData = {
       closingDate: "July 5, 2023",
       evaluationPeriod: "2 weeks",
       awardDate: "July 20, 2023",
-      budget: "$250,000",
+      budget: "NGN 60,000,000",
       status: "open",
       requirements: [
         "Minimum 5 years experience supplying marine engine parts",
@@ -60,7 +60,7 @@ export const tendersData = {
       contact: {
         name: "Procurement Officer",
         email: "procurement@navaldockyard.com",
-        phone: "+1 (555) 123-4567",
+        phone: "+234 812 345 6789",
       },
     },
     {
@@ -73,7 +73,7 @@ export const tendersData = {
       closingDate: "June 25, 2023",
       evaluationPeriod: "3 weeks",
       awardDate: "July 10, 2023",
-      budget: "$180,000",
+      budget: "NGN 2,000,000",
       status: "closing-soon",
       requirements: [
         "Minimum 3 years experience in dry dock maintenance",
@@ -98,7 +98,7 @@ export const tendersData = {
       contact: {
         name: "Maintenance Coordinator",
         email: "maintenance@navaldockyard.com",
-        phone: "+1 (555) 234-5678",
+        phone: "+234 812 345 6789",
       },
     },
     {
@@ -111,7 +111,7 @@ export const tendersData = {
       closingDate: "June 22, 2023",
       evaluationPeriod: "2 weeks",
       awardDate: "July 6, 2023",
-      budget: "$100,000",
+      budget: "NGN 20,000,000",
       status: "closing-soon",
       requirements: [
         "Authorized dealer of marine-grade welding materials",
@@ -135,7 +135,7 @@ export const tendersData = {
       contact: {
         name: "Materials Officer",
         email: "materials@navaldockyard.com",
-        phone: "+1 (555) 345-6789",
+        phone: "+234 812 345 6789",
       },
     },
     {
@@ -148,7 +148,7 @@ export const tendersData = {
       closingDate: "June 15, 2023",
       evaluationPeriod: "1 week",
       awardDate: "June 22, 2023",
-      budget: "$90,000",
+      budget: "NGN 6,000,000",
       status: "closed",
       requirements: [
         "Certified crane operators",
@@ -173,7 +173,7 @@ export const tendersData = {
       contact: {
         name: "Operations Manager",
         email: "ops@navaldockyard.com",
-        phone: "+1 (555) 456-7890",
+        phone: "+234 812 345 6789",
       },
     },
     {
@@ -186,7 +186,7 @@ export const tendersData = {
       closingDate: "June 10, 2023",
       evaluationPeriod: "2 weeks",
       awardDate: "June 24, 2023",
-      budget: "$120,000",
+      budget: "NGN 3,000,000",
       status: "closed",
       requirements: [
         "Manufacturer certification for marine-grade electrical systems",
@@ -211,7 +211,7 @@ export const tendersData = {
       contact: {
         name: "Electrical Systems Lead",
         email: "electrical@navaldockyard.com",
-        phone: "+1 (555) 567-8901",
+        phone: "+234 812 345 6789",
       },
     },
     {
@@ -224,7 +224,7 @@ export const tendersData = {
       closingDate: "June 5, 2023",
       evaluationPeriod: "3 weeks",
       awardDate: "June 26, 2023",
-      budget: "$150,000",
+      budget: "NGN 6,500,000",
       status: "closed",
       requirements: [
         "OEM partnership certification (Cisco, Fortinet, etc.)",
@@ -249,7 +249,7 @@ export const tendersData = {
       contact: {
         name: "IT Procurement Officer",
         email: "itprocurement@navaldockyard.com",
-        phone: "+1 (555) 678-9012",
+        phone: "+234 812 345 6789",
       },
     },
     {
@@ -262,7 +262,7 @@ export const tendersData = {
       closingDate: "May 31, 2023",
       evaluationPeriod: "2 weeks",
       awardDate: "June 14, 2023",
-      budget: "$95,000",
+      budget: "NGN 120,000,000",
       status: "closed",
       requirements: [
         "Authorized dealership for workshop machinery",
@@ -287,7 +287,7 @@ export const tendersData = {
       contact: {
         name: "Workshop Manager",
         email: "tools@navaldockyard.com",
-        phone: "+1 (555) 789-0123",
+        phone: "+234 812 345 6789",
       },
     },
     {
@@ -300,7 +300,7 @@ export const tendersData = {
       closingDate: "May 21, 2023",
       evaluationPeriod: "1 week",
       awardDate: "May 28, 2023",
-      budget: "$60,000",
+      budget: "NGN 10,000,000",
       status: "closed",
       requirements: [
         "Proven supply of facility maintenance goods",
@@ -325,7 +325,7 @@ export const tendersData = {
       contact: {
         name: "Facility Admin",
         email: "facility@navaldockyard.com",
-        phone: "+1 (555) 890-1234",
+        phone: "+234 812 345 6789",
       },
     },
     {
@@ -338,7 +338,7 @@ export const tendersData = {
       closingDate: "May 15, 2023",
       evaluationPeriod: "1 week",
       awardDate: "May 22, 2023",
-      budget: "$110,000",
+      budget: "NGN 40,000,000",
       status: "closed",
       requirements: [
         "Marine-certified coatings supplier",
@@ -363,7 +363,7 @@ export const tendersData = {
       contact: {
         name: "Coatings Officer",
         email: "coatings@navaldockyard.com",
-        phone: "+1 (555) 901-2345",
+        phone: "+234 812 345 6789",
       },
     },
     {
@@ -376,7 +376,7 @@ export const tendersData = {
       closingDate: "May 10, 2023",
       evaluationPeriod: "2 weeks",
       awardDate: "May 24, 2023",
-      budget: "$85,000",
+      budget: "NGN 7,000,000",
       status: "closed",
       requirements: [
         "Registered training provider with ISO certification",
@@ -401,7 +401,7 @@ export const tendersData = {
       contact: {
         name: "HR Training Coordinator",
         email: "training@navaldockyard.com",
-        phone: "+1 (555) 012-3456",
+        phone: "+234 812 345 6789",
       },
     },
   ],
