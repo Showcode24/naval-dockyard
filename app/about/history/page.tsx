@@ -140,7 +140,7 @@ export default function HistoryPage() {
               }}
             >
               <Image
-                src="/images/img/history-founding.webp"
+                src="/images/img/history-old.jpg"
                 alt="Naval Dockyard Founding"
                 width={600}
                 height={400}
