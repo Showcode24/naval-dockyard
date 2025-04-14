@@ -246,7 +246,7 @@ export const clientsData: Client[] = [
   },
   {
     name: "GOG Marine",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Coat_of_arms_of_Benin.svg/1200px-Coat_of_arms_of_Benin.svg.png",
+    logo: "https://www.gogmarine.com/wp-content/uploads/2019/10/gogfulllogo.png",
     highlighted: false,
   },
 ]
