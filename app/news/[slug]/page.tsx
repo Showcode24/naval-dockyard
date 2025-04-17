@@ -160,11 +160,21 @@ export default function NewsDetailPage({ params }: { params: { slug: string } })
                     </p>
                   )}
 
+
                   <div
                     className="prose max-w-none animate-on-scroll opacity-0 transition-all duration-700 translate-y-4"
                     style={{ animationDelay: "0.5s" }}
-                    dangerouslySetInnerHTML={{ __html: articleContent }}
-                  ></div>
+                  // dangerouslySetInnerHTML={{ __html: articleContent }}
+                  >
+                    {"content" in article && (
+                      <p
+                        className="text-lg font-medium mb-6 animate-on-scroll opacity-0 transition-all duration-700 translate-y-4"
+                        style={{ animationDelay: "0.4s" }}
+                      >
+                        {article.content}
+                      </p>
+                    )}
+                  </div>
 
                   {"category" in article && article.category && (
                     <div
