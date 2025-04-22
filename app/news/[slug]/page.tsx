@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
-import Link from "next/link"
+import Link from "next/link"  
 import { Button } from "@/components/ui/button"
 import { newsData } from "@/data/news"
 import { Calendar, User, ArrowLeft, Tag, ChevronLeft, ChevronRight } from "lucide-react"
