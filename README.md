@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Naval Dockyard Nigeria Website
 
-## Getting Started
+Official website built for Naval Dockyard, Nigeria, to showcase its operations, services, and contributions to maritime defense and engineering. Developed using Next.js for optimal performance, SEO, and scalability.
 
-First, run the development server:
+## Features
+
+- **About Section**: Detailed overview of the dockyard’s history, mission, and leadership  
+- **Services Page**: Highlights engineering services, shipbuilding, and repair capabilities  
+- **News & Updates**: Keeps visitors informed with announcements, achievements, and media releases  
+- **Gallery**: Showcases images and videos from naval operations, shipbuilding, and training activities  
+- **Contact Form**: Easy-to-use form for inquiries and official communication  
+- **Mobile Responsive**: Fully optimized for viewing on all screen sizes  
+
+## Tech Stack
+
+- **Frontend:** Next.js, React, TailwindCSS  
+- **Backend (Optional):** Can be integrated with custom APIs or CMS (e.g., Strapi, Contentful)  
+- **Deployment:** Hosted on [Vercel](https://vercel.com) or preferred hosting platform  
+- **SEO Optimization:** Meta tags, Open Graph protocol, and sitemap generation enabled  
+
+## Installation
+
+To run the website locally:
 
 ```bash
+git clone https://github.com/your-username/naval-dockyard-website.git
+cd naval-dockyard-website
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deployment
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The production site is deployed on [Vercel](https://vercel.com) and optimized for speed and uptime. You can access the live version here: [Live Demo](https://your-site.vercel.app)
 
-## Learn More
+## Planned Enhancements
 
-To learn more about Next.js, take a look at the following resources:
+- **Admin CMS Integration**: Enable the team to update content without developer involvement  
+- **Newsletter Signup**: Feature for citizens and naval personnel to subscribe to updates  
+- **Accessibility Compliance**: Improve accessibility to meet international standards (WCAG)  
+- **Advanced Search**: Search functionality across news, projects, and services  
+- **Multi-language Support**: Allow content delivery in English and other Nigerian languages  
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Contributing
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This is an official project. External contributions may be limited, but suggestions, feedback, or collaboration proposals are welcome. For internal developers, follow standard pull request practices.
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is proprietary. For usage or collaboration rights, contact the Naval Dockyard IT Department.
