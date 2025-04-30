@@ -13,6 +13,7 @@ import { contactData } from "@/data/contact"
 import { MapPin, Phone, Mail, Clock, CheckCircle2, Ship, FileText, Calendar, Loader2 } from "lucide-react"
 import { submitContactForm } from "@/lib/actions"
 import { useToast } from "@/components/ui/use-toast"
+import { supabase } from "@/supabaseClient"
 
 type TabType = "quote" | "support" | "info"
 
@@ -62,19 +63,32 @@ export default function ContactPage() {
   }
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-    setError(null)
+    e.preventDefault();
+    setIsSubmitting(true);
+    setError("");
 
     try {
-      const result = await submitContactForm({
-        ...formState,
-        tabType: activeTab,
-      })
+      const { name, email, phone, company, serviceType, vesselType, projectTimeline, message } = formState;
 
-      if (result.success) {
-        setIsSubmitting(false)
-        setIsSubmitted(true)
+      const { data, error } = await supabase.from("Quote Request").insert([
+        {
+          name,
+          email,
+          phone,
+          company,
+          service_type: serviceType,
+          vessel_type: vesselType,
+          project_timeline: projectTimeline,
+          message,
+        },
+      ]);
+
+      if (error) {
+        setError("Failed to submit your request. Please try again later.");
+        console.error(error);
+      } else {
+        setIsSubmitted(true);
+        // Optionally reset form
         setFormState({
           name: "",
           email: "",
@@ -84,25 +98,16 @@ export default function ContactPage() {
           vesselType: "",
           projectTimeline: "",
           message: "",
-        })
-        toast({
-          title: "Form submitted successfully",
-          description: "We'll get back to you soon!",
-          variant: "default",
-        })
-      } else {
-        throw new Error(result.error || "Something went wrong")
+        });
       }
     } catch (err) {
-      setIsSubmitting(false)
-      setError(err instanceof Error ? err.message : "Failed to submit form. Please try again.")
-      toast({
-        title: "Error",
-        description: err instanceof Error ? err.message : "Failed to submit form. Please try again.",
-        variant: "destructive",
-      })
+      console.error(err);
+      setError("An unexpected error occurred.");
+    } finally {
+      setIsSubmitting(false);
     }
-  }
+  };
+
 
   return (
     <>
