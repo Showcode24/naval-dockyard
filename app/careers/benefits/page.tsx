@@ -72,7 +72,7 @@ export default function BenefitsPage() {
               </p>
             </div>
           </div>
-
+        //New Section arranged
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
             <div className="relative rounded-lg overflow-hidden shadow-xl h-[400px]">
               <Image
