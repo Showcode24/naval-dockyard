@@ -13,5 +13,5 @@ export function generateStaticParams() {
 }
 
 export default function NewsDetailPage({ params }: { params: { slug: string } }) {
-  return <NewsDetailPage params={params} />
+  return <NewsDetailPageClient params={params} />
 }
