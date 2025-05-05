@@ -4,7 +4,7 @@ import { render } from "@react-email/render";
 import ConfirmationEmail from "@/app/email/confirmation-email";
 import AdminNotificationEmail from "@/app/email/admin-notification-email";
 
-// Initialize Resend with your API key here
+// Initialize Resend with your API key
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 // Admin email from environment variables
