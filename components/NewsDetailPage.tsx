@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
-import Link from "next/link"  
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { newsData } from "@/data/news"
 import { Calendar, User, ArrowLeft, Tag, ChevronLeft, ChevronRight } from "lucide-react"
@@ -22,17 +22,7 @@ type ArticleWithOptionalFields = {
   category: string
 }
 
-export default function NewsDetailPage({ params }: { params: { slug: string } }) {
-  // Find the article with the matching slug
-  const article = [...newsData.featuredArticles, ...newsData.recentArticles, ...newsData.pressReleases].find(
-    (article) => article.slug === params.slug,
-  ) as ArticleWithOptionalFields | undefined
-
-  // If no article is found, return 404
-  if (!article) {
-    notFound()
-  }
-
+export default function NewsDetailPage({ article }: { article: ArticleWithOptionalFields }) {
   // Animation states
   const [scrollY, setScrollY] = useState(0)
   const headerRef = useRef<HTMLDivElement>(null)
