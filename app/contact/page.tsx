@@ -26,6 +26,9 @@ interface FormState {
   vesselType: string
   projectTimeline: string
   message: string
+  projectId: string
+  issueType: string
+  issueDetails: string
 }
 
 export default function ContactPage() {
@@ -41,6 +44,9 @@ export default function ContactPage() {
     vesselType: "",
     projectTimeline: "",
     message: "",
+    projectId: "",
+    issueType: "",
+    issueDetails: "",
   })
 
   const [isSubmitted, setIsSubmitted] = useState(false)
@@ -70,7 +76,7 @@ export default function ContactPage() {
     try {
       const { name, email, phone, company, serviceType, vesselType, projectTimeline, message } = formState;
 
-      const { data, error } = await supabase.from("Quote Request").insert([
+      const { data, error } = await supabase.from("quote_requests").insert([
         {
           name,
           email,
@@ -80,6 +86,9 @@ export default function ContactPage() {
           vessel_type: vesselType,
           project_timeline: projectTimeline,
           message,
+          projectId: formState.projectId,
+          issueType: formState.issueType,
+          issueDetails: formState.issueDetails,
         },
       ]);
 
@@ -98,6 +107,9 @@ export default function ContactPage() {
           vesselType: "",
           projectTimeline: "",
           message: "",
+          projectId: "",
+          issueType: "",
+          issueDetails: "",
         });
       }
     } catch (err) {
