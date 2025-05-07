@@ -5,12 +5,19 @@ import { commercialProjectsData } from "@/data/portfolio/commercial"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Badge } from "@/components/ui/badge"
 import { ArrowRight, Ship, Award, BarChart } from "lucide-react"
+import AnimatedHero from "@/components/ui/animated-hero"
 
 
 export default function CommercialPortfolioPage() {
   return (
     <>
-      <section className="pt-32 pb-16 bg-[url('/contact-us.jpg')] bg-cover bg-center text-white relative">
+      <AnimatedHero
+        title="Commercial Projects"
+        subtitle="Our portfolio of commercial vessel projects showcasing our expertise across the maritime industry"
+        backgroundImage="/contact-us.jpg"
+      />
+
+      {/* <section className="pt-32 pb-16 bg-[url('/contact-us.jpg')] bg-cover bg-center text-white relative">
         <div className="absolute inset-0 bg-black/70 z-0"></div>
         <div className="container mx-auto page-header-content">
           <div className="max-w-3xl">
@@ -20,7 +27,7 @@ export default function CommercialPortfolioPage() {
             </p>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">

@@ -5,11 +5,18 @@ import { militaryProjectsData } from "@/data/portfolio/military"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Badge } from "@/components/ui/badge"
 import { ArrowRight, Shield, Clock, PenToolIcon as Tool, FileText } from "lucide-react"
+import AnimatedHero from "@/components/ui/animated-hero"
 
 export default function MilitaryPortfolioPage() {
   return (
     <>
-      <section className="pt-32 pb-16 bg-[url('/contact-us.jpg')] bg-cover bg-center text-white relative">
+      <AnimatedHero
+        title="Military Projects"
+        subtitle="Our portfolio of naval and military vessel projects showcasing our expertise in defense sector work"
+        backgroundImage="/contact-us.jpg"
+      />
+
+      {/* <section className="pt-32 pb-16 bg-[url('/contact-us.jpg')] bg-cover bg-center text-white relative">
         <div className="absolute inset-0 bg-black/70 z-0"></div>
         <div className="container mx-auto page-header-content">
           <div className="max-w-3xl">
@@ -19,7 +26,7 @@ export default function MilitaryPortfolioPage() {
             </p>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">

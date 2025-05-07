@@ -8,6 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Badge } from "@/components/ui/badge"
 import { tendersData } from "@/data/procurement/tenders"
 import { Search, Calendar, FileText, Clock, ArrowRight } from "lucide-react"
+import AnimatedHero from "@/components/ui/animated-hero"
 
 export default function TendersPage() {
   const [searchTerm, setSearchTerm] = useState("")
@@ -27,7 +28,13 @@ export default function TendersPage() {
 
   return (
     <>
-      <section className="pt-32 pb-16 bg-[url('/contact-us.jpg')] bg-cover bg-center text-white relative">
+      <AnimatedHero
+        title="Current Tenders"
+        subtitle="View and bid on current procurement opportunities"
+        backgroundImage="/contact-us.jpg"
+      />
+
+      {/* <section className="pt-32 pb-16 bg-[url('/contact-us.jpg')] bg-cover bg-center text-white relative">
         <div className="absolute inset-0 bg-black/70 z-0"></div>
         <div className="container mx-auto page-header-content">
           <div className="max-w-3xl">
@@ -35,7 +42,7 @@ export default function TendersPage() {
             <p className="text-xl text-gray-300">View and bid on current procurement opportunities</p>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">

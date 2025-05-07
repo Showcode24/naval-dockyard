@@ -69,14 +69,15 @@ export default function ContactPage() {
   }
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setError("");
+    e.preventDefault()
+    setIsSubmitting(true)
+    setError("")
 
     try {
-      const { name, email, phone, company, serviceType, vesselType, projectTimeline, message } = formState;
+      const { name, email, phone, company, serviceType, vesselType, projectTimeline, message } = formState
 
-      const { data, error } = await supabase.from("quote_requests").insert([
+      // Step 1: Save to Supabase directly
+      const { data, error: supabaseError } = await supabase.from("quote_requests").insert([
         {
           name,
           email,
@@ -90,36 +91,61 @@ export default function ContactPage() {
           issueType: formState.issueType,
           issueDetails: formState.issueDetails,
         },
-      ]);
+      ])
 
-      if (error) {
-        setError("Failed to submit your request. Please try again later.");
-        console.error(error);
-      } else {
-        setIsSubmitted(true);
-        // Optionally reset form
-        setFormState({
-          name: "",
-          email: "",
-          phone: "",
-          company: "",
-          serviceType: "",
-          vesselType: "",
-          projectTimeline: "",
-          message: "",
-          projectId: "",
-          issueType: "",
-          issueDetails: "",
-        });
+      if (supabaseError) {
+        console.error("Error saving to database:", supabaseError)
+        setError("Failed to submit your request. Please try again later.")
+        return
       }
-    } catch (err) {
-      console.error(err);
-      setError("An unexpected error occurred.");
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
 
+      // Step 2: Send email notification via server action
+      const emailResult = await submitContactForm({
+        name,
+        email,
+        phone,
+        company,
+        serviceType,
+        vesselType,
+        projectTimeline,
+        message,
+        tabType: activeTab,
+        projectId: formState.projectId,
+        issueType: formState.issueType,
+        issueDetails: formState.issueDetails,
+      })
+
+      if (!emailResult.success) {
+        toast({
+          title: "Request Saved",
+          description:
+            "Your request was saved, but we couldn't send a confirmation email. Our team will still contact you shortly.",
+          variant: "default",
+        })
+      }
+
+      setIsSubmitted(true)
+      // Reset form
+      setFormState({
+        name: "",
+        email: "",
+        phone: "",
+        company: "",
+        serviceType: "",
+        vesselType: "",
+        projectTimeline: "",
+        message: "",
+        projectId: "",
+        issueType: "",
+        issueDetails: "",
+      })
+    } catch (err) {
+      console.error("Error submitting form:", err)
+      setError("An unexpected error occurred.")
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
 
   return (
     <>
