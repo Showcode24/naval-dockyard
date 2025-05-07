@@ -8,6 +8,7 @@ import { Label } from "@/components/ui/label"
 import { Checkbox } from "@/components/ui/checkbox"
 import { portalData } from "@/data/procurement/portal"
 import { ShieldCheck, HelpCircle } from "lucide-react"
+import AnimatedHero from "@/components/ui/animated-hero"
 
 export default function VendorPortalPage() {
   const [isLoggingIn, setIsLoggingIn] = useState(false)
@@ -26,7 +27,13 @@ export default function VendorPortalPage() {
 
   return (
     <>
-      <section className="pt-32 pb-16 bg-[url('/contact-us.jpg')] bg-cover bg-center text-white relative">
+      <AnimatedHero
+        title="Vendor Portal"
+        subtitle="Access the secure vendor management portal"
+        backgroundImage="/contact-us.jpg"
+      />
+
+      {/* <section className="pt-32 pb-16 bg-[url('/contact-us.jpg')] bg-cover bg-center text-white relative">
         <div className="absolute inset-0 bg-black/70 z-0"></div>
         <div className="container mx-auto page-header-content">
           <div className="max-w-3xl">
@@ -34,7 +41,7 @@ export default function VendorPortalPage() {
             <p className="text-xl text-gray-300">Access the secure vendor management portal</p>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">

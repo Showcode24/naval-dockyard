@@ -1,5 +1,6 @@
 import { newsData } from "@/data/news"
-import NewsDetailPageClient from "./NewsDetailPage"
+import NewsDetailPageClient from "@/components/NewsDetailPage"
+import { notFound } from "next/navigation"
 
 // This function tells Next.js which paths to pre-generate at build time
 export function generateStaticParams() {
@@ -13,5 +14,15 @@ export function generateStaticParams() {
 }
 
 export default function NewsDetailPage({ params }: { params: { slug: string } }) {
-  return <NewsDetailPageClient params={params} />
+  // Find the article with the matching slug
+  const article = [...newsData.featuredArticles, ...newsData.recentArticles, ...newsData.pressReleases].find(
+    (article) => article.slug === params.slug,
+  )
+
+  // If no article is found, return 404
+  if (!article) {
+    notFound()
+  }
+
+  return <NewsDetailPageClient article={article} />
 }

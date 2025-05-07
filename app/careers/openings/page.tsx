@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Badge } from "@/components/ui/badge"
 import { Search, MapPin, Briefcase, Clock, ChevronRight } from "lucide-react"
+import AnimatedHero from "@/components/ui/animated-hero"
 
 export default function JobOpeningsPage() {
   const [searchTerm, setSearchTerm] = useState("")
@@ -30,7 +31,13 @@ export default function JobOpeningsPage() {
 
   return (
     <>
-      <section className="pt-32 pb-16 bg-[url('/contact-us.jpg')] bg-cover bg-center text-white relative">
+      <AnimatedHero
+        title="Job Openings"
+        subtitle="Join our team of skilled professionals in the maritime industry"
+        backgroundImage="/contact-us.jpg"
+      />
+
+      {/* <section className="pt-32 pb-16 bg-[url('/contact-us.jpg')] bg-cover bg-center text-white relative">
         <div className="absolute inset-0 bg-black/70 z-0"></div>
         <div className="container mx-auto page-header-content">
           <div className="max-w-3xl">
@@ -38,7 +45,7 @@ export default function JobOpeningsPage() {
             <p className="text-xl text-gray-300">Join our team of skilled professionals in the maritime industry</p>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">

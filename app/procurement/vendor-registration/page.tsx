@@ -17,6 +17,7 @@ import { Alert, AlertDescription } from "@/components/ui/alert"
 
 import { v4 as uuidv4 } from "uuid"
 import { supabase } from "@/supabaseClient"
+import AnimatedHero from "@/components/ui/animated-hero"
 
 // Add these type definitions at the top of the file, after the imports
 type FormData = {
@@ -474,7 +475,12 @@ export default function VendorRegistrationPage() {
 
   return (
     <>
-      <section className="pt-32 pb-16 bg-[url('/contact-us.jpg')] bg-cover bg-center text-white relative">
+      <AnimatedHero
+        title="Vendor Registration"
+        subtitle="Register as a supplier or contractor for Naval Dockyard"
+        backgroundImage="/contact-us.jpg"
+      />
+      {/* <section className="pt-32 pb-16 bg-[url('/contact-us.jpg')] bg-cover bg-center text-white relative">
         <div className="absolute inset-0 bg-black/70 z-0"></div>
         <div className="container mx-auto page-header-content">
           <div className="max-w-3xl">
@@ -482,7 +488,7 @@ export default function VendorRegistrationPage() {
             <p className="text-xl text-gray-300">Register as a supplier or contractor for Naval Dockyard</p>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
@@ -531,10 +537,10 @@ export default function VendorRegistrationPage() {
                     <div key={i} className="flex flex-col items-center">
                       <div
                         className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg mb-2 ${step === i
-                            ? "bg-primary text-white"
-                            : step > i
-                              ? "bg-primary/20 text-primary"
-                              : "bg-muted text-muted-foreground"
+                          ? "bg-primary text-white"
+                          : step > i
+                            ? "bg-primary/20 text-primary"
+                            : "bg-muted text-muted-foreground"
                           }`}
                       >
                         {i}

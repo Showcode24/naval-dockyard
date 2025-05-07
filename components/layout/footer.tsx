@@ -14,16 +14,16 @@ export default function Footer() {
               engineering services for naval and commercial vessels.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="hover:text-accent transition-colors">
+              <a href="https://www.facebook.com/NavalDockYardLimited/" className="hover:text-accent transition-colors">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="hover:text-accent transition-colors">
+              <a href="https://x.com/navaldockyard01" className="hover:text-accent transition-colors">
                 <Twitter className="h-5 w-5" />
               </a>
-              <a href="#" className="hover:text-accent transition-colors">
+              <a href="https://www.linkedin.com/company/naval-dockyard-limited/?originalSubdomain=ng" className="hover:text-accent transition-colors">
                 <Linkedin className="h-5 w-5" />
               </a>
-              <a href="#" className="hover:text-accent transition-colors">
+              <a href="https://www.instagram.com/navaldockyardlimitednigeria/" className="hover:text-accent transition-colors">
                 <Instagram className="h-5 w-5" />
               </a>
             </div>

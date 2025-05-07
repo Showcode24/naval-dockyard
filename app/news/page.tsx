@@ -4,19 +4,16 @@ import Link from "next/link"
 import { newsData } from "@/data/news"
 import { Badge } from "@/components/ui/badge"
 import { Calendar, User, ArrowRight } from "lucide-react"
+import AnimatedHero from "@/components/ui/animated-hero"
 
 export default function NewsPage() {
   return (
     <>
-      <section className="pt-32 pb-16 bg-[url('/contact-us.jpg')] bg-cover bg-center text-white relative">
-        <div className="absolute inset-0 bg-black/70 z-0"></div>
-        <div className="container mx-auto page-header-content">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">News & Updates</h1>
-            <p className="text-xl text-gray-300">Stay informed about the latest developments at Naval Dockyard</p>
-          </div>
-        </div>
-      </section>
+      <AnimatedHero
+        title="News & Updates"
+        subtitle="Stay informed about the latest developments at Naval Dockyard"
+        backgroundImage="/contact-us.jpg"
+      />
 
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
@@ -130,7 +127,7 @@ export default function NewsPage() {
                       <Link href={`/news/${release.slug}`} className="hover:text-primary transition-colors">
                         <h4 className="font-medium">{release.title}</h4>
                         <p className="text-sm text-muted-foreground mt-1">{release.date}</p>
-                      </Link>
+                      </Link>-
                     </li>
                   ))}
                 </ul>

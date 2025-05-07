@@ -11,6 +11,7 @@ import { ChevronDown, ChevronUp } from "lucide-react"
 import { motion, useInView } from "framer-motion"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import AnimatedHero from "@/components/ui/animated-hero"
 
 export default function LeadershipPage() {
   const heroRef = useRef(null)
@@ -80,47 +81,11 @@ export default function LeadershipPage() {
 
   return (
     <div onMouseMove={handleMouseMove}>
-      <motion.section
-        className="pt-32 pb-16 bg-secondary text-white relative overflow-hidden"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-        ref={heroRef}
-      >
-        {/* Animated background elements */}
-        <motion.div
-          className="absolute inset-0 opacity-10"
-          style={{
-            backgroundImage: "url('/images/about/blueprint-pattern.svg')",
-            backgroundSize: "cover",
-            x: mousePosition.x * -20,
-            y: mousePosition.y * -20,
-          }}
-        />
-
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-3xl">
-            <motion.h1
-              className="text-4xl md:text-5xl font-bold mb-6"
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              style={{ x: mousePosition.x * 10, y: mousePosition.y * 10 }}
-            >
-              Leadership Team
-            </motion.h1>
-            <motion.p
-              className="text-xl text-gray-300"
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              style={{ x: mousePosition.x * 5, y: mousePosition.y * 5 }}
-            >
-              Meet the experienced professionals guiding Naval Dockyard
-            </motion.p>
-          </div>
-        </div>
-      </motion.section>
+      <AnimatedHero
+        title="Leadership Team"
+        subtitle="Meet the experienced professionals guiding Naval Dockyard"
+        backgroundImage="/contact-us.jpg"
+      />
 
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
