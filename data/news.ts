@@ -310,7 +310,13 @@ export const newsData = {
         "Rear Admiral IE Shehu paid a courtesy visit to the GOC 81 Division, fostering stronger military collaboration and joint operational synergy.",
       content:
         "On 6 May 2025, Rear Admiral IE Shehu, Admiral Superintendent of Naval Dockyard Limited (NDL), paid a courtesy call to the Division Headquarters of the 81 Division Nigerian Army. He was received by the General Officer Commanding (GOC), Major General Farouk Mijinyawa. The meeting reaffirmed a mutual commitment to collaboration among security agencies in Lagos and Ogun states. Discussions centered on improving synergy in maintenance, logistics, and fleet support. Rear Admiral Shehu pledged NDL’s support in providing essential engineering services and technical maintenance. He also visited key partners such as NIMASA, NAVDOC, NAFRC, and HQWNC to reinforce institutional partnerships.",
-      image: "/images/events/81division-visit.jpg",
+      image: "/images/news/division-1.JPG",
+      additionalImages: [
+        "/images/news/division-2.JPG",
+        "/images/news/division-3.JPG",
+        "/images/news/division-4.JPG",
+        "/images/news/division-5.JPG",
+      ],
       date: "May 6, 2025",
       author: "Info",
       category: "Partnerships",
@@ -358,7 +364,14 @@ export const newsData = {
         "Naval Dockyard Limited hosted a networking cocktail event to strengthen business relations with stakeholders in the maritime industry.",
       "content":
         "On 30 April 2025, Rear Admiral Ibrahim E. Shehu hosted a cocktail meet and greet at Naval Dockyard Limited’s Conference Hall. The event brought together senior officers, contractors, captains of industry, and stakeholders for an evening of networking, fine dining, and strategic discussions. The gathering fostered deeper business ties and opened new opportunities for collaboration in maritime and industrial sectors.",
-      "image": "/images/events/cocktail-event.jpg",
+      "image": "/images/news/cocktail-1.JPG",
+      additionalImages: [
+        "/images/news/cocktail-2.JPG",
+        "/images/news/cocktail-3.JPG",
+        "/images/news/cocktail-4.JPG",
+        "/images/news/cocktail-5.JPG",
+        "/images/news/cocktail-6.JPG",
+      ],
       "date": "April 30, 2025",
       "author": "Info",
       "category": "Networking",
@@ -395,7 +408,13 @@ export const newsData = {
         "His Royal Majesty Oba Abdulwasiu Lawal visited NDL to commemorate his 5th coronation anniversary, reaffirming ties between Iruland and the Nigerian Navy.",
       "content":
         "On Tuesday, 13 May 2025, the Oniru of Iruland, His Royal Majesty Oba Abdulwasiu Omogbolahan Lawal, paid a courtesy visit to Naval Dockyard Limited (NDL) as part of activities marking his 5th anniversary on the throne. The revered monarch, accompanied by his royal entourage consisting of Chiefs holding the titles of baale and Olowu, was warmly received by the Admiral Superintendent, Rear Admiral IE Shehu, alongside senior officers of the Dockyard.\n\nRear Admiral Shehu commended His Majesty’s commitment to fostering community relations, better life for his subjects and maritime security. The visit highlighted some importance of roles the Yard plays in collaborating with traditional institutions in promoting national development. His royal majesty expressed appreciation for NDL’s contributions to the host community, Lagos State and Nigeria’s maritime sector, reaffirming his support for the Navy’s efforts. The visit further strengthened the existing cordial bond between Iruland, the Nigerian Navy and Naval Dockyard in particular.",
-      "image": "/images/events/oniru-visit.jpg",
+      "image": "/images/news/oniru-1.jpg",
+      additionalImages: [
+        "/images/news/oniru-2.jpg",
+        "/images/news/oniru-3.jpg",
+        "/images/news/oniru-4.jpg",
+        "/images/news/oniru-5.jpg",
+      ],
       "date": "May 13, 2025",
       "author": "Info",
       "category": "Community Relations",
@@ -407,7 +426,13 @@ export const newsData = {
         "NDL successfully undocked MV Jascon 3, showcasing precision, technical excellence, and safety in marine engineering.",
       "content":
         "Naval Dockyard Limited marked another milestone with the successful undocking of MV Jascon 3. The operation demonstrated the Dockyard’s precision, professionalism, and adherence to safety in vessel handling and marine engineering. This achievement reinforces NDL’s reputation for excellence in supporting Nigeria’s naval and maritime industry through high-quality maintenance and construction.",
-      "image": "/images/events/jascon3-undocking.jpg",
+      "image": "/images/news/jascon3-1.JPG",
+      additionalImages: [
+        "/images/news/jascon3-2.JPG",
+        "/images/news/jascon3-3.JPG",
+        "/images/news/jascon3-4.JPG",
+        "/images/news/jascon3-5.JPG",
+      ],
       "date": "April 17, 2025",
       "author": "Info",
       "category": "Engineering",
