@@ -40,7 +40,7 @@ export async function submitContactForm(formData: FormData) {
     const host = (await headersList).get("host") || "";
     const protocol = process.env.NODE_ENV === "development" ? "http" : "https";
 
-    // Use environment variable if available, otherwise construct from headers
+    // Use Environment variable if available, otherwise construct from headers
     let apiUrl: string;
     if (process.env.NEXT_PUBLIC_APP_URL) {
       apiUrl = `${process.env.NEXT_PUBLIC_APP_URL}/api/send-email`;
