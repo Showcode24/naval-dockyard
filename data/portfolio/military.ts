@@ -1,3 +1,4 @@
+//military projects data
 export const militaryProjectsData = {
   overview:
     "Naval Dockyard Limited (NDL) plays a critical role in supporting the Nigerian Navy and regional partners through indigenous warship construction, fleet maintenance, and modernization. NDL's expertise spans from building Seaward Defence Boats (SDBs) to refurbishing foreign naval vessels, thereby enhancing maritime security and regional cooperation.",
