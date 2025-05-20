@@ -1,54 +1,16 @@
-/* /app/api/send-quote.ts -------------------------------------------------- */
-import { NextResponse } from "next/server";
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
+import { type NextRequest, NextResponse } from "next/server";
 import { render } from "@react-email/render";
 import ConfirmationEmail from "@/app/email/confirmation-email";
 import AdminNotificationEmail from "@/app/email/admin-notification-email";
 
-/* ------------------------------------------------------------------------ */
-/*  Brevo SMTP credentials (find them in    Dashboard ▸ SMTP & API ▸ SMTP   */
-/*  You can keep the same variable names to avoid touching other code.)     */
-const EMAIL_USER = process.env.EMAIL_USER; // e.g. "yourbrevo@email.com"
-const EMAIL_PASS = process.env.EMAIL_PASS; // SMTP key from Brevo
-const ADMIN_EMAIL = process.env.ADMIN_EMAIL || "admin@navaldockyard.com";
-const FROM_EMAIL = process.env.FROM_EMAIL || "contact@yourdomain.com";
+const resend = new Resend(process.env.RESEND_API_KEY);
+const adminEmail = process.env.ADMIN_EMAIL || "admin@navaldockyard.com";
+const fromEmail = process.env.FROM_EMAIL || "contact@yourdomain.com";
 
-/* ------------------------------------------------------------------------ */
-interface FormData {
-  name: string;
-  email: string;
-  phone: string;
-  company?: string;
-  serviceType?: string;
-  vesselType?: string;
-  projectTimeline?: string;
-  message: string;
-  tabType: "quote" | "support" | "info";
-}
-
-/* 1️⃣  Create Brevo transporter (via Nodemailer SMTP) ---------------------- */
-const createTransporter = () => {
-  if (!EMAIL_USER || !EMAIL_PASS) {
-    throw new Error("Brevo SMTP credentials not configured");
-  }
-
-  return nodemailer.createTransport({
-    host: "smtp-relay.brevo.com", // ✅ Brevo SMTP host
-    port: 587, // 465 if you prefer SSL
-    secure: false, // true for port 465
-    auth: {
-      user: EMAIL_USER, // your Brevo SMTP login
-      pass: EMAIL_PASS, // your Brevo SMTP password (API key)
-    },
-  });
-};
-
-/* 2️⃣  Request handler ----------------------------------------------------- */
-export async function POST(request: Request) {
+export async function POST(req: NextRequest) {
   try {
-    console.log("Starting email sending process...");
-
-    const formData: FormData = await request.json();
+    const body = await req.json();
     const {
       name,
       email,
@@ -59,18 +21,9 @@ export async function POST(request: Request) {
       projectTimeline,
       message,
       tabType,
-    } = formData;
+    } = body;
 
-    if (!name || !email || !message) {
-      console.error("Missing required fields:", { name, email, message });
-      return NextResponse.json({ error: "Required fields are missing" }, {
-        status: 400,
-      });
-    }
-
-    const transporter = createTransporter();
-
-    /* ---------- Confirmation email to user ---------- */
+    // Send confirmation email to the user
     const userEmailHtml = await render(
       ConfirmationEmail({
         name,
@@ -81,53 +34,22 @@ export async function POST(request: Request) {
       }),
     );
 
-    let userEmailRetries = 0;
-    const maxRetries = 3;
+    const userEmailInfo = await resend.emails.send({
+      from: `Naval Dockyard <${fromEmail}>`,
+      to: email,
+      subject: `Your ${
+        tabType || "Contact"
+      } Request Has Been Received - Naval Dockyard`,
+      html: userEmailHtml,
+    });
 
-    while (userEmailRetries < maxRetries) {
-      try {
-        console.log(
-          `Attempting to send user email (attempt ${userEmailRetries + 1})...`,
-        );
-
-        const userEmailInfo = await transporter.sendMail({
-          from: `Naval Dockyard <${FROM_EMAIL}>`,
-          to: email,
-          subject: `Your ${
-            tabType || "Contact"
-          } Request Has Been Received - Naval Dockyard`,
-          html: userEmailHtml,
-        });
-
-        console.log("User email sent successfully:", userEmailInfo.messageId);
-        break;
-      } catch (error) {
-        console.error(
-          `Error on user email attempt ${userEmailRetries + 1}:`,
-          error,
-        );
-        userEmailRetries++;
-
-        if (userEmailRetries < maxRetries) {
-          await new Promise((resolve) =>
-            setTimeout(resolve, 1000 * Math.pow(2, userEmailRetries))
-          );
-        }
-      }
+    if (userEmailInfo.error) {
+      return NextResponse.json({ error: userEmailInfo.error });
     }
 
-    if (userEmailRetries === maxRetries) {
-      console.error("Failed to send user email after maximum retries");
-      return NextResponse.json(
-        {
-          error:
-            "Failed to send confirmation email after multiple attempts. Please try again later.",
-        },
-        { status: 500 },
-      );
-    }
+    console.log("User email sent successfully:", userEmailInfo.data?.id);
 
-    /* ---------- Notification email to admin ---------- */
+    // Send notification email to the admin
     const adminEmailHtml = await render(
       AdminNotificationEmail({
         name,
@@ -142,60 +64,27 @@ export async function POST(request: Request) {
       }),
     );
 
-    let adminEmailRetries = 0;
+    const adminEmailInfo = await resend.emails.send({
+      from: `Naval Dockyard Contact Form <${fromEmail}>`,
+      to: adminEmail,
+      subject: `New ${tabType || "Contact"} Form Submission - ${name}`,
+      html: adminEmailHtml,
+      replyTo: email,
+    });
 
-    while (adminEmailRetries < maxRetries) {
-      try {
-        console.log(
-          `Attempting to send admin email (attempt ${
-            adminEmailRetries + 1
-          })...`,
-        );
-
-        const adminEmailInfo = await transporter.sendMail({
-          from: `Naval Dockyard Contact Form <${FROM_EMAIL}>`,
-          to: ADMIN_EMAIL,
-          subject: `New ${tabType || "Contact"} Form Submission - ${name}`,
-          html: adminEmailHtml,
-          replyTo: email,
-        });
-
-        console.log("Admin email sent successfully:", adminEmailInfo.messageId);
-        break;
-      } catch (error) {
-        console.error(
-          `Error on admin email attempt ${adminEmailRetries + 1}:`,
-          error,
-        );
-        adminEmailRetries++;
-
-        if (adminEmailRetries < maxRetries) {
-          await new Promise((resolve) =>
-            setTimeout(resolve, 1000 * Math.pow(2, adminEmailRetries))
-          );
-        }
-      }
+    if (adminEmailInfo.error) {
+      return NextResponse.json({ error: adminEmailInfo.error });
     }
 
-    if (adminEmailRetries === maxRetries) {
-      console.warn(
-        "User email sent but admin notification failed after maximum retries",
-      );
-      return NextResponse.json({
-        success: true,
-        warning:
-          "Your request was received and confirmation email sent, but we couldn't notify our team. They will see your submission in the system.",
-      });
-    }
+    console.log("Admin email sent successfully:", adminEmailInfo.data?.id);
 
-    console.log("Email sending process completed successfully!");
-    return NextResponse.json({ success: true });
+    return NextResponse.json({
+      message: "Emails sent successfully!",
+      userEmailId: userEmailInfo.data?.id,
+      adminEmailId: adminEmailInfo.data?.id,
+    });
   } catch (error) {
-    console.error("Unexpected error in email sending process:", error);
-    return NextResponse.json(
-      { error: "Failed to process email request. Please try again later." },
-      { status: 500 },
-    );
+    return NextResponse.json({ error });
   }
 }
 

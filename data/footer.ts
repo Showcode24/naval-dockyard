@@ -1,4 +1,3 @@
-// Footer links and data
 export const footerLinks = {
   quickLinks: [
     { label: "About Us", href: "/about/history" },
