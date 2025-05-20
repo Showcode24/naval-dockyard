@@ -43,6 +43,7 @@
     "@react-email/components": "^0.0.36",
     "@react-email/render": "^1.0.6",
     "@react-email/tailwind": "^1.0.4",
+    "@sendinblue/client": "^3.3.1",
     "@supabase/supabase-js": "^2.49.4",
     "autoprefixer": "^10.4.20",
     "class-variance-authority": "^0.7.1",
