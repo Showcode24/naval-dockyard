@@ -34,7 +34,7 @@ export async function submitContactForm(formData: FormData) {
     // Send email notifications
     console.log("Attempting to send email notifications...");
 
-    // Get the host from headers to construct the absolute URL
+    // Get the host from Headers to construct the absolute URL
     // Note: headers() is not async in Next.js 14+, but we'll handle both cases
     const headersList = headers();
     const host = (await headersList).get("host") || "";
