@@ -1,3 +1,4 @@
+//action for sending email notification
 "use server";
 
 import { revalidatePath } from "next/cache";
