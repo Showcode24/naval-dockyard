@@ -31,7 +31,7 @@ export async function submitContactForm(formData: FormData) {
       messageLength: formData.message?.length || 0,
     });
 
-    // Send email notifications
+    // Send Email notifications
     console.log("Attempting to send email notifications...");
 
     // Get the host from Headers to construct the absolute URL
