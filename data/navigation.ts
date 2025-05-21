@@ -1,4 +1,4 @@
-// Navigation data for the header
+// Navigation data for the Header
 export const navData = [
   {
     key: "about",
@@ -64,13 +64,15 @@ export const navData = [
         key: "services-vessel-construction",
         title: "Boat & Barge Construction",
         href: "/services/boat-construction",
-        description: "Construction of tug boats, LPG barges, houseboats, and work vessels",
+        description:
+          "Construction of tug boats, LPG barges, houseboats, and work vessels",
       },
       {
         key: "services-logistics",
         title: "Marine Logistics & Load-out Base Services",
         href: "/services/marine-logistics",
-        description: "Complete logistics support and base operations for marine services",
+        description:
+          "Complete logistics support and base operations for marine services",
       },
       // {
       //   key: "services-platforms",
@@ -82,7 +84,8 @@ export const navData = [
         key: "services-electroplating",
         title: "Electroplating",
         href: "/services/electroplating",
-        description: "Specialized services for corrosion protection and metal finishing",
+        description:
+          "Specialized services for corrosion protection and metal finishing",
       },
       {
         key: "services-galvanizing",
@@ -106,23 +109,26 @@ export const navData = [
         key: "services-machine-shop",
         title: "Machine Shop & Foundry Services",
         href: "/services/machine-shop",
-        description: "Precision machining, foundry, and component manufacturing services",
+        description:
+          "Precision machining, foundry, and component manufacturing services",
       },
       {
         key: "services-electrical",
         title: "Electrical Motor Rewinding",
         href: "/services/motor-rewinding",
-        description: "Rewinding and repair services for industrial electrical motors",
+        description:
+          "Rewinding and repair services for industrial electrical motors",
       },
       {
         key: "services-carpentry",
         title: "Carpentry & Furniture Works",
         href: "/services/carpentry",
-        description: "Marine-grade carpentry, joinery, and furniture fabrication",
-      }
+        description:
+          "Marine-grade carpentry, joinery, and furniture fabrication",
+      },
     ],
   },
-  
+
   {
     key: "portfolio",
     title: "Portfolio",
@@ -210,5 +216,4 @@ export const navData = [
     href: "/contact",
     subItems: null,
   },
-]
-
+];

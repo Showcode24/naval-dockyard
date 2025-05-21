@@ -1,5 +1,15 @@
-import type React from "react"
-import { Anchor, Wrench, Ruler, Shield, Ship, Droplets, Hammer, Cog, Zap } from "lucide-react"
+import type React from "react";
+import {
+  Anchor,
+  Cog,
+  Droplets,
+  Hammer,
+  Ruler,
+  Shield,
+  Ship,
+  Wrench,
+  Zap,
+} from "lucide-react";
 
 // Hero section data
 export const heroData = {
@@ -8,18 +18,16 @@ export const heroData = {
     "Providing world-class ship repair, maintenance, and engineering services to the Nigerian Navy and commercial maritime sector across West Africa.",
   primaryCTA: "Request Our Services",
   secondaryCTA: "Explore Our Capabilities",
-}
+};
 
-// Stats section data
+// Statistics section data
 export interface StatItem {
-  value: number
-  label: string
-  description: string
-  icon: React.ElementType
-  link: string
+  value: number;
+  label: string;
+  description: string;
+  icon: React.ElementType;
+  link: string;
 }
-
-
 
 export const statsData: StatItem[] = [
   {
@@ -27,7 +35,7 @@ export const statsData: StatItem[] = [
     label: "Ships Serviced Annually",
     description: "Naval and commercial vessels maintained each year",
     icon: Ship,
-    link: "/portfolio/military", 
+    link: "/portfolio/military",
   },
   {
     value: 6,
@@ -43,23 +51,23 @@ export const statsData: StatItem[] = [
     icon: Anchor,
     link: "/portfolio/commercial",
   },
-]
-
+];
 
 // Service summary for homepage
 export interface ServiceSummary {
-  title: string
-  description: string
-  extendedDescription: string
-  image: string
-  icon: React.ElementType
-  features: string[]
+  title: string;
+  description: string;
+  extendedDescription: string;
+  image: string;
+  icon: React.ElementType;
+  features: string[];
 }
 
 export const serviceSummaryData: ServiceSummary[] = [
   {
     title: "Ship Repair & Maintenance",
-    description: "Comprehensive repair services for naval and commercial vessels",
+    description:
+      "Comprehensive repair services for naval and commercial vessels",
     extendedDescription:
       "Our ship repair and maintenance services cover everything from hull repairs to complex propulsion system servicing for both military and commercial vessels.",
     image: "/images/img/ship-repair.webp",
@@ -129,7 +137,8 @@ export const serviceSummaryData: ServiceSummary[] = [
   // },
   {
     title: "Electroplating",
-    description: "High-quality metal electroplating services for marine applications",
+    description:
+      "High-quality metal electroplating services for marine applications",
     extendedDescription:
       "Our advanced electroplating services provide superior corrosion resistance and aesthetic finishes for marine components operating in harsh saltwater environments.",
     image: "/images/electroplating/electroplating-05.webp",
@@ -155,13 +164,13 @@ export const serviceSummaryData: ServiceSummary[] = [
       "Extended lifespan for marine metal components",
     ],
   },
-]
+];
 
 // Testimonial data
 export interface Testimonial {
-  name: string
-  position: string
-  quote: string
+  name: string;
+  position: string;
+  quote: string;
 }
 
 export const testimonialData: Testimonial[] = [
@@ -189,34 +198,38 @@ export const testimonialData: Testimonial[] = [
     quote:
       "The quality of work and personal attention I received for my vessel's overhaul was extraordinary. The team at Naval Dockyard Limited treats every ship with the same level of care, regardless of size.",
   },
-]
+];
 
 // Clients data
 export interface Client {
-  name: string
-  logo: string
-  highlighted: boolean
+  name: string;
+  logo: string;
+  highlighted: boolean;
 }
 
 export const clientsData: Client[] = [
   {
     name: "Nigerian Navy",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/e/e7/Badge_of_the_Nigerian_Navy.svg",
+    logo:
+      "https://upload.wikimedia.org/wikipedia/commons/e/e7/Badge_of_the_Nigerian_Navy.svg",
     highlighted: true,
   },
   {
     name: "NIMASA",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/c/c0/Wp7.NIM.LOGO.jpg",
+    logo:
+      "https://upload.wikimedia.org/wikipedia/commons/c/c0/Wp7.NIM.LOGO.jpg",
     highlighted: false,
   },
   {
     name: "Republic of Benin Navy",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/The_Westfield_Group_logo.svg/640px-The_Westfield_Group_logo.svg.png",
+    logo:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/The_Westfield_Group_logo.svg/640px-The_Westfield_Group_logo.svg.png",
     highlighted: false,
   },
   {
     name: "Westfield",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Coat_of_arms_of_Benin.svg/1200px-Coat_of_arms_of_Benin.svg.png",
+    logo:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Coat_of_arms_of_Benin.svg/1200px-Coat_of_arms_of_Benin.svg.png",
     highlighted: false,
   },
   {
@@ -226,7 +239,8 @@ export const clientsData: Client[] = [
   },
   {
     name: "DormanLong Engineering Limited",
-    logo: "https://image.pitchbook.com/Bi1dS4otodVGdUqlGdiETTCvj3K1665398808780_200x200",
+    logo:
+      "https://image.pitchbook.com/Bi1dS4otodVGdUqlGdiETTCvj3K1665398808780_200x200",
     highlighted: false,
   },
   {
@@ -236,20 +250,23 @@ export const clientsData: Client[] = [
   },
   {
     name: "Century Group",
-    logo: "https://ceslintlgroup.com/wp-content/uploads/2024/05/cropped-CG-Large_200.png",
+    logo:
+      "https://ceslintlgroup.com/wp-content/uploads/2024/05/cropped-CG-Large_200.png",
     highlighted: false,
   },
   {
     name: "Shipowners Association of Nigeria",
-    logo: "https://lh5.googleusercontent.com/proxy/bCmv6N_gpd0F-nRm_H3l_5D_dtb5pK7ywepGM-3pUDs0BYhSXZZN5s-_0Pwkcgc8T8-rFe07-6SOU1NEuQpt",
+    logo:
+      "https://lh5.googleusercontent.com/proxy/bCmv6N_gpd0F-nRm_H3l_5D_dtb5pK7ywepGM-3pUDs0BYhSXZZN5s-_0Pwkcgc8T8-rFe07-6SOU1NEuQpt",
     highlighted: false,
   },
   {
     name: "GOG Marine",
-    logo: "https://www.gogmarine.com/wp-content/uploads/2019/10/gogfulllogo.png",
+    logo:
+      "https://www.gogmarine.com/wp-content/uploads/2019/10/gogfulllogo.png",
     highlighted: false,
   },
-]
+];
 
 // Call To Action data
 export const ctaData = {
@@ -260,7 +277,7 @@ export const ctaData = {
   primaryButtonLink: "/contact",
   secondaryButtonText: "Learn More",
   secondaryButtonLink: "/services",
-}
+};
 
 export const heroSlidesData = [
   {
@@ -293,5 +310,4 @@ export const heroSlidesData = [
     secondaryCTALink: "/expertise",
     image: "/images/img/team.webp",
   },
-]
-
+];
