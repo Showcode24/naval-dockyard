@@ -107,9 +107,8 @@ export default function NewsCategoryPage({ params }: { params: { slug: string } 
                     <li key={index}>
                       <Link
                         href={`/news/category/${cat.slug}`}
-                        className={`flex items-center justify-between py-2 hover:text-primary transition-colors ${
-                          cat.slug === params.slug ? "text-primary font-medium" : ""
-                        }`}
+                        className={`flex items-center justify-between py-2 hover:text-primary transition-colors ${cat.slug === params.slug ? "text-primary font-medium" : ""
+                          }`}
                       >
                         <span>{cat.name}</span>
                         <span className="bg-background px-2 py-1 rounded-full text-xs">{cat.count}</span>
@@ -141,7 +140,7 @@ export default function NewsCategoryPage({ params }: { params: { slug: string } 
                 <p className="mb-4">For media inquiries, please contact our communications department:</p>
                 <ul className="space-y-2 mb-6">
                   <li>Email: media@navaldockyard.com</li>
-                  <li>Phone: +234 (0) 123 4567 890</li>
+                  <li>Phone: +234 913 9381 685</li>
                 </ul>
                 <Button variant="secondary" asChild>
                   <Link href="/contact">Contact Media Relations</Link>

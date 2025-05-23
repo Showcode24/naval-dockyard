@@ -156,7 +156,7 @@ export default function MediaResourcesPage() {
                   <div>
                     <p className="font-medium">Contact Information:</p>
                     <p>Email: media@navaldockyard.com</p>
-                    <p>Phone: +234 (0) 123 4567 890</p>
+                    <p>Phone: +234 913 9381 685</p>
                   </div>
                 </div>
                 <Button variant="secondary" asChild>

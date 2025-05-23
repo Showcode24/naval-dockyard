@@ -1,3 +1,4 @@
+//Leadership Data
 export const leadershipData = {
   executives: [
     {
@@ -33,21 +34,21 @@ export const leadershipData = {
       position: "General Manager Arsenal",
       bio:
         "The General Manager Arsenal oversees all aspects of naval weaponry and defense systems integration. Their extensive background in naval armaments ensures our vessels are equipped with state-of-the-art defense capabilities.",
-      image: "/images/leadership/arsenal.jpg",
+      image: "/images/executives/arsenal.png",
     },
     {
       name: "Captain M.W. Gana",
       position: "Ag.General Manager Yard Services",
       bio:
         "Leading our comprehensive yard services division, they ensure all dockyard facilities operate at peak efficiency. Their expertise in shipyard operations has been vital to our ability to service vessels of all classes.",
-      image: "/images/leadership/yardservices.jpg",
+      image: "/images/executives/yard_services_1.png",
     },
     {
       name: "Captain D. Shehu",
       position: "General Manager Finance",
       bio:
         "As General Manager Finance, they provide strategic oversight of all financial operations and ensure fiscal discipline across departments. Their financial acumen and commitment to transparency support the dockyard’s long-term sustainability and growth.",
-      image: "/images/leadership/finance.jpg",
+      image: "/images/executives/finance.png",
     },
   ],
 };

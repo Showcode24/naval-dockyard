@@ -1,8 +1,8 @@
 export const contactData = {
   address: "Naval Dockyard Limited, Victoria Island, Lagos, Nigeria",
-  phone: "+234 (0) 123 4567 890",
+  phone: "+234 913 9381 685",
   emergencyPhone: "+234 (0) 123 4567 999",
-  email: "info@navaldockyard.com",
+  email: "info@navaldockyardltd.com",
   serviceEmail: "service@navaldockyard.com",
   hours: "Monday - Friday: 8:00 AM - 5:00 PM | Saturday: 9:00 AM - 2:00 PM",
 
@@ -46,5 +46,4 @@ export const contactData = {
     "Long-term (6+ months)",
     "Planned Maintenance (Specific date)",
   ],
-}
-
+};
