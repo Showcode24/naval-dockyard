@@ -66,7 +66,7 @@ export default function ConfirmationEmail({
               {/* Header with logo */}
               <Section className="bg-blue-900 p-8 text-center">
                 <Img
-                  src="https://placehold.co/200x60/0a2463/ffffff?text=NAVAL+DOCKYARD"
+                  src="/images/logo/dockyard-logo-2.png"
                   alt="Naval Dockyard Logo"
                   width="200"
                   height="60"
@@ -111,7 +111,7 @@ export default function ConfirmationEmail({
 
                 <Section className="mb-6">
                   <Text className="text-gray-700 mb-2">
-                    <strong>Phone:</strong> +234 123 456 7890
+                    <strong>Phone:</strong> +234 913 9381 685
                   </Text>
                   <Text className="text-gray-700">
                     <strong>Email:</strong> service@navaldockyard.com
@@ -122,7 +122,7 @@ export default function ConfirmationEmail({
 
                 <Section className="text-center">
                   <Button
-                    href="https://navaldockyard.com/services"
+                    href="https://www.navaldockyardltd.org/services"
                     className="bg-blue-700 text-white font-bold px-6 py-3 rounded-md"
                   >
                     Explore Our Services
