@@ -64,11 +64,11 @@ export default function Footer() {
               </li>
               <li className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 flex-shrink-0" />
-                <span>+234 (0) 123 4567 890</span>
+                <span>+234 913 9381 685</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 flex-shrink-0" />
-                <span>info@navaldockyard.com</span>
+                <span>info@navaldockyardltd.com</span>
               </li>
             </ul>
           </div>
@@ -79,7 +79,7 @@ export default function Footer() {
             <p className="text-gray-400 text-sm mb-4 md:mb-0">
               © {new Date().getFullYear()} Naval Dockyard Limited. All rights reserved.
             </p>
-            <div className="flex space-x-6">
+            {/* <div className="flex space-x-6">
               <Link href="/privacy-policy" className="text-gray-400 hover:text-white text-sm">
                 Privacy Policy
               </Link>
@@ -89,7 +89,7 @@ export default function Footer() {
               <Link href="/sitemap" className="text-gray-400 hover:text-white text-sm">
                 Sitemap
               </Link>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

@@ -15,6 +15,6 @@ export const footerLinks = {
       label: "Ship Design & Construction",
       href: "/services/naval-architecture",
     },
-    { label: "Offshore Support", href: "/services/offshore-support" },
+    // { label: "Offshore Support", href: "/services/offshore-support" },
   ],
 };
