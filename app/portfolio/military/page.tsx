@@ -85,22 +85,12 @@ export default function MilitaryPortfolioPage() {
           </Tabs>
 
           <div className="bg-muted p-8 rounded-lg mb-16">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-              <div>
-                <h2 className="text-2xl font-bold mb-4">Security Clearance & Confidentiality</h2>
-                <p className="text-muted-foreground mb-6">{militaryProjectsData.securityNote}</p>
-                <Button asChild>
-                  <Link href="/contact">Request Detailed Information</Link>
-                </Button>
-              </div>
-              <div className="relative h-64 rounded-lg overflow-hidden">
-                <Image
-                  src="/images/portfolio/security-clearance.jpg"
-                  alt="Security Clearance"
-                  fill
-                  className="object-cover"
-                />
-              </div>
+            <div className="flex flex-col items-center text-center">
+              <h2 className="text-2xl font-bold mb-4">Security Clearance & Confidentiality</h2>
+              <p className="text-muted-foreground mb-6">{militaryProjectsData.securityNote}</p>
+              <Button asChild>
+                <Link href="/contact">Request Detailed Information</Link>
+              </Button>
             </div>
           </div>
 

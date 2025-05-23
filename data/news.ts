@@ -581,7 +581,7 @@ export const newsData = {
       slug: "ndl-refurbishes-beninese-warships",
       excerpt:
         "In March 2024, NDL commenced refurbishment of six warships belonging to the Benin Republic Navy, enhancing security in the Gulf of Guinea.",
-      image: "/images/commercial/benin-navy-ship/benin-ship-08.jpg",
+      image: "/images/commercial/benin-navy-ship/benin-ship-20.JPG",
       date: "March 4, 2024",
       category: "Projects",
     },

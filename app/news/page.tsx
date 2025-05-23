@@ -140,7 +140,7 @@ export default function NewsPage() {
                 <h3 className="text-xl font-bold mb-4">Media Contact</h3>
                 <p className="mb-4">For media inquiries, please contact our communications department:</p>
                 <ul className="space-y-2 mb-6">
-                  <li>Email: media@oceanforcedockyard.com</li>
+                  <li>Email: info@navaldockyardltd.com</li>
                   <li>Phone: +1 (234) 567-8910</li>
                 </ul>
                 <Button variant="secondary" asChild>
