@@ -166,7 +166,7 @@ export default function CommercialPortfolioPage() {
             </div>
           </div>
 
-          <div className="bg-muted p-8 rounded-lg">
+          {/* <div className="bg-muted p-8 rounded-lg">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div className="order-2 lg:order-1 relative h-64 rounded-lg overflow-hidden">
                 <Image
@@ -187,7 +187,7 @@ export default function CommercialPortfolioPage() {
                 <p className="text-sm text-muted-foreground">Fleet Manager, Atlantic Shipping Co.</p>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
 
