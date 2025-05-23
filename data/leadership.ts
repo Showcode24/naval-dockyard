@@ -1,5 +1,4 @@
-
-//Leadership Data
+//Leadership
 export const leadershipData = {
   executives: [
     {
