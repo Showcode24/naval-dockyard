@@ -63,7 +63,7 @@ export default function ConfirmationEmail({
         <Body className="bg-gray-100 font-sans">
           <Container className="mx-auto p-4 max-w-[600px]">
             <Section className="bg-white rounded-lg overflow-hidden shadow-lg">
-              {/* Header with logo */}
+              {/* Header with Logo */}
               <Section className="bg-blue-900 p-8 text-center">
                 <Img
                   src="/images/logo/dockyard-logo-2.png"
